@@ -1,0 +1,85 @@
+//
+//  Question.swift
+//  High School Science Bowl Practice
+//
+//  Created by Jake Polatty on 7/11/17.
+//  Copyright © 2017 Jake Polatty. All rights reserved.
+//
+
+import Foundation
+
+enum AnswerType {
+    case multipleChoice
+    case shortAnswer
+    
+    init(typeString: String) {
+        switch typeString {
+        case "MC": self = .multipleChoice
+        case "SA": self = .shortAnswer
+        default: self = .shortAnswer
+        }
+    }
+}
+
+enum QuestionType {
+    case tossup
+    case bonus
+    
+    init (typeString: String) {
+        switch typeString {
+        case "T": self = .tossup
+        case "B": self = .bonus
+        default: self = .tossup
+        }
+    }
+}
+
+struct Question {
+    let questionText: String
+    let category: Category
+    let questionType: QuestionType
+    let answerType: AnswerType
+    let setNumber: Int
+    let roundNumber: Int
+    let questionNumber: Int
+    let answerChoices: [String]?
+    let answer: String
+}
+
+extension Question {
+    struct Key {
+        static let questionText = "questionText";
+        static let questionAnswer = "questionAnswer";
+        static let answerChoices = "answerChoices";
+        static let category = "category";
+        static let setNumber = "setNumber";
+        static let roundNumber = "roundNumber";
+        static let questionNumber = "questionNumber";
+        static let answerType = "type";
+        static let questionType = "questionType";
+    }
+    
+    init?(json: [String: Any]) {
+        guard let qText = json[Key.questionText] as? String,
+            let qAnswer = json[Key.questionAnswer] as? String,
+            let answerChoices = json[Key.answerChoices] as? [String],
+            let catString = json[Key.category] as? String,
+            let setNumber = json[Key.setNumber] as? Int,
+            let roundNumber = json[Key.roundNumber] as? Int,
+            let questionNumber = json[Key.questionNumber] as? Int,
+            let answerType = json[Key.answerType] as? String,
+            let questionType = json[Key.questionType] as? String else {
+                return nil;
+        }
+        
+        self.questionText = qText;
+        self.answer = qAnswer;
+        self.answerChoices = answerChoices;
+        self.setNumber = setNumber;
+        self.roundNumber = roundNumber;
+        self.questionNumber = questionNumber;
+        self.category = Category(catString: catString);
+        self.answerType = AnswerType(typeString: answerType);
+        self.questionType = QuestionType(typeString: questionType);
+    }
+}

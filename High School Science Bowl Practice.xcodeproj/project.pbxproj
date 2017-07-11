@@ -12,6 +12,8 @@
 		1CAD658F1F1573C100D1A289 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD658D1F1573C100D1A289 /* Main.storyboard */; };
 		1CAD65911F1573C100D1A289 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD65901F1573C100D1A289 /* Assets.xcassets */; };
 		1CAD65941F1573C100D1A289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD65921F1573C100D1A289 /* LaunchScreen.storyboard */; };
+		1CAD659D1F1581AB00D1A289 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD659C1F1581AB00D1A289 /* Question.swift */; };
+		1CAD659F1F1581C200D1A289 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD659E1F1581C200D1A289 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		1CAD65901F1573C100D1A289 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CAD65931F1573C100D1A289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CAD65951F1573C100D1A289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CAD659C1F1581AB00D1A289 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		1CAD659E1F1581C200D1A289 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		1CAD65881F1573C100D1A289 /* High School Science Bowl Practice */ = {
 			isa = PBXGroup;
 			children = (
+				1CAD659B1F15819200D1A289 /* Data Model */,
 				1CAD65891F1573C100D1A289 /* AppDelegate.swift */,
 				1CAD658B1F1573C100D1A289 /* ViewController.swift */,
 				1CAD658D1F1573C100D1A289 /* Main.storyboard */,
@@ -62,6 +67,15 @@
 				1CAD65951F1573C100D1A289 /* Info.plist */,
 			);
 			path = "High School Science Bowl Practice";
+			sourceTree = "<group>";
+		};
+		1CAD659B1F15819200D1A289 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CAD659E1F1581C200D1A289 /* Category.swift */,
+				1CAD659C1F1581AB00D1A289 /* Question.swift */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CAD659D1F1581AB00D1A289 /* Question.swift in Sources */,
 				1CAD658C1F1573C100D1A289 /* ViewController.swift in Sources */,
 				1CAD658A1F1573C100D1A289 /* AppDelegate.swift in Sources */,
+				1CAD659F1F1581C200D1A289 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
