@@ -14,6 +14,9 @@
 		1CAD65941F1573C100D1A289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD65921F1573C100D1A289 /* LaunchScreen.storyboard */; };
 		1CAD659D1F1581AB00D1A289 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD659C1F1581AB00D1A289 /* Question.swift */; };
 		1CAD659F1F1581C200D1A289 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD659E1F1581C200D1A289 /* Category.swift */; };
+		1CAD65A11F158B3100D1A289 /* QuizModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD65A01F158B3100D1A289 /* QuizModeViewController.swift */; };
+		1CAD65A41F158B6D00D1A289 /* QuestionJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD65A31F158B6D00D1A289 /* QuestionJSONParser.swift */; };
+		1CAD65A61F158D3B00D1A289 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD65A51F158D3B00D1A289 /* questions.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		1CAD65951F1573C100D1A289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CAD659C1F1581AB00D1A289 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1CAD659E1F1581C200D1A289 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../Category.swift; sourceTree = "<group>"; };
+		1CAD65A01F158B3100D1A289 /* QuizModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizModeViewController.swift; sourceTree = "<group>"; };
+		1CAD65A31F158B6D00D1A289 /* QuestionJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionJSONParser.swift; sourceTree = "<group>"; };
+		1CAD65A51F158D3B00D1A289 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +64,11 @@
 		1CAD65881F1573C100D1A289 /* High School Science Bowl Practice */ = {
 			isa = PBXGroup;
 			children = (
+				1CAD65A21F158B3700D1A289 /* View Controllers */,
 				1CAD659B1F15819200D1A289 /* Data Model */,
 				1CAD65891F1573C100D1A289 /* AppDelegate.swift */,
 				1CAD658B1F1573C100D1A289 /* ViewController.swift */,
+				1CAD65A51F158D3B00D1A289 /* questions.json */,
 				1CAD658D1F1573C100D1A289 /* Main.storyboard */,
 				1CAD65901F1573C100D1A289 /* Assets.xcassets */,
 				1CAD65921F1573C100D1A289 /* LaunchScreen.storyboard */,
@@ -74,8 +82,17 @@
 			children = (
 				1CAD659E1F1581C200D1A289 /* Category.swift */,
 				1CAD659C1F1581AB00D1A289 /* Question.swift */,
+				1CAD65A31F158B6D00D1A289 /* QuestionJSONParser.swift */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		1CAD65A21F158B3700D1A289 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1CAD65A01F158B3100D1A289 /* QuizModeViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CAD65941F1573C100D1A289 /* LaunchScreen.storyboard in Resources */,
+				1CAD65A61F158D3B00D1A289 /* questions.json in Resources */,
 				1CAD65911F1573C100D1A289 /* Assets.xcassets in Resources */,
 				1CAD658F1F1573C100D1A289 /* Main.storyboard in Resources */,
 			);
@@ -150,10 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CAD65A41F158B6D00D1A289 /* QuestionJSONParser.swift in Sources */,
 				1CAD659D1F1581AB00D1A289 /* Question.swift in Sources */,
 				1CAD658C1F1573C100D1A289 /* ViewController.swift in Sources */,
 				1CAD658A1F1573C100D1A289 /* AppDelegate.swift in Sources */,
 				1CAD659F1F1581C200D1A289 /* Category.swift in Sources */,
+				1CAD65A11F158B3100D1A289 /* QuizModeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -243,6 +243,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="lB9-u6-ERo" kind="show" id="4ZU-bT-YsM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -274,6 +277,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHS-9H-xcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1975.2" y="-558.17091454272872"/>
+        </scene>
+        <!--Quiz Mode View Controller-->
+        <scene sceneID="l3Z-kT-Let">
+            <objects>
+                <viewController id="lB9-u6-ERo" customClass="QuizModeViewController" customModule="High_School_Science_Bowl_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sZY-bA-tYm"/>
+                        <viewControllerLayoutGuide type="bottom" id="XI6-Gd-DRI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fKB-7d-kwg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMV-0G-ZU3">
+                                <rect key="frame" x="36" y="80" width="303" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Jqe-7k-K8V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LMV-0G-ZU3" firstAttribute="centerX" secondItem="fKB-7d-kwg" secondAttribute="centerX" id="HXM-Io-bBe"/>
+                            <constraint firstItem="LMV-0G-ZU3" firstAttribute="top" secondItem="sZY-bA-tYm" secondAttribute="bottom" constant="60" id="Nqw-Yg-XRA"/>
+                            <constraint firstItem="LMV-0G-ZU3" firstAttribute="leading" secondItem="fKB-7d-kwg" secondAttribute="leadingMargin" constant="20" id="i0x-9R-U4k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LMV-0G-ZU3" secondAttribute="trailing" constant="20" id="iys-WF-48d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="questionTextLabel" destination="LMV-0G-ZU3" id="PYe-ld-HMU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eso-DS-2WQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2773.5999999999999" y="-558.17091454272872"/>
         </scene>
         <!--Reader Mode-->
         <scene sceneID="5Mh-kh-fmW">
