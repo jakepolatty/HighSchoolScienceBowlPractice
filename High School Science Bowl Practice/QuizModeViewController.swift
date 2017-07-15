@@ -11,13 +11,13 @@ import UIKit
 
 class QuizModeViewController: UIViewController {
     @IBOutlet weak var questionTextLabel: UILabel!
-    let parser = QuestionJSONParser()
+    var parser = QuestionJSONParser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let parsedJSON = parser.parseJsonFile(withName: "questions")
-        let question = parsedJSON[42]
+        let parsedJSON = parser.parsedJSON
+        let question = parsedJSON[43]
         guard let qText = question["qTxt"], let text = qText as? String else {
             fatalError()
         }

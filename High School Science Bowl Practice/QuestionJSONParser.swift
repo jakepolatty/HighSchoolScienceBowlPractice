@@ -9,10 +9,18 @@
 import Foundation
 
 struct QuestionJSONParser {
-    func parseJsonFile(withName name: String) -> [NSDictionary] {
+    lazy var parsedJSON = {
+        QuestionJSONParser.parseJsonFile(withName: "questions")
+    }()
+    
+    static func parseJsonFile(withName name: String) -> [NSDictionary] {
         let file = Bundle.main.path(forResource: name, ofType: "json")
         let data = try! Data.init(contentsOf: URL(fileURLWithPath: file!))
         let jsonData = try! JSONSerialization.jsonObject(with: data, options: []) as! [NSDictionary]
         return jsonData
     }
+    
+//    func parseQuestionForIndex(_ index: Int) -> Question {
+//        
+//    }
 }
