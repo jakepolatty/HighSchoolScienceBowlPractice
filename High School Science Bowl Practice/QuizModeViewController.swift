@@ -17,10 +17,8 @@ class QuizModeViewController: UIViewController {
         super.viewDidLoad()
 
         let parsedJSON = parser.parseJsonFile(withName: "questions")
-        guard let question = parsedJSON["S1R17Q1Tossup"] else {
-            fatalError()
-        }
-        guard let q = question as? [String: Any], let qText = q["tossupQuestion"], let text = qText as? String else {
+        let question = parsedJSON[42]
+        guard let qText = question["qTxt"], let text = qText as? String else {
             fatalError()
         }
         questionTextLabel.text = text
