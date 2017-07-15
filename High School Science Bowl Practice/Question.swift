@@ -21,6 +21,15 @@ enum AnswerType {
     }
 }
 
+extension AnswerType: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .multipleChoice: return "Multiple Choice"
+        case .shortAnswer: return "Short Answer"
+        }
+    }
+}
+
 enum QuestionType {
     case tossup
     case bonus
@@ -30,6 +39,15 @@ enum QuestionType {
         case "T": self = .tossup
         case "B": self = .bonus
         default: self = .tossup
+        }
+    }
+}
+
+extension QuestionType: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .tossup: return "Tossup"
+        case .bonus: return "Bonus"
         }
     }
 }

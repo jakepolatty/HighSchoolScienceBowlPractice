@@ -32,3 +32,18 @@ enum Category {
         }
     }
 }
+
+extension Category: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .biology: return "Biology"
+        case .chemistry: return "Chemistry"
+        case .earthAndSpace: return "Earth and Space"
+        case .energy: return "Energy"
+        case .mathematics: return "Mathematics"
+        case .physics: return "Physics"
+        case .generalScience: return "General Science"
+        case .computerScience: return "Computer Science"
+        }
+    }
+}
