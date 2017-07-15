@@ -15,13 +15,9 @@ class QuizModeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let parsedJSON = parser.parseJsonFile(withName: "questions")
-        let question = parsedJSON[42]
-        guard let qText = question["qTxt"], let text = qText as? String else {
-            fatalError()
-        }
-        questionTextLabel.text = text
+        
+        let question = parser.getRandomQuestion()
+        questionTextLabel.text = question?.questionText
     }
 
     override func didReceiveMemoryWarning() {
