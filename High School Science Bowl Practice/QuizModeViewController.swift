@@ -23,8 +23,11 @@ class QuizModeViewController: UIViewController {
         if let roundNum = question?.roundNumber, let setNum = question?.setNumber {
             roundSetNumLabel.text = "Question Set \(setNum) Round \(roundNum)"
         }
-        if let questionNum = question?.questionNumber {
-            questionNumLabel.text = "Question \(questionNum)"
+        if let questionNum = question?.questionNumber, let questionType = question?.questionType {
+            questionNumLabel.text = "Question \(questionNum) \(String(describing: questionType))"
+        }
+        if let category = question?.category, let answerType = question?.answerType {
+            catTypeLabel.text = "\(String(describing: category)) \(String(describing: answerType))"
         }
         questionTextLabel.text = question?.questionText
     }
