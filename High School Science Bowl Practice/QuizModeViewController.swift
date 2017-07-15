@@ -11,7 +11,7 @@ import UIKit
 
 class QuizModeViewController: UIViewController {
     @IBOutlet weak var questionTextLabel: UILabel!
-    var parser = QuestionJSONParser()
+    let parser = QuestionJSONParser()
 
     override func viewDidLoad() {
         super.viewDidLoad()

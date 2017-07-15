@@ -9,7 +9,7 @@
 import Foundation
 
 struct QuestionJSONParser {
-    lazy var parsedJSON = {
+    let parsedJSON = {
         QuestionJSONParser.parseJsonFile(withName: "questions")
     }()
     
