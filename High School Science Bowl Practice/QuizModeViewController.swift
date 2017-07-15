@@ -6,6 +6,7 @@
 //  Copyright © 2017 Jake Polatty. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class QuizModeViewController: UIViewController {
@@ -16,7 +17,13 @@ class QuizModeViewController: UIViewController {
         super.viewDidLoad()
 
         let parsedJSON = parser.parseJsonFile(withName: "questions")
-        print(parsedJSON["S1R1Q1Tossup"]);
+        guard let question = parsedJSON["S1R17Q1Tossup"] else {
+            fatalError()
+        }
+        guard let q = question as? [String: Any], let qText = q["tossupQuestion"], let text = qText as? String else {
+            fatalError()
+        }
+        questionTextLabel.text = text
     }
 
     override func didReceiveMemoryWarning() {
