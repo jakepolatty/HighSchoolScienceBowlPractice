@@ -16,7 +16,7 @@ class QuizModeViewController: UIViewController {
         super.viewDidLoad()
 
         let parsedJSON = parser.parseJsonFile(withName: "questions")
-        print(parsedJSON)
+        print(parsedJSON["S1R1Q1Tossup"]);
     }
 
     override func didReceiveMemoryWarning() {

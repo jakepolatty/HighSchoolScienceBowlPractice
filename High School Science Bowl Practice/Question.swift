@@ -48,15 +48,15 @@ struct Question {
 
 extension Question {
     struct Key {
-        static let questionText = "questionText";
-        static let questionAnswer = "questionAnswer";
-        static let answerChoices = "answerChoices";
-        static let category = "category";
-        static let setNumber = "setNumber";
-        static let roundNumber = "roundNumber";
-        static let questionNumber = "questionNumber";
-        static let answerType = "type";
-        static let questionType = "questionType";
+        static let questionText = "qTxt";
+        static let questionAnswer = "qAns";
+        static let answerChoices = "ansCh";
+        static let category = "cat";
+        static let setNumber = "sNum";
+        static let roundNumber = "rNum";
+        static let questionNumber = "qNum";
+        static let answerType = "mc";
+        static let questionType = "tb";
     }
     
     init?(json: [String: Any]) {
