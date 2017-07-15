@@ -48,21 +48,20 @@ struct Question {
 
 extension Question {
     struct Key {
-        static let questionText = "qTxt";
-        static let questionAnswer = "qAns";
-        static let answerChoices = "ansCh";
-        static let category = "cat";
-        static let setNumber = "sNum";
-        static let roundNumber = "rNum";
-        static let questionNumber = "qNum";
-        static let answerType = "mc";
-        static let questionType = "tb";
+        static let questionText = "qTxt"
+        static let questionAnswer = "qAns"
+        static let answerChoices = "ansCh"
+        static let category = "cat"
+        static let setNumber = "sNum"
+        static let roundNumber = "rNum"
+        static let questionNumber = "qNum"
+        static let answerType = "mc"
+        static let questionType = "tb"
     }
     
     init?(json: [String: Any]) {
         guard let qText = json[Key.questionText] as? String,
             let qAnswer = json[Key.questionAnswer] as? String,
-            let answerChoices = json[Key.answerChoices] as? [String],
             let catString = json[Key.category] as? String,
             let setNumber = json[Key.setNumber] as? Int,
             let roundNumber = json[Key.roundNumber] as? Int,
@@ -72,14 +71,22 @@ extension Question {
                 return nil;
         }
         
-        self.questionText = qText;
-        self.answer = qAnswer;
-        self.answerChoices = answerChoices;
-        self.setNumber = setNumber;
-        self.roundNumber = roundNumber;
-        self.questionNumber = questionNumber;
-        self.category = Category(catString: catString);
-        self.answerType = AnswerType(typeString: answerType);
-        self.questionType = QuestionType(typeString: questionType);
+        self.questionText = qText
+        self.answer = qAnswer
+        self.setNumber = setNumber
+        self.roundNumber = roundNumber
+        self.questionNumber = questionNumber
+        self.category = Category(catString: catString)
+        self.answerType = AnswerType(typeString: answerType)
+        self.questionType = QuestionType(typeString: questionType)
+        
+        if self.answerType == .multipleChoice {
+            guard let ansChoices = json[Key.answerChoices] as? [String] else {
+                return nil;
+            }
+            self.answerChoices = ansChoices
+        } else {
+            self.answerChoices = nil
+        }
     }
 }
