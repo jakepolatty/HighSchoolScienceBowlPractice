@@ -19,7 +19,8 @@ class QuizModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let question = parser.getRandomQuestion()
+        let question = parser.getQuestionForCategory(Category.biology)
+        
         let roundNum = question.roundNumber
         let setNum = question.setNumber
         roundSetNumLabel.text = "Question Set \(setNum) Round \(roundNum)"

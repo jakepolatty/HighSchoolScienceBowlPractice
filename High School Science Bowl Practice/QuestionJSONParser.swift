@@ -10,7 +10,7 @@ import GameKit
 import Foundation
 
 struct QuestionJSONParser {
-    let parsedQuestions = {
+    static let parsedQuestions = {
         QuestionJSONParser.parseJSONToQuestions()
     }()
     
@@ -32,17 +32,22 @@ struct QuestionJSONParser {
         return questionArray
     }
     
-    func parseQuestionForIndex(_ index: Int) -> Question {
+    static func parseQuestionForIndex(_ index: Int) -> Question {
         return parsedQuestions[index]
     }
     
-    func getRandomQuestion() -> Question {
+    static func getRandomQuestion() -> Question {
         let randomIndex = GKRandomSource.sharedRandom().nextInt(upperBound: parsedQuestions.count)
         return parseQuestionForIndex(randomIndex)
     }
     
     func getQuestionForCategory(_ category: Category) -> Question {
-        
-        return parsedQuestions[0]
+        while true {
+            let question = QuestionJSONParser.getRandomQuestion()
+            if question.category == category {
+                return question
+            }
+        }
+        // Will never reach this state because of limited enum values
     }
 }
