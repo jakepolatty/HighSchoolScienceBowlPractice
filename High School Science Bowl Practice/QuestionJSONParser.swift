@@ -10,8 +10,8 @@ import GameKit
 import Foundation
 
 struct QuestionJSONParser {
-    let parsedJSON = {
-        QuestionJSONParser.parseJsonFile(withName: "questions")
+    let parsedQuestions = {
+        QuestionJSONParser.parseJSONToQuestions()
     }()
     
     static func parseJsonFile(withName name: String) -> [[String: Any]] {
@@ -21,16 +21,28 @@ struct QuestionJSONParser {
         return jsonData
     }
     
-    func parseQuestionForIndex(_ index: Int) -> Question? {
-        let questionJSON = parsedJSON[index]
-        guard let parsedQuestion = Question(json: questionJSON) else {
-            return nil
+    static func parseJSONToQuestions() -> [Question] {
+        var questionArray = [Question]()
+        let parsedJSON = QuestionJSONParser.parseJsonFile(withName: "questions")
+        for questionJSON in parsedJSON {
+            if let parsedQuestion = Question(json: questionJSON) {
+                questionArray.append(parsedQuestion)
+            }
         }
-        return parsedQuestion
+        return questionArray
     }
     
-    func getRandomQuestion() -> Question? {
-        let randomIndex = GKRandomSource.sharedRandom().nextInt(upperBound: parsedJSON.count)
+    func parseQuestionForIndex(_ index: Int) -> Question {
+        return parsedQuestions[index]
+    }
+    
+    func getRandomQuestion() -> Question {
+        let randomIndex = GKRandomSource.sharedRandom().nextInt(upperBound: parsedQuestions.count)
         return parseQuestionForIndex(randomIndex)
+    }
+    
+    func getQuestionForCategory(_ category: Category) -> Question {
+        
+        return parsedQuestions[0]
     }
 }
