@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ReaderSettingsViewController: UIViewController {
+class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    @IBOutlet weak var setRoundPicker: UIPickerView!
     let parser = QuestionJSONParser()
-
+    let pickerData = [
+        ["Question Set 1", "Question Set 2", "Question Set 3", "Question Set 4", "Question Set 5", "Question Set 6", "Question Set 7", "Question Set 8"],
+        ["Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setRoundPicker.delegate = self
+        setRoundPicker.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,8 +29,24 @@ class ReaderSettingsViewController: UIViewController {
     }
     
     @IBAction func startReaderMode(_ sender: Any) {
-        let questionSet = parser.getQuestionSet(1, forRound: 1)
+        let questionSetNum = setRoundPicker.selectedRow(inComponent: 0) + 1
+        let roundNum = setRoundPicker.selectedRow(inComponent: 1) + 1
+        let questionSet = parser.getQuestionSet(questionSetNum, forRound: roundNum)
         let readerController = ReaderModeViewController(questionSet: questionSet, index: 0)
         navigationController?.pushViewController(readerController, animated: true)
+    }
+    
+    // MARK: - Picker Data Source
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData[component].count
+    }
+    
+    // MARK: - Picker Delegate
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[component][row]
     }
 }
