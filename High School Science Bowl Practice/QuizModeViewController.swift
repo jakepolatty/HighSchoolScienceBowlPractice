@@ -19,7 +19,11 @@ class QuizModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let question = parser.getQuestionForSet(8, andRound: 17)
+        //let question = parser.getQuestionForCategory(Category.physics)
+        //let question = parser.getQuestionForRound(17)
+        let question = parser.getQuestionForSet(8, andRound: 11)
+        let questionSet = parser.getQuestionSet(1, forRound: 1)
+        print(questionSet)
         
         let roundNum = question.roundNumber
         let setNum = question.setNumber
