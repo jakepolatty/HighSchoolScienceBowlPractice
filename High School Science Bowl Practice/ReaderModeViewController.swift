@@ -60,6 +60,32 @@ class ReaderModeViewController: UIViewController {
         return label
     }()
     
+    lazy var answerOptionsLabel: UILabel? = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        if let answerChoices = self.questionSet?[self.index].answerChoices {
+            if answerChoices.count > 0 {
+                label.text = "\(answerChoices[0])\n\(answerChoices[1])\n\(answerChoices[2])\n\(answerChoices[3])"
+                return label
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }()
+    
+    lazy var questionAnswerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        if let answerText = self.questionSet?[self.index].answer {
+            label.text = "Answer: \(answerText)"
+        }
+        return label
+    }()
+    
     init(questionSet: [Question], index: Int) {
         self.questionSet = questionSet
         self.index = index
@@ -103,6 +129,22 @@ class ReaderModeViewController: UIViewController {
             questionTextLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
+        
+        view.addSubview(questionAnswerLabel)
+        NSLayoutConstraint.activate([
+            questionAnswerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            questionAnswerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            questionAnswerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+        
+        if let answerOptionsLabel = answerOptionsLabel {
+            view.addSubview(answerOptionsLabel)
+            NSLayoutConstraint.activate([
+                answerOptionsLabel.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 20),
+                answerOptionsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                answerOptionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            ])
+        }
     }
     
     func loadNextQuestion() {
