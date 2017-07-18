@@ -90,6 +90,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="MainMenu"/>
                         <constraints>
                             <constraint firstItem="P5w-b9-xA7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Y6-A7-Y6o"/>
                             <constraint firstItem="wfl-0v-ktB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8fS-Ec-sBl"/>
@@ -334,7 +335,6 @@
                         <constraints>
                             <constraint firstItem="Bnt-Iu-ThY" firstAttribute="centerX" secondItem="fKB-7d-kwg" secondAttribute="centerX" id="3KL-54-62f"/>
                             <constraint firstItem="ySR-m5-ApM" firstAttribute="top" secondItem="Bnt-Iu-ThY" secondAttribute="bottom" constant="10" id="9bc-8P-8yB"/>
-                            <constraint firstItem="LMV-0G-ZU3" firstAttribute="centerX" secondItem="fKB-7d-kwg" secondAttribute="centerX" id="HXM-Io-bBe"/>
                             <constraint firstItem="LMV-0G-ZU3" firstAttribute="top" secondItem="sZY-bA-tYm" secondAttribute="bottom" constant="90" id="Nqw-Yg-XRA"/>
                             <constraint firstItem="ySR-m5-ApM" firstAttribute="centerX" secondItem="fKB-7d-kwg" secondAttribute="centerX" id="aRN-Fx-0B6"/>
                             <constraint firstItem="00L-Q2-IWA" firstAttribute="top" secondItem="ySR-m5-ApM" secondAttribute="bottom" constant="10" id="hZk-Jg-xYc"/>
@@ -358,7 +358,7 @@
         <!--Reader Mode-->
         <scene sceneID="5Mh-kh-fmW">
             <objects>
-                <viewController id="L5Y-qB-APp" sceneMemberID="viewController">
+                <viewController id="L5Y-qB-APp" customClass="ReaderSettingsViewController" customModule="High_School_Science_Bowl_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W4E-mh-dfE"/>
                         <viewControllerLayoutGuide type="bottom" id="qam-7C-RBs"/>
@@ -366,7 +366,32 @@
                     <view key="view" contentMode="scaleToFill" id="yBu-pk-HL8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16F-Q7-zvS">
+                                <rect key="frame" x="127" y="311" width="120" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.2470588235" alpha="0.50432571309999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="IJO-fO-Ulp"/>
+                                    <constraint firstAttribute="height" constant="44" id="gkS-GE-Xqq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Start Set"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startReaderMode:" destination="L5Y-qB-APp" eventType="touchUpInside" id="lnn-6Z-zGa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="16F-Q7-zvS" firstAttribute="centerX" secondItem="yBu-pk-HL8" secondAttribute="centerX" id="6Rq-hS-FIB"/>
+                            <constraint firstItem="16F-Q7-zvS" firstAttribute="centerY" secondItem="yBu-pk-HL8" secondAttribute="centerY" id="9hF-B4-Cj1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reader Mode" id="05v-YD-Ann"/>
                 </viewController>
