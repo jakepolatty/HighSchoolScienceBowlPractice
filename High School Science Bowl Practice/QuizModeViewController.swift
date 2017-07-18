@@ -19,12 +19,17 @@ class QuizModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let question = parser.getQuestionForCategory(Category.physics)
-        //let question = parser.getQuestionForRound(17)
         let question = parser.getQuestionForSet(8, andRound: 11)
-        let questionSet = parser.getQuestionSet(1, forRound: 1)
-        print(questionSet)
-        
+        setupDisplayForQuestion(question)
+        //let questionSet = parser.getQuestionSet(1, forRound: 1)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func setupDisplayForQuestion(_ question: Question) {
         let roundNum = question.roundNumber
         let setNum = question.setNumber
         roundSetNumLabel.text = "Question Set \(setNum) Round \(roundNum)"
@@ -32,17 +37,12 @@ class QuizModeViewController: UIViewController {
         let questionNum = question.questionNumber
         let questionType = question.questionType
         questionNumLabel.text = "Question \(questionNum) \(String(describing: questionType))"
-
+        
         let category = question.category
         let answerType = question.answerType
         catTypeLabel.text = "\(String(describing: category)) \(String(describing: answerType))"
         
         questionTextLabel.text = question.questionText
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
