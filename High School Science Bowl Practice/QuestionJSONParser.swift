@@ -70,6 +70,33 @@ struct QuestionJSONParser {
         }
         // Will never reach this state because of limited set and round selections
     }
+    
+    func getQuestionSet(_ set: Int, forRound round: Int) -> [Question] {
+        var questions = [Question]()
+        for question in QuestionJSONParser.parsedQuestions {
+            if question.setNumber == set && question.roundNumber == round {
+                questions.append(question)
+            }
+        }
+        return questions.sorted(by: sortQuestionsByNumberAndType)
+    }
+    
+    func sortQuestionsByNumberAndType(this: Question, that: Question) -> Bool {
+        let thisFirst: Bool
+        if this.questionNumber < that.questionNumber {
+            thisFirst = true
+        } else if this.questionNumber == that.questionNumber {
+            if this.questionType == .tossup {
+                thisFirst = true
+            } else {
+                thisFirst = false
+            }
+        } else {
+            thisFirst = false
+        }
+        
+        return thisFirst
+    }
 }
 
 
