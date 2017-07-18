@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2985C81F1EABCC007F96FC /* ReaderModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2985C71F1EABCC007F96FC /* ReaderModeViewController.swift */; };
+		1C2985CA1F1EB94A007F96FC /* ReaderSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2985C91F1EB94A007F96FC /* ReaderSettingsViewController.swift */; };
 		1CAD658A1F1573C100D1A289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD65891F1573C100D1A289 /* AppDelegate.swift */; };
 		1CAD658C1F1573C100D1A289 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD658B1F1573C100D1A289 /* ViewController.swift */; };
 		1CAD658F1F1573C100D1A289 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD658D1F1573C100D1A289 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C2985C71F1EABCC007F96FC /* ReaderModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderModeViewController.swift; sourceTree = "<group>"; };
+		1C2985C91F1EB94A007F96FC /* ReaderSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderSettingsViewController.swift; sourceTree = "<group>"; };
 		1CAD65861F1573C100D1A289 /* High School Science Bowl Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "High School Science Bowl Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAD65891F1573C100D1A289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CAD658B1F1573C100D1A289 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				1CAD65A01F158B3100D1A289 /* QuizModeViewController.swift */,
+				1C2985C71F1EABCC007F96FC /* ReaderModeViewController.swift */,
+				1C2985C91F1EB94A007F96FC /* ReaderSettingsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -168,9 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C2985CA1F1EB94A007F96FC /* ReaderSettingsViewController.swift in Sources */,
 				1CAD65A41F158B6D00D1A289 /* QuestionJSONParser.swift in Sources */,
 				1CAD659D1F1581AB00D1A289 /* Question.swift in Sources */,
 				1CAD658C1F1573C100D1A289 /* ViewController.swift in Sources */,
+				1C2985C81F1EABCC007F96FC /* ReaderModeViewController.swift in Sources */,
 				1CAD658A1F1573C100D1A289 /* AppDelegate.swift in Sources */,
 				1CAD659F1F1581C200D1A289 /* Category.swift in Sources */,
 				1CAD65A11F158B3100D1A289 /* QuizModeViewController.swift in Sources */,
@@ -335,6 +343,7 @@
 				1CAD659A1F1573C100D1A289 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
