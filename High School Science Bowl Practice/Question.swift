@@ -102,6 +102,7 @@ extension Question {
             guard let ansChoices = json[Key.answerChoices] as? [String] else {
                 return nil;
             }
+            print(ansChoices)
             self.answerChoices = ansChoices
         } else {
             self.answerChoices = nil
