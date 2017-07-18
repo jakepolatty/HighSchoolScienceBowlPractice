@@ -13,7 +13,13 @@ class ReaderModeViewController: UIViewController {
     var index: Int = 0
     
     lazy var nextQuestionButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Next Question", style: .plain, target: self, action: #selector(ReaderModeViewController.loadNextQuestion))
+        let count = self.questionSet?.count ?? 0
+        let button: UIBarButtonItem
+        if self.index == count - 1 {
+            button = UIBarButtonItem(title: "Finish Set", style: .done, target: self, action: #selector(ReaderModeViewController.finishSet))
+        } else {
+            button = UIBarButtonItem(title: "Next Question", style: .plain, target: self, action: #selector(ReaderModeViewController.loadNextQuestion))
+        }
         return button
     }()
     
@@ -104,5 +110,9 @@ class ReaderModeViewController: UIViewController {
             let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1)
             navigationController?.pushViewController(nextQuestionController, animated: true)
         }
+    }
+    
+    func finishSet() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
