@@ -26,6 +26,8 @@ class ReaderModeViewController: UIViewController {
     lazy var roundSetNumLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         if let roundNum = self.questionSet?[self.index].roundNumber, let setNum = self.questionSet?[self.index].setNumber {
             label.text = "Question Set \(setNum) Round \(roundNum)"
         }
@@ -35,6 +37,8 @@ class ReaderModeViewController: UIViewController {
     lazy var questionNumLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         if let questionNum = self.questionSet?[self.index].questionNumber, let questionType = self.questionSet?[self.index].questionType {
             label.text = "Question \(questionNum) \(questionType)"
         }
@@ -44,6 +48,8 @@ class ReaderModeViewController: UIViewController {
     lazy var catTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         if let category = self.questionSet?[self.index].category, let answerType = self.questionSet?[self.index].answerType {
             label.text = "\(String(describing: category)) \(String(describing: answerType))"
         }
@@ -54,6 +60,8 @@ class ReaderModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
         if let questionText = self.questionSet?[self.index].questionText {
             label.text = questionText
         }
@@ -64,6 +72,8 @@ class ReaderModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightSemibold)
+        label.textColor = UIColor(colorLiteralRed: 212.0/255.0, green: 212.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         if let answerChoices = self.questionSet?[self.index].answerChoices {
             if answerChoices.count > 0 {
                 label.text = "\(answerChoices[0])\n\(answerChoices[1])\n\(answerChoices[2])\n\(answerChoices[3])"
@@ -80,6 +90,9 @@ class ReaderModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightHeavy)
+        label.textAlignment = NSTextAlignment.center
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
         if let answerText = self.questionSet?[self.index].answer {
             label.text = "Answer: \(answerText)"
         }
