@@ -82,6 +82,16 @@ class StudyModeViewController: UIViewController {
         }
     }()
     
+    lazy var showAnswerButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Show Answer", for: .normal)
+        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.tintColor = UIColor.white
+        button.layer.cornerRadius = 10
+        button.target(forAction: #selector(showAnswer), withSender: nil)
+        return button
+    }()
+    
     lazy var questionAnswerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -137,12 +147,19 @@ class StudyModeViewController: UIViewController {
             questionTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
-        view.addSubview(questionAnswerLabel)
+        view.addSubview(showAnswerButton)
         NSLayoutConstraint.activate([
-            questionAnswerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            questionAnswerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            questionAnswerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            showAnswerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 30),
+            showAnswerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
+        
+//        view.addSubview(questionAnswerLabel)
+//        NSLayoutConstraint.activate([
+//            questionAnswerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+//            questionAnswerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+//            questionAnswerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+//        ])
+//        questionAnswerLabel.isHidden = true
         
         if let answerOptionsLabel = answerOptionsLabel {
             view.addSubview(answerOptionsLabel)
@@ -157,5 +174,10 @@ class StudyModeViewController: UIViewController {
     func loadNextQuestion() {
         let nextQuestionController = StudyModeViewController(category: category, round: round)
         navigationController?.pushViewController(nextQuestionController, animated: true)
+    }
+    
+    func showAnswer() {
+        showAnswerButton.isHidden = true
+        //questionAnswerLabel.isHidden = false
     }
 }
