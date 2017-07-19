@@ -13,7 +13,11 @@ class StudyModeViewController: UIViewController {
     var round: Int = 0
     lazy var question: Question = {
         guard let category = self.category else {
-            return QuestionJSONParser.getRandomQuestion()
+            if self.round == 0 {
+                return QuestionJSONParser.shared.getRandomQuestion()
+            } else {
+                return QuestionJSONParser.shared.getQuestionForRound(self.round)
+            }
         }
         if self.round == 0 {
             return QuestionJSONParser.shared.getQuestionForCategory(category)
@@ -124,6 +128,7 @@ class StudyModeViewController: UIViewController {
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.rightBarButtonItem = nextQuestionButton
         self.navigationItem.leftBarButtonItem = mainMenuButton
+        self.navigationItem.title = "Study Mode"
     }
     
     override func viewWillLayoutSubviews() {
@@ -131,7 +136,7 @@ class StudyModeViewController: UIViewController {
         
         view.addSubview(roundSetNumLabel)
         NSLayoutConstraint.activate([
-            roundSetNumLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+            roundSetNumLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
             roundSetNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         

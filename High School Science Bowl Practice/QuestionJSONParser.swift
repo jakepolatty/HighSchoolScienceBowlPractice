@@ -10,7 +10,7 @@ import GameKit
 import Foundation
 
 struct QuestionJSONParser {
-    static let parsedQuestions = {
+    let parsedQuestions = {
         QuestionJSONParser.parseJSONToQuestions()
     }()
     
@@ -34,18 +34,18 @@ struct QuestionJSONParser {
         return questionArray
     }
     
-    static func parseQuestionForIndex(_ index: Int) -> Question {
+    func parseQuestionForIndex(_ index: Int) -> Question {
         return parsedQuestions[index]
     }
     
-    static func getRandomQuestion() -> Question {
+    func getRandomQuestion() -> Question {
         let randomIndex = GKRandomSource.sharedRandom().nextInt(upperBound: parsedQuestions.count)
-        return parseQuestionForIndex(randomIndex)
+        return QuestionJSONParser.shared.parseQuestionForIndex(randomIndex)
     }
     
     func getQuestionForCategory(_ category: Category) -> Question {
         while true {
-            let question = QuestionJSONParser.getRandomQuestion()
+            let question = QuestionJSONParser.shared.getRandomQuestion()
             if question.category == category {
                 return question
             }
@@ -55,7 +55,7 @@ struct QuestionJSONParser {
     
     func getQuestionForCategory(_ category: Category, andRound round: Int) -> Question {
         while true {
-            let question = QuestionJSONParser.getRandomQuestion()
+            let question = QuestionJSONParser.shared.getRandomQuestion()
             if question.category == category && question.roundNumber == round {
                 return question
             }
@@ -65,7 +65,7 @@ struct QuestionJSONParser {
     
     func getQuestionForRound(_ round: Int) -> Question {
         while true {
-            let question = QuestionJSONParser.getRandomQuestion()
+            let question = QuestionJSONParser.shared.getRandomQuestion()
             if question.roundNumber == round {
                 return question
             }
@@ -75,7 +75,7 @@ struct QuestionJSONParser {
     
     func getQuestionForSet(_ set: Int, andRound round: Int) -> Question {
         while true {
-            let question = QuestionJSONParser.getRandomQuestion()
+            let question = QuestionJSONParser.shared.getRandomQuestion()
             if question.setNumber == set && question.roundNumber == round {
                 return question
             }
@@ -85,7 +85,7 @@ struct QuestionJSONParser {
     
     func getQuestionSet(_ set: Int, forRound round: Int) -> [Question] {
         var questions = [Question]()
-        for question in QuestionJSONParser.parsedQuestions {
+        for question in QuestionJSONParser.shared.parsedQuestions {
             if question.setNumber == set && question.roundNumber == round {
                 questions.append(question)
             }
