@@ -427,7 +427,7 @@
         <!--Study Mode-->
         <scene sceneID="CSi-wv-emq">
             <objects>
-                <viewController id="t6z-xE-ids" sceneMemberID="viewController">
+                <viewController id="t6z-xE-ids" customClass="StudySettingsViewController" customModule="High_School_Science_Bowl_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RKZ-lM-rJQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Pea-hb-Nee"/>
@@ -435,9 +435,202 @@
                     <view key="view" contentMode="scaleToFill" id="r6G-pB-EHy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Topic:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nd-yb-qF7">
+                                <rect key="frame" x="122" y="94" width="132.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFS-R2-PHC">
+                                <rect key="frame" x="36" y="122.5" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2490299916" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="0FP-qk-tEE"/>
+                                    <constraint firstAttribute="height" constant="44" id="nsh-G1-dPB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Biology"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce8-vo-NtR">
+                                <rect key="frame" x="199" y="122.5" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2490299916" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="G6a-2a-YVs"/>
+                                    <constraint firstAttribute="height" constant="44" id="lLD-pv-R4L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Chemistry"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cax-Vc-qgY">
+                                <rect key="frame" x="36" y="176.5" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2490299916" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="FQA-Z6-uaa"/>
+                                    <constraint firstAttribute="height" constant="44" id="niq-Qb-uYK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Earth and Space"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83g-ft-I4D">
+                                <rect key="frame" x="199" y="176.5" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2490299916" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="BEB-g6-LGm"/>
+                                    <constraint firstAttribute="height" constant="44" id="Ble-Qd-QSG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Energy"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izi-wC-96q">
+                                <rect key="frame" x="36" y="230.5" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2490299916" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nbX-vR-uIR"/>
+                                    <constraint firstAttribute="width" constant="140" id="pFM-VM-zA8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Mathematics"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bd-3T-ToC">
+                                <rect key="frame" x="199" y="230.5" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2490299916" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="a0f-We-18c"/>
+                                    <constraint firstAttribute="width" constant="140" id="xzD-0k-2R7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Physics"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Generate Random Questions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHh-wk-hU3">
+                                <rect key="frame" x="56.5" y="284.5" width="262" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iK-O4-OZ7">
+                                <rect key="frame" x="118" y="313" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2490299916" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="EIc-my-epy"/>
+                                    <constraint firstAttribute="height" constant="44" id="t86-8C-mPf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Random"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lW-Rl-osz">
+                                <rect key="frame" x="128" y="593" width="120" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.2470588235" alpha="0.50432571309999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="EK7-Td-dxh"/>
+                                    <constraint firstAttribute="width" constant="120" id="HRw-NJ-H9z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Start Set"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startStudyMode:" destination="t6z-xE-ids" eventType="touchUpInside" id="g7B-kh-kaN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And Select A Round:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bY-Y4-7jL">
+                                <rect key="frame" x="104" y="372" width="166" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyt-Bf-ObE">
+                                <rect key="frame" x="36" y="404" width="303" height="140"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.24853187919463096" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="WQi-4f-tdj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pea-hb-Nee" firstAttribute="top" secondItem="4lW-Rl-osz" secondAttribute="bottom" constant="30" id="1az-fc-DHO"/>
+                            <constraint firstItem="izi-wC-96q" firstAttribute="leading" secondItem="Cax-Vc-qgY" secondAttribute="leading" id="1ga-m4-UIv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fyt-Bf-ObE" secondAttribute="trailing" constant="20" id="5lP-XW-6LI"/>
+                            <constraint firstItem="9nd-yb-qF7" firstAttribute="centerX" secondItem="r6G-pB-EHy" secondAttribute="centerX" id="6xp-rr-PCY"/>
+                            <constraint firstItem="7bd-3T-ToC" firstAttribute="trailing" secondItem="83g-ft-I4D" secondAttribute="trailing" id="8b5-Fk-jav"/>
+                            <constraint firstItem="83g-ft-I4D" firstAttribute="trailing" secondItem="Ce8-vo-NtR" secondAttribute="trailing" id="AfZ-TL-dGN"/>
+                            <constraint firstItem="uHh-wk-hU3" firstAttribute="centerX" secondItem="r6G-pB-EHy" secondAttribute="centerX" id="CND-Eb-3UB"/>
+                            <constraint firstItem="uHh-wk-hU3" firstAttribute="top" secondItem="7bd-3T-ToC" secondAttribute="bottom" constant="10" id="Dgp-xh-bjD"/>
+                            <constraint firstItem="uFS-R2-PHC" firstAttribute="leading" secondItem="r6G-pB-EHy" secondAttribute="leadingMargin" constant="20" id="FxJ-fO-NjK"/>
+                            <constraint firstItem="Cax-Vc-qgY" firstAttribute="top" secondItem="uFS-R2-PHC" secondAttribute="bottom" constant="10" id="GmS-na-Yqx"/>
+                            <constraint firstItem="uFS-R2-PHC" firstAttribute="top" secondItem="9nd-yb-qF7" secondAttribute="bottom" constant="7" id="NVs-Hg-B3c"/>
+                            <constraint firstItem="0bY-Y4-7jL" firstAttribute="top" secondItem="6iK-O4-OZ7" secondAttribute="bottom" constant="15" id="PQx-j1-6xg"/>
+                            <constraint firstItem="6iK-O4-OZ7" firstAttribute="top" secondItem="uHh-wk-hU3" secondAttribute="bottom" constant="7" id="QJb-9S-ee0"/>
+                            <constraint firstItem="Cax-Vc-qgY" firstAttribute="leading" secondItem="uFS-R2-PHC" secondAttribute="leading" id="RCA-Af-9I5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ce8-vo-NtR" secondAttribute="trailing" constant="20" id="SLd-KI-mTW"/>
+                            <constraint firstItem="fyt-Bf-ObE" firstAttribute="top" secondItem="0bY-Y4-7jL" secondAttribute="bottom" constant="10" id="TEU-tL-tl2"/>
+                            <constraint firstItem="0bY-Y4-7jL" firstAttribute="centerX" secondItem="r6G-pB-EHy" secondAttribute="centerX" id="XlB-iW-fym"/>
+                            <constraint firstItem="9nd-yb-qF7" firstAttribute="top" secondItem="RKZ-lM-rJQ" secondAttribute="bottom" constant="30" id="YeP-Ct-0YE"/>
+                            <constraint firstItem="fyt-Bf-ObE" firstAttribute="leading" secondItem="r6G-pB-EHy" secondAttribute="leadingMargin" constant="20" id="fj4-cT-dVw"/>
+                            <constraint firstItem="izi-wC-96q" firstAttribute="top" secondItem="Cax-Vc-qgY" secondAttribute="bottom" constant="10" id="fyq-ac-Lm3"/>
+                            <constraint firstItem="6iK-O4-OZ7" firstAttribute="centerX" secondItem="r6G-pB-EHy" secondAttribute="centerX" id="jMM-33-nQi"/>
+                            <constraint firstItem="7bd-3T-ToC" firstAttribute="top" secondItem="83g-ft-I4D" secondAttribute="bottom" constant="10" id="nBe-ze-l5n"/>
+                            <constraint firstItem="Ce8-vo-NtR" firstAttribute="top" secondItem="9nd-yb-qF7" secondAttribute="bottom" constant="7" id="oTM-oV-IBe"/>
+                            <constraint firstItem="83g-ft-I4D" firstAttribute="top" secondItem="Ce8-vo-NtR" secondAttribute="bottom" constant="10" id="wuI-nD-LnX"/>
+                            <constraint firstItem="4lW-Rl-osz" firstAttribute="centerX" secondItem="r6G-pB-EHy" secondAttribute="centerX" id="xYw-VR-CC8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Study Mode" id="tGz-XA-Xkc"/>
+                    <connections>
+                        <outlet property="roundPicker" destination="fyt-Bf-ObE" id="DUQ-aM-VfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSg-Ul-wB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
