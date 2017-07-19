@@ -14,6 +14,8 @@ struct QuestionJSONParser {
         QuestionJSONParser.parseJSONToQuestions()
     }()
     
+    static let shared = QuestionJSONParser()
+    
     static func parseJsonFile(withName name: String) -> [[String: Any]] {
         let file = Bundle.main.path(forResource: name, ofType: "json")
         let data = try! Data.init(contentsOf: URL(fileURLWithPath: file!))
