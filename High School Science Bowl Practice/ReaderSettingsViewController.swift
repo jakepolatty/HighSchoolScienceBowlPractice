@@ -31,9 +31,12 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     @IBAction func startReaderMode(_ sender: Any) {
         let questionSetNum = setRoundPicker.selectedRow(inComponent: 0) + 1
         let roundNum = setRoundPicker.selectedRow(inComponent: 1) + 1
-        let questionSet = QuestionJSONParser.shared.getQuestionSet(questionSetNum, forRound: roundNum)
-        let readerController = ReaderModeViewController(questionSet: questionSet, index: 0)
-        navigationController?.pushViewController(readerController, animated: true)
+        if ((roundNum == 16 || roundNum == 17) && (questionSetNum == 5 || questionSetNum == 6)) {
+        } else {
+            let questionSet = QuestionJSONParser.shared.getQuestionSet(questionSetNum, forRound: roundNum)
+            let readerController = ReaderModeViewController(questionSet: questionSet, index: 0)
+            navigationController?.pushViewController(readerController, animated: true)
+        }
     }
     
     func returnMainMenu() {
