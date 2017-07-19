@@ -53,6 +53,16 @@ struct QuestionJSONParser {
         // Will never reach this state because of limited enum values
     }
     
+    func getQuestionForCategory(_ category: Category, andRound round: Int) -> Question {
+        while true {
+            let question = QuestionJSONParser.getRandomQuestion()
+            if question.category == category && question.roundNumber == round {
+                return question
+            }
+        }
+        // Will never reach this state because of limited enum values
+    }
+    
     func getQuestionForRound(_ round: Int) -> Question {
         while true {
             let question = QuestionJSONParser.getRandomQuestion()

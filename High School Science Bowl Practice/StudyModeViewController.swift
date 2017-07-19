@@ -10,12 +10,15 @@ import UIKit
 
 class StudyModeViewController: UIViewController {
     var category: Category?
-    var round: Int?
+    var round: Int = 0
     lazy var question: Question = {
-        if let category = self.category {
+        guard let category = self.category else {
+            return QuestionJSONParser.getRandomQuestion()
+        }
+        if self.round == 0 {
             return QuestionJSONParser.shared.getQuestionForCategory(category)
         } else {
-            return QuestionJSONParser.shared.getQuestionForRound(1)
+            return QuestionJSONParser.shared.getQuestionForCategory(category, andRound: self.round)
         }
     }()
     
@@ -90,7 +93,7 @@ class StudyModeViewController: UIViewController {
         return label
     }()
     
-    init(category: Category?, round: Int?) {
+    init(category: Category?, round: Int) {
         self.category = category
         self.round = round
         super.init(nibName: nil, bundle: nil)

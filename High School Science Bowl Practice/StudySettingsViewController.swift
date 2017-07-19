@@ -8,10 +8,16 @@
 
 import UIKit
 
-class StudySettingsViewController: UIViewController {
+class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    @IBOutlet weak var roundPicker: UIPickerView!
+    let pickerData = [
+        ["All Rounds", "Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundPicker.dataSource = self
+        roundPicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +27,22 @@ class StudySettingsViewController: UIViewController {
     
     @IBAction func startStudyMode(_ sender: Any) {
         let category = Category.physics
-        let studyController = StudyModeViewController(category: category, round: nil)
+        let roundNumber = roundPicker.selectedRow(inComponent: 0)
+        let studyController = StudyModeViewController(category: category, round: roundNumber)
         navigationController?.pushViewController(studyController, animated: true)
+    }
+    
+    // MARK: - Picker Data Source
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData[component].count
+    }
+    
+    // MARK: - Picker Delegate
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[component][row]
     }
 }
