@@ -9,7 +9,6 @@
 import UIKit
 
 class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    @IBOutlet weak var roundPicker: UIPickerView!
     let pickerData = [
         ["All Rounds", "Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
     ]
@@ -111,6 +110,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 10
+        button.isSelected = true
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleRandom), for: .touchUpInside)
         return button
     }()
@@ -124,22 +124,30 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         return label
     }()
     
+    lazy var roundPicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.25)
+        picker.layer.cornerRadius = 10
+        return picker
+    }()
+    
     lazy var startSetButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Random", for: .normal)
+        button.setTitle("Start Set", for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(StudySettingsViewController.toggleRandom), for: .touchUpInside)
+        button.addTarget(self, action: #selector(StudySettingsViewController.startStudyMode), for: .touchUpInside)
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
-        roundPicker.dataSource = self
         roundPicker.delegate = self
+        roundPicker.dataSource = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -182,10 +190,62 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             energyButton.topAnchor.constraint(equalTo: chemistryButton.bottomAnchor, constant: 10),
             energyButton.trailingAnchor.constraint(equalTo: chemistryButton.trailingAnchor)
         ])
+        
+        view.addSubview(mathButton)
+        NSLayoutConstraint.activate([
+            mathButton.widthAnchor.constraint(equalToConstant: 120),
+            mathButton.heightAnchor.constraint(equalToConstant: 44),
+            mathButton.topAnchor.constraint(equalTo: earthAndSpaceButton.bottomAnchor, constant: 10),
+            mathButton.leadingAnchor.constraint(equalTo: earthAndSpaceButton.leadingAnchor)
+        ])
+        
+        view.addSubview(physicsButton)
+        NSLayoutConstraint.activate([
+            physicsButton.widthAnchor.constraint(equalToConstant: 120),
+            physicsButton.heightAnchor.constraint(equalToConstant: 44),
+            physicsButton.topAnchor.constraint(equalTo: energyButton.bottomAnchor, constant: 10),
+            physicsButton.trailingAnchor.constraint(equalTo: energyButton.trailingAnchor),
+        ])
+        
+        view.addSubview(randomHeader)
+        NSLayoutConstraint.activate([
+            randomHeader.topAnchor.constraint(equalTo: mathButton.bottomAnchor, constant: 10),
+            randomHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        view.addSubview(randomButton)
+        NSLayoutConstraint.activate([
+            randomButton.widthAnchor.constraint(equalToConstant: 120),
+            randomButton.heightAnchor.constraint(equalToConstant: 44),
+            randomButton.topAnchor.constraint(equalTo: randomHeader.bottomAnchor, constant: 7),
+            randomButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        view.addSubview(roundHeader)
+        NSLayoutConstraint.activate([
+            roundHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 15),
+            roundHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        view.addSubview(roundPicker)
+        NSLayoutConstraint.activate([
+            roundPicker.heightAnchor.constraint(equalToConstant: 140),
+            roundPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            roundPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            roundPicker.topAnchor.constraint(equalTo: roundHeader.bottomAnchor, constant: 7)
+        ])
+        
+        view.addSubview(startSetButton)
+        NSLayoutConstraint.activate([
+            startSetButton.widthAnchor.constraint(equalToConstant: 120),
+            startSetButton.heightAnchor.constraint(equalToConstant: 44),
+            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
     
-    @IBAction func startStudyMode(_ sender: Any) {
-        let category = Category.physics
+    func startStudyMode() {
+        let category = getCategoryForToggle()
         let roundNumber = roundPicker.selectedRow(inComponent: 0)
         let studyController = StudyModeViewController(category: category, round: roundNumber)
         navigationController?.pushViewController(studyController, animated: true)
@@ -272,6 +332,24 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         physicsButton.isSelected = false
         randomButton.isSelected = true
         category = nil
+    }
+    
+    func getCategoryForToggle() -> Category? {
+        if biologyButton.isSelected {
+            return Category.biology
+        } else if chemistryButton.isSelected {
+            return Category.chemistry
+        } else if earthAndSpaceButton.isSelected {
+            return Category.earthAndSpace
+        } else if energyButton.isSelected {
+            return Category.energy
+        } else if mathButton.isSelected {
+            return Category.mathematics
+        } else if physicsButton.isSelected {
+            return Category.physics
+        } else {
+            return nil
+        }
     }
     
     // MARK: - Picker Data Source
