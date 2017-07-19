@@ -14,14 +14,12 @@ class QuizModeViewController: UIViewController {
     @IBOutlet weak var questionNumLabel: UILabel!
     @IBOutlet weak var catTypeLabel: UILabel!
     @IBOutlet weak var questionTextLabel: UILabel!
-    let parser = QuestionJSONParser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let question = parser.getQuestionForSet(8, andRound: 11)
+        let question = QuestionJSONParser.shared.getQuestionForSet(8, andRound: 11)
         setupDisplayForQuestion(question)
-        //let questionSet = parser.getQuestionSet(1, forRound: 1)
     }
 
     override func didReceiveMemoryWarning() {

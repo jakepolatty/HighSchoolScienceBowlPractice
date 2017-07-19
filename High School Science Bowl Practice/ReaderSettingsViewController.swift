@@ -10,7 +10,6 @@ import UIKit
 
 class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var setRoundPicker: UIPickerView!
-    let parser = QuestionJSONParser()
     let pickerData = [
         ["Question Set 1", "Question Set 2", "Question Set 3", "Question Set 4", "Question Set 5", "Question Set 6", "Question Set 7", "Question Set 8"],
         ["Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
@@ -31,7 +30,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     @IBAction func startReaderMode(_ sender: Any) {
         let questionSetNum = setRoundPicker.selectedRow(inComponent: 0) + 1
         let roundNum = setRoundPicker.selectedRow(inComponent: 1) + 1
-        let questionSet = parser.getQuestionSet(questionSetNum, forRound: roundNum)
+        let questionSet = QuestionJSONParser.shared.getQuestionSet(questionSetNum, forRound: roundNum)
         let readerController = ReaderModeViewController(questionSet: questionSet, index: 0)
         navigationController?.pushViewController(readerController, animated: true)
     }
