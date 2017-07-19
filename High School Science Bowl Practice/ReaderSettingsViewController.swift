@@ -15,16 +15,17 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         ["Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
     ]
     
+    lazy var mainMenuButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(ReaderSettingsViewController.returnMainMenu))
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = mainMenuButton
         setRoundPicker.delegate = self
         setRoundPicker.dataSource = self
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func startReaderMode(_ sender: Any) {
@@ -33,6 +34,10 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let questionSet = QuestionJSONParser.shared.getQuestionSet(questionSetNum, forRound: roundNum)
         let readerController = ReaderModeViewController(questionSet: questionSet, index: 0)
         navigationController?.pushViewController(readerController, animated: true)
+    }
+    
+    func returnMainMenu() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Picker Data Source

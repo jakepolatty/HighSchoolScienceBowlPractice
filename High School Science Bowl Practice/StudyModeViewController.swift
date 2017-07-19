@@ -22,6 +22,11 @@ class StudyModeViewController: UIViewController {
         }
     }()
     
+    lazy var mainMenuButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
+        return button
+    }()
+    
     lazy var nextQuestionButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Next Question", style: .plain, target: self, action: #selector(ReaderModeViewController.loadNextQuestion))
         return button
@@ -117,6 +122,7 @@ class StudyModeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.rightBarButtonItem = nextQuestionButton
+        self.navigationItem.leftBarButtonItem = mainMenuButton
     }
     
     override func viewWillLayoutSubviews() {
@@ -174,6 +180,10 @@ class StudyModeViewController: UIViewController {
     func loadNextQuestion() {
         let nextQuestionController = StudyModeViewController(category: category, round: round)
         navigationController?.pushViewController(nextQuestionController, animated: true)
+    }
+    
+    func returnMainMenu() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func showAnswer() {

@@ -13,9 +13,15 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     let pickerData = [
         ["All Rounds", "Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
     ]
+    
+    lazy var mainMenuButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudySettingsViewController.returnMainMenu))
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = mainMenuButton
         roundPicker.dataSource = self
         roundPicker.delegate = self
     }
@@ -30,6 +36,10 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let roundNumber = roundPicker.selectedRow(inComponent: 0)
         let studyController = StudyModeViewController(category: category, round: roundNumber)
         navigationController?.pushViewController(studyController, animated: true)
+    }
+    
+    func returnMainMenu() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Picker Data Source

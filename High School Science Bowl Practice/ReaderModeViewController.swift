@@ -12,6 +12,11 @@ class ReaderModeViewController: UIViewController {
     var questionSet: [Question]?
     var index: Int = 0
     
+    lazy var mainMenuButton: UIBarButtonItem? = {
+        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
+        return button
+    }()
+    
     lazy var nextQuestionButton: UIBarButtonItem = {
         let count = self.questionSet?.count ?? 0
         let button: UIBarButtonItem
@@ -113,6 +118,7 @@ class ReaderModeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.rightBarButtonItem = nextQuestionButton
+        self.navigationItem.leftBarButtonItem = mainMenuButton
     }
     
     override func viewWillLayoutSubviews() {
@@ -165,6 +171,10 @@ class ReaderModeViewController: UIViewController {
             let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1)
             navigationController?.pushViewController(nextQuestionController, animated: true)
         }
+    }
+    
+    func returnMainMenu() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func finishSet() {
