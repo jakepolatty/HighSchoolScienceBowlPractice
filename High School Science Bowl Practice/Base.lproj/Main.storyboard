@@ -366,59 +366,8 @@
                     <view key="view" contentMode="scaleToFill" id="yBu-pk-HL8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-GQ-zbM">
-                                <rect key="frame" x="16" y="132" width="343" height="216"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.25146812080536912" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Question Set:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-Ha-N4f">
-                                <rect key="frame" x="92.5" y="100" width="190" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16F-Q7-zvS">
-                                <rect key="frame" x="127.5" y="378" width="120" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.2470588235" alpha="0.50432571309999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="IJO-fO-Ulp"/>
-                                    <constraint firstAttribute="height" constant="44" id="gkS-GE-Xqq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Start Set"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="startReaderMode:" destination="L5Y-qB-APp" eventType="touchUpInside" id="lnn-6Z-zGa"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Grh-Ha-N4f" firstAttribute="top" secondItem="W4E-mh-dfE" secondAttribute="bottom" constant="36" id="2tq-2c-S8d"/>
-                            <constraint firstItem="16F-Q7-zvS" firstAttribute="top" secondItem="jCf-GQ-zbM" secondAttribute="bottom" constant="30" id="69B-zb-4qc"/>
-                            <constraint firstItem="16F-Q7-zvS" firstAttribute="centerX" secondItem="yBu-pk-HL8" secondAttribute="centerX" id="6Rq-hS-FIB"/>
-                            <constraint firstItem="jCf-GQ-zbM" firstAttribute="trailing" secondItem="yBu-pk-HL8" secondAttribute="trailingMargin" id="LMC-Gg-GiP"/>
-                            <constraint firstItem="jCf-GQ-zbM" firstAttribute="leading" secondItem="yBu-pk-HL8" secondAttribute="leadingMargin" id="LOw-NZ-MS9"/>
-                            <constraint firstItem="jCf-GQ-zbM" firstAttribute="top" secondItem="Grh-Ha-N4f" secondAttribute="bottom" constant="10" id="M2m-gG-0gP"/>
-                            <constraint firstItem="Grh-Ha-N4f" firstAttribute="centerX" secondItem="yBu-pk-HL8" secondAttribute="centerX" id="c2I-5e-Tyx"/>
-                            <constraint firstItem="jCf-GQ-zbM" firstAttribute="centerX" secondItem="yBu-pk-HL8" secondAttribute="centerX" id="yL2-cg-lfS"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reader Mode" id="05v-YD-Ann"/>
-                    <connections>
-                        <outlet property="setRoundPicker" destination="jCf-GQ-zbM" id="zaW-cp-L0z"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0E-cc-e67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,7 +384,6 @@
                     <view key="view" contentMode="scaleToFill" id="r6G-pB-EHy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Study Mode" id="tGz-XA-Xkc"/>
                 </viewController>
