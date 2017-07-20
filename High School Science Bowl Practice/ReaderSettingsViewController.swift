@@ -11,7 +11,7 @@ import UIKit
 class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var setRoundPicker: UIPickerView!
     let pickerData = [
-        ["Question Set 1", "Question Set 2", "Question Set 3", "Question Set 4", "Question Set 5", "Question Set 6", "Question Set 7", "Question Set 8"],
+        ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6", "Set 7", "Set 8"],
         ["Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
     ]
     

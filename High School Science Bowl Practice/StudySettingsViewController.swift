@@ -197,23 +197,23 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(biologyButton)
         NSLayoutConstraint.activate([
-            biologyButton.widthAnchor.constraint(equalToConstant: 120),
+            biologyButton.widthAnchor.constraint(equalToConstant: 130),
             biologyButton.heightAnchor.constraint(equalToConstant: 44),
             biologyButton.topAnchor.constraint(equalTo: topicHeader.bottomAnchor, constant: 7),
-            biologyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            biologyButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -15)
         ])
         
         view.addSubview(chemistryButton)
         NSLayoutConstraint.activate([
-            chemistryButton.widthAnchor.constraint(equalToConstant: 120),
+            chemistryButton.widthAnchor.constraint(equalToConstant: 130),
             chemistryButton.heightAnchor.constraint(equalToConstant: 44),
             chemistryButton.topAnchor.constraint(equalTo: topicHeader.bottomAnchor, constant: 7),
-            chemistryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            chemistryButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 15)
         ])
         
         view.addSubview(earthAndSpaceButton)
         NSLayoutConstraint.activate([
-            earthAndSpaceButton.widthAnchor.constraint(equalToConstant: 120),
+            earthAndSpaceButton.widthAnchor.constraint(equalToConstant: 130),
             earthAndSpaceButton.heightAnchor.constraint(equalToConstant: 44),
             earthAndSpaceButton.topAnchor.constraint(equalTo: biologyButton.bottomAnchor, constant: 10),
             earthAndSpaceButton.leadingAnchor.constraint(equalTo: biologyButton.leadingAnchor)
@@ -221,7 +221,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(energyButton)
         NSLayoutConstraint.activate([
-            energyButton.widthAnchor.constraint(equalToConstant: 120),
+            energyButton.widthAnchor.constraint(equalToConstant: 130),
             energyButton.heightAnchor.constraint(equalToConstant: 44),
             energyButton.topAnchor.constraint(equalTo: chemistryButton.bottomAnchor, constant: 10),
             energyButton.trailingAnchor.constraint(equalTo: chemistryButton.trailingAnchor)
@@ -229,7 +229,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(mathButton)
         NSLayoutConstraint.activate([
-            mathButton.widthAnchor.constraint(equalToConstant: 120),
+            mathButton.widthAnchor.constraint(equalToConstant: 130),
             mathButton.heightAnchor.constraint(equalToConstant: 44),
             mathButton.topAnchor.constraint(equalTo: earthAndSpaceButton.bottomAnchor, constant: 10),
             mathButton.leadingAnchor.constraint(equalTo: earthAndSpaceButton.leadingAnchor)
@@ -237,7 +237,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(physicsButton)
         NSLayoutConstraint.activate([
-            physicsButton.widthAnchor.constraint(equalToConstant: 120),
+            physicsButton.widthAnchor.constraint(equalToConstant: 130),
             physicsButton.heightAnchor.constraint(equalToConstant: 44),
             physicsButton.topAnchor.constraint(equalTo: energyButton.bottomAnchor, constant: 10),
             physicsButton.trailingAnchor.constraint(equalTo: energyButton.trailingAnchor),
@@ -251,7 +251,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(randomButton)
         NSLayoutConstraint.activate([
-            randomButton.widthAnchor.constraint(equalToConstant: 120),
+            randomButton.widthAnchor.constraint(equalToConstant: 130),
             randomButton.heightAnchor.constraint(equalToConstant: 44),
             randomButton.topAnchor.constraint(equalTo: randomHeader.bottomAnchor, constant: 7),
             randomButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -265,14 +265,14 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(roundPicker)
         NSLayoutConstraint.activate([
-            roundPicker.heightAnchor.constraint(equalToConstant: 140),
             roundPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             roundPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            roundPicker.topAnchor.constraint(equalTo: roundHeader.bottomAnchor, constant: 7)
+            roundPicker.topAnchor.constraint(equalTo: roundHeader.bottomAnchor, constant: 10),
         ])
         
         view.addSubview(startSetButton)
         NSLayoutConstraint.activate([
+            roundPicker.bottomAnchor.constraint(equalTo: startSetButton.topAnchor, constant: -20),
             startSetButton.widthAnchor.constraint(equalToConstant: 120),
             startSetButton.heightAnchor.constraint(equalToConstant: 44),
             startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
