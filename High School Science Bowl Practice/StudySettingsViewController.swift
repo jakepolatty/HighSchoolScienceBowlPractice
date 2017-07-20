@@ -127,7 +127,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     lazy var roundPicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.25)
+        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         picker.layer.cornerRadius = 10
         return picker
     }()
@@ -364,5 +364,11 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     // MARK: - Picker Delegate
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[component][row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let title = pickerData[component][row]
+        let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
+        return attributedString
     }
 }
