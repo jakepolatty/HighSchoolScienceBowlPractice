@@ -182,6 +182,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
+        self.navigationItem.title = "Study Mode"
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         roundPicker.delegate = self
         roundPicker.dataSource = self

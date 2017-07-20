@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="High_School_Science_Bowl_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="High_School_Science_Bowl_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -66,7 +66,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="ews-cz-IHw" kind="presentation" id="8gK-Cd-Vti"/>
+                                    <action selector="startReaderMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sal-2h-Hsz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5w-b9-xA7">
@@ -85,7 +85,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="wzT-y3-ggb" kind="presentation" id="MvO-l9-bAr"/>
+                                    <action selector="startStudyMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y0X-g0-XmK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -355,42 +355,6 @@
             </objects>
             <point key="canvasLocation" x="2773.5999999999999" y="-558.17091454272872"/>
         </scene>
-        <!--Reader Mode-->
-        <scene sceneID="5Mh-kh-fmW">
-            <objects>
-                <viewController id="L5Y-qB-APp" customClass="ReaderSettingsViewController" customModule="High_School_Science_Bowl_Practice" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W4E-mh-dfE"/>
-                        <viewControllerLayoutGuide type="bottom" id="qam-7C-RBs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yBu-pk-HL8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Reader Mode" id="05v-YD-Ann"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o0E-cc-e67" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1975.2" y="123.68815592203899"/>
-        </scene>
-        <!--Study Mode-->
-        <scene sceneID="CSi-wv-emq">
-            <objects>
-                <viewController id="t6z-xE-ids" customClass="StudySettingsViewController" customModule="High_School_Science_Bowl_Practice" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RKZ-lM-rJQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Pea-hb-Nee"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r6G-pB-EHy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Study Mode" id="tGz-XA-Xkc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fSg-Ul-wB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1975.2" y="796.55172413793105"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="E8V-zs-uIl">
             <objects>
@@ -408,42 +372,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKw-M5-SvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1036" y="-558.17091454272872"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3r1-bA-Ygv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ews-cz-IHw" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3cT-DD-MEX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="L5Y-qB-APp" kind="relationship" relationship="rootViewController" id="JiL-ra-H4S"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="liP-Ph-vKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1036" y="123.68815592203899"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ItW-oO-U37">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wzT-y3-ggb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g7g-2b-17n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="t6z-xE-ids" kind="relationship" relationship="rootViewController" id="d6v-1I-EcX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1SB-nT-uA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1036" y="796.55172413793105"/>
         </scene>
     </scenes>
 </document>
