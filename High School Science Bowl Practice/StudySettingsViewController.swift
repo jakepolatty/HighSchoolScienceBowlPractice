@@ -8,10 +8,25 @@
 
 import UIKit
 
+extension UIButton {
+    
+    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
+        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.setBackgroundImage(colorImage, for: forState)
+    }
+}
+
 class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     let pickerData = [
         ["All Rounds", "Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
     ]
+    static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+    static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
     var category: Category?
     
     lazy var mainMenuButton: UIBarButtonItem = {
@@ -29,66 +44,84 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     }()
     
     lazy var biologyButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Biology", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleBiology), for: .touchUpInside)
         return button
     }()
     
     lazy var chemistryButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Chemistry", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleChemistry), for: .touchUpInside)
         return button
     }()
     
     lazy var earthAndSpaceButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Earth and Space", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleEarthAndSpace), for: .touchUpInside)
         return button
     }()
     
     lazy var energyButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Energy", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleEnergy), for: .touchUpInside)
         return button
     }()
     
     lazy var mathButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Mathematics", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleMath), for: .touchUpInside)
         return button
     }()
     
     lazy var physicsButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Physics", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.togglePhysics), for: .touchUpInside)
         return button
@@ -104,11 +137,14 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     }()
     
     lazy var randomButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Random", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.isSelected = true
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleRandom), for: .touchUpInside)
@@ -161,23 +197,23 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(biologyButton)
         NSLayoutConstraint.activate([
-            biologyButton.widthAnchor.constraint(equalToConstant: 120),
+            biologyButton.widthAnchor.constraint(equalToConstant: 130),
             biologyButton.heightAnchor.constraint(equalToConstant: 44),
             biologyButton.topAnchor.constraint(equalTo: topicHeader.bottomAnchor, constant: 7),
-            biologyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            biologyButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -15)
         ])
         
         view.addSubview(chemistryButton)
         NSLayoutConstraint.activate([
-            chemistryButton.widthAnchor.constraint(equalToConstant: 120),
+            chemistryButton.widthAnchor.constraint(equalToConstant: 130),
             chemistryButton.heightAnchor.constraint(equalToConstant: 44),
             chemistryButton.topAnchor.constraint(equalTo: topicHeader.bottomAnchor, constant: 7),
-            chemistryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            chemistryButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 15)
         ])
         
         view.addSubview(earthAndSpaceButton)
         NSLayoutConstraint.activate([
-            earthAndSpaceButton.widthAnchor.constraint(equalToConstant: 120),
+            earthAndSpaceButton.widthAnchor.constraint(equalToConstant: 130),
             earthAndSpaceButton.heightAnchor.constraint(equalToConstant: 44),
             earthAndSpaceButton.topAnchor.constraint(equalTo: biologyButton.bottomAnchor, constant: 10),
             earthAndSpaceButton.leadingAnchor.constraint(equalTo: biologyButton.leadingAnchor)
@@ -185,7 +221,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(energyButton)
         NSLayoutConstraint.activate([
-            energyButton.widthAnchor.constraint(equalToConstant: 120),
+            energyButton.widthAnchor.constraint(equalToConstant: 130),
             energyButton.heightAnchor.constraint(equalToConstant: 44),
             energyButton.topAnchor.constraint(equalTo: chemistryButton.bottomAnchor, constant: 10),
             energyButton.trailingAnchor.constraint(equalTo: chemistryButton.trailingAnchor)
@@ -193,7 +229,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(mathButton)
         NSLayoutConstraint.activate([
-            mathButton.widthAnchor.constraint(equalToConstant: 120),
+            mathButton.widthAnchor.constraint(equalToConstant: 130),
             mathButton.heightAnchor.constraint(equalToConstant: 44),
             mathButton.topAnchor.constraint(equalTo: earthAndSpaceButton.bottomAnchor, constant: 10),
             mathButton.leadingAnchor.constraint(equalTo: earthAndSpaceButton.leadingAnchor)
@@ -201,7 +237,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(physicsButton)
         NSLayoutConstraint.activate([
-            physicsButton.widthAnchor.constraint(equalToConstant: 120),
+            physicsButton.widthAnchor.constraint(equalToConstant: 130),
             physicsButton.heightAnchor.constraint(equalToConstant: 44),
             physicsButton.topAnchor.constraint(equalTo: energyButton.bottomAnchor, constant: 10),
             physicsButton.trailingAnchor.constraint(equalTo: energyButton.trailingAnchor),
@@ -215,7 +251,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(randomButton)
         NSLayoutConstraint.activate([
-            randomButton.widthAnchor.constraint(equalToConstant: 120),
+            randomButton.widthAnchor.constraint(equalToConstant: 130),
             randomButton.heightAnchor.constraint(equalToConstant: 44),
             randomButton.topAnchor.constraint(equalTo: randomHeader.bottomAnchor, constant: 7),
             randomButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -229,14 +265,14 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(roundPicker)
         NSLayoutConstraint.activate([
-            roundPicker.heightAnchor.constraint(equalToConstant: 140),
             roundPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             roundPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            roundPicker.topAnchor.constraint(equalTo: roundHeader.bottomAnchor, constant: 7)
+            roundPicker.topAnchor.constraint(equalTo: roundHeader.bottomAnchor, constant: 10),
         ])
         
         view.addSubview(startSetButton)
         NSLayoutConstraint.activate([
+            roundPicker.bottomAnchor.constraint(equalTo: startSetButton.topAnchor, constant: -20),
             startSetButton.widthAnchor.constraint(equalToConstant: 120),
             startSetButton.heightAnchor.constraint(equalToConstant: 44),
             startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
