@@ -8,10 +8,25 @@
 
 import UIKit
 
+extension UIButton {
+    
+    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
+        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.setBackgroundImage(colorImage, for: forState)
+    }
+}
+
 class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     let pickerData = [
         ["All Rounds", "Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
     ]
+    static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+    static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
     var category: Category?
     
     lazy var mainMenuButton: UIBarButtonItem = {
@@ -29,66 +44,84 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     }()
     
     lazy var biologyButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Biology", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleBiology), for: .touchUpInside)
         return button
     }()
     
     lazy var chemistryButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Chemistry", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleChemistry), for: .touchUpInside)
         return button
     }()
     
     lazy var earthAndSpaceButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Earth and Space", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleEarthAndSpace), for: .touchUpInside)
         return button
     }()
     
     lazy var energyButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Energy", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleEnergy), for: .touchUpInside)
         return button
     }()
     
     lazy var mathButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Mathematics", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleMath), for: .touchUpInside)
         return button
     }()
     
     lazy var physicsButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Physics", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.togglePhysics), for: .touchUpInside)
         return button
@@ -104,11 +137,14 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     }()
     
     lazy var randomButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Random", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
         button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.isSelected = true
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleRandom), for: .touchUpInside)
