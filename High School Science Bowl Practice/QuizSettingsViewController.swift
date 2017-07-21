@@ -1,23 +1,33 @@
 //
-//  StudySettingsViewController.swift
+//  QuizSettingsViewController.swift
 //  High School Science Bowl Practice
 //
-//  Created by Jake Polatty on 7/18/17.
+//  Created by David Polatty on 7/20/17.
 //  Copyright © 2017 Jake Polatty. All rights reserved.
 //
 
 import UIKit
 
-class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    let pickerData = [
-        ["All Rounds", "Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
-    ]
+extension UIButton {
+    
+    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
+        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.setBackgroundImage(colorImage, for: forState)
+    }
+}
+
+class QuizSettingsViewController: UIViewController {
     static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
     static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
     var category: Category?
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudySettingsViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(QuizSettingsViewController.returnMainMenu))
         return button
     }()
     
@@ -40,7 +50,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(StudySettingsViewController.toggleBiology), for: .touchUpInside)
+        button.addTarget(self, action: #selector(QuizSettingsViewController.toggleBiology), for: .touchUpInside)
         return button
     }()
     
@@ -54,7 +64,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(StudySettingsViewController.toggleChemistry), for: .touchUpInside)
+        button.addTarget(self, action: #selector(QuizSettingsViewController.toggleChemistry), for: .touchUpInside)
         return button
     }()
     
@@ -68,7 +78,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(StudySettingsViewController.toggleEarthAndSpace), for: .touchUpInside)
+        button.addTarget(self, action: #selector(QuizSettingsViewController.toggleEarthAndSpace), for: .touchUpInside)
         return button
     }()
     
@@ -82,7 +92,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(StudySettingsViewController.toggleEnergy), for: .touchUpInside)
+        button.addTarget(self, action: #selector(QuizSettingsViewController.toggleEnergy), for: .touchUpInside)
         return button
     }()
     
@@ -96,7 +106,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(StudySettingsViewController.toggleMath), for: .touchUpInside)
+        button.addTarget(self, action: #selector(QuizSettingsViewController.toggleMath), for: .touchUpInside)
         return button
     }()
     
@@ -110,7 +120,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(StudySettingsViewController.togglePhysics), for: .touchUpInside)
+        button.addTarget(self, action: #selector(QuizSettingsViewController.togglePhysics), for: .touchUpInside)
         return button
     }()
     
@@ -134,25 +144,8 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.isSelected = true
-        button.addTarget(self, action: #selector(StudySettingsViewController.toggleRandom), for: .touchUpInside)
+        button.addTarget(self, action: #selector(QuizSettingsViewController.toggleRandom), for: .touchUpInside)
         return button
-    }()
-    
-    lazy var roundHeader: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "And Select a Round:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
-        label.textColor = UIColor.white
-        return label
-    }()
-    
-    lazy var roundPicker: UIPickerView = {
-        let picker = UIPickerView()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-        picker.layer.cornerRadius = 10
-        return picker
     }()
     
     lazy var startSetButton: UIButton = {
@@ -162,17 +155,15 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(StudySettingsViewController.startStudyMode), for: .touchUpInside)
+        button.addTarget(self, action: #selector(QuizSettingsViewController.startQuizMode), for: .touchUpInside)
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
-        self.navigationItem.title = "Study Mode"
+        self.navigationItem.title = "Quiz Mode"
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        roundPicker.delegate = self
-        roundPicker.dataSource = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -246,22 +237,8 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             randomButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(roundHeader)
-        NSLayoutConstraint.activate([
-            roundHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 15),
-            roundHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        
-        view.addSubview(roundPicker)
-        NSLayoutConstraint.activate([
-            roundPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            roundPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            roundPicker.topAnchor.constraint(equalTo: roundHeader.bottomAnchor, constant: 10),
-        ])
-        
         view.addSubview(startSetButton)
         NSLayoutConstraint.activate([
-            roundPicker.bottomAnchor.constraint(equalTo: startSetButton.topAnchor, constant: -20),
             startSetButton.widthAnchor.constraint(equalToConstant: 120),
             startSetButton.heightAnchor.constraint(equalToConstant: 44),
             startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
@@ -269,10 +246,9 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         ])
     }
     
-    func startStudyMode() {
+    func startQuizMode() {
         let category = getCategoryForToggle()
-        let roundNumber = roundPicker.selectedRow(inComponent: 0)
-        let studyController = StudyModeViewController(category: category, round: roundNumber)
+        let studyController = QuizModeViewController(category: category, stats: QuizModeStats())
         navigationController?.pushViewController(studyController, animated: true)
     }
     
@@ -350,25 +326,5 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         } else {
             return nil
         }
-    }
-    
-    // MARK: - Picker Data Source
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return pickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData[component].count
-    }
-    
-    // MARK: - Picker Delegate
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[component][row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let title = pickerData[component][row]
-        let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
-        return attributedString
     }
 }
