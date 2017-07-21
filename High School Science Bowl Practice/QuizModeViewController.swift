@@ -17,6 +17,7 @@ extension Question {
 
 class QuizModeViewController: UIViewController {
     var category: Category?
+    var statsTracker: QuizModeStats?
     lazy var question: Question = {
         guard let category = self.category else {
             return QuestionJSONParser.shared.getMCQuestion()
@@ -135,8 +136,9 @@ class QuizModeViewController: UIViewController {
         return button
     }()
     
-    init(category: Category?) {
+    init(category: Category?, stats: QuizModeStats?) {
         self.category = category
+        self.statsTracker = stats
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -245,41 +247,45 @@ class QuizModeViewController: UIViewController {
     func selectOptionW() {
         optionSelected()
         if question.getAnswerLetter() == "W" {
-            
+            statsTracker?.numberCorrect += 1
         } else {
             optionWButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+            statsTracker?.numberIncorrect += 1
         }
     }
     
     func selectOptionX() {
         optionSelected()
         if question.getAnswerLetter() == "X" {
-        
+            statsTracker?.numberCorrect += 1
         } else {
             optionXButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+            statsTracker?.numberIncorrect += 1
         }
     }
     
     func selectOptionY() {
         optionSelected()
         if question.getAnswerLetter() == "Y" {
-        
+            statsTracker?.numberCorrect += 1
         } else {
             optionYButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+            statsTracker?.numberIncorrect += 1
         }
     }
     
     func selectOptionZ() {
         optionSelected()
         if question.getAnswerLetter() == "Z" {
-        
+            statsTracker?.numberCorrect += 1
         } else {
             optionZButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+            statsTracker?.numberIncorrect += 1
         }
     }
     
     func loadNextQuestion() {
-        let nextQuestionController = QuizModeViewController(category: category)
+        let nextQuestionController = QuizModeViewController(category: category, stats: statsTracker)
         navigationController?.pushViewController(nextQuestionController, animated: true)
     }
 }

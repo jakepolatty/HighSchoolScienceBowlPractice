@@ -248,7 +248,7 @@ class QuizSettingsViewController: UIViewController {
     
     func startQuizMode() {
         let category = getCategoryForToggle()
-        let studyController = QuizModeViewController(category: category)
+        let studyController = QuizModeViewController(category: category, stats: QuizModeStats())
         navigationController?.pushViewController(studyController, animated: true)
     }
     
