@@ -9,10 +9,13 @@
 import UIKit
 
 class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    let pickerData = [
+    let roundPickerData = [
         ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6", "Set 7", "Set 8"],
         ["Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
     ]
+    
+    let tossupTimePickerData = [["5 Seconds", "10 Seconds", "15 Seconds"]]
+    let bonusTimePickerData = [["20 Seconds", "25 Seconds", "30 Seconds", "35 Seconds", "40 Seconds"]]
     
     lazy var mainMenuButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(ReaderSettingsViewController.returnMainMenu))
@@ -47,6 +50,49 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         return button
     }()
     
+    lazy var timePickerHeader: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Select Question Time Limits:"
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
+        return label
+    }()
+    
+    lazy var tossupTimeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Tossup:"
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
+        return label
+    }()
+    
+    lazy var tossupTimePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.layer.cornerRadius = 10
+        return picker
+    }()
+    
+    lazy var bonusTimeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Bonus:"
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
+        return label
+    }()
+    
+    lazy var bonusTimePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.layer.cornerRadius = 10
+        return picker
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
@@ -54,6 +100,10 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         setRoundPicker.delegate = self
         setRoundPicker.dataSource = self
+        tossupTimePicker.delegate = self
+        tossupTimePicker.dataSource = self
+        tossupTimePicker.delegate = self
+        tossupTimePicker.dataSource = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -80,6 +130,40 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
             startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
+        
+        view.addSubview(timePickerHeader)
+        NSLayoutConstraint.activate([
+            timePickerHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timePickerHeader.topAnchor.constraint(equalTo: setRoundPicker.bottomAnchor, constant: 10)
+        ])
+        
+        view.addSubview(tossupTimeLabel)
+        NSLayoutConstraint.activate([
+            tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 6),
+            tossupTimeLabel.topAnchor.constraint(equalTo: timePickerHeader.bottomAnchor, constant: 10)
+        ])
+        
+        view.addSubview(tossupTimePicker)
+        NSLayoutConstraint.activate([
+            tossupTimePicker.widthAnchor.constraint(equalToConstant: 100),
+            tossupTimePicker.heightAnchor.constraint(equalToConstant: 50),
+            tossupTimePicker.leadingAnchor.constraint(equalTo: tossupTimeLabel.trailingAnchor, constant: 15),
+            tossupTimePicker.centerXAnchor.constraint(equalTo: tossupTimeLabel.centerXAnchor)
+        ])
+        
+        view.addSubview(bonusTimeLabel)
+        NSLayoutConstraint.activate([
+            bonusTimeLabel.leadingAnchor.constraint(equalTo: tossupTimeLabel.leadingAnchor),
+            bonusTimeLabel.topAnchor.constraint(equalTo: tossupTimeLabel.bottomAnchor, constant: 10)
+        ])
+        
+        view.addSubview(bonusTimePicker)
+        NSLayoutConstraint.activate([
+            bonusTimePicker.widthAnchor.constraint(equalToConstant: 100),
+            bonusTimePicker.heightAnchor.constraint(equalToConstant: 50),
+            bonusTimePicker.leadingAnchor.constraint(equalTo: bonusTimeLabel.trailingAnchor, constant: 15),
+            bonusTimePicker.centerXAnchor.constraint(equalTo: bonusTimeLabel.centerXAnchor)
+        ])
     }
     
     func startReaderMode() {
@@ -99,20 +183,35 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     
     // MARK: - Picker Data Source
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return pickerData.count
+        if pickerView == setRoundPicker {
+            return roundPickerData.count
+        } else if pickerView == tossupTimePicker {
+            return tossupTimePickerData.count
+        } else if pickerView == bonusTimePicker {
+            return bonusTimePickerData.count
+        }
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData[component].count
+        if pickerView == setRoundPicker {
+            return roundPickerData[component].count
+        } else if pickerView == tossupTimePicker {
+            return tossupTimePickerData[component].count
+        } else if pickerView == bonusTimePicker {
+            return bonusTimePickerData[component].count
+        } else {
+            return 0
+        }
     }
     
     // MARK: - Picker Delegate
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[component][row]
+        return roundPickerData[component][row]
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let title = pickerData[component][row]
+        let title = roundPickerData[component][row]
         let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
         return attributedString
     }
