@@ -11,6 +11,9 @@ import UIKit
 class ReaderModeViewController: UIViewController {
     var questionSet: [Question]?
     var index: Int = 0
+    var seconds: Int = 10
+    var timer = Timer()
+    var isTimerRunning = false
     
     lazy var mainMenuButton: UIBarButtonItem? = {
         let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
@@ -97,10 +100,31 @@ class ReaderModeViewController: UIViewController {
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightHeavy)
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.95)
         if let answerText = self.questionSet?[self.index].answer {
             label.text = "Answer: \(answerText)"
         }
+        return label
+    }()
+    
+    lazy var startTimerButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Start Timer", for: .normal)
+        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
+        button.tintColor = UIColor.white
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(ReaderModeViewController.startTimerPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var timerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightThin)
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+        label.isHidden = true
+        label.text = "\(self.seconds) Seconds Left"
         return label
     }()
     
@@ -152,9 +176,23 @@ class ReaderModeViewController: UIViewController {
         
         view.addSubview(questionAnswerLabel)
         NSLayoutConstraint.activate([
-            questionAnswerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            questionAnswerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
             questionAnswerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionAnswerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+        
+        view.addSubview(startTimerButton)
+        NSLayoutConstraint.activate([
+            startTimerButton.widthAnchor.constraint(equalToConstant: 120),
+            startTimerButton.heightAnchor.constraint(equalToConstant: 44),
+            startTimerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            startTimerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
+        ])
+        
+        view.addSubview(timerLabel)
+        NSLayoutConstraint.activate([
+            timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
         
         if let answerOptionsLabel = answerOptionsLabel {
@@ -180,5 +218,25 @@ class ReaderModeViewController: UIViewController {
     
     func finishSet() {
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func startTimerPressed() {
+        runTimer()
+        startTimerButton.isHidden = true
+        timerLabel.isHidden = false
+    }
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ReaderModeViewController.updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer() {
+        if seconds < 1 {
+            timer.invalidate()
+            timerLabel.text = "Time's Up"
+        } else {
+            seconds -= 1
+            timerLabel.text = "\(seconds) Seconds Left"
+        }
     }
 }
