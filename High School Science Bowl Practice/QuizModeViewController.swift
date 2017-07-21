@@ -25,8 +25,8 @@ class QuizModeViewController: UIViewController {
         return QuestionJSONParser.shared.getMCQuestionForCategory(category)
     }()
     
-    lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(QuizModeViewController.returnMainMenu))
+    lazy var finishSetButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Finish Set", style: .plain, target: self, action: #selector(QuizModeViewController.finishSet))
         return button
     }()
     
@@ -149,7 +149,7 @@ class QuizModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        self.navigationItem.leftBarButtonItem = mainMenuButton
+        self.navigationItem.leftBarButtonItem = finishSetButton
         self.navigationItem.title = "Quiz Mode"
     }
 
@@ -214,8 +214,9 @@ class QuizModeViewController: UIViewController {
         ])
     }
     
-    func returnMainMenu() {
-        navigationController?.dismiss(animated: true, completion: nil)
+    func finishSet() {
+        let statsController = QuizModeStatsViewController(stats: statsTracker)
+        navigationController?.pushViewController(statsController, animated: true)
     }
     
     func disableButtons() {

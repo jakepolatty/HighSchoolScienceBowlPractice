@@ -23,6 +23,7 @@
 		844E83371F2119C60081555B /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E83361F2119C60081555B /* MainMenuViewController.swift */; };
 		844E83391F2170150081555B /* QuizSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E83381F2170150081555B /* QuizSettingsViewController.swift */; };
 		844E833B1F218C660081555B /* QuizModeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E833A1F218C660081555B /* QuizModeStats.swift */; };
+		844E833D1F2190820081555B /* QuizModeStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E833C1F2190820081555B /* QuizModeStatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		844E83361F2119C60081555B /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		844E83381F2170150081555B /* QuizSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSettingsViewController.swift; sourceTree = "<group>"; };
 		844E833A1F218C660081555B /* QuizModeStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizModeStats.swift; sourceTree = "<group>"; };
+		844E833C1F2190820081555B /* QuizModeStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizModeStatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				1CAD65A01F158B3100D1A289 /* QuizModeViewController.swift */,
 				844E83381F2170150081555B /* QuizSettingsViewController.swift */,
+				844E833C1F2190820081555B /* QuizModeStatsViewController.swift */,
 				1C2985C71F1EABCC007F96FC /* ReaderModeViewController.swift */,
 				1C2985C91F1EB94A007F96FC /* ReaderSettingsViewController.swift */,
 				1C2985CD1F1EE7B1007F96FC /* StudyModeViewController.swift */,
@@ -190,6 +193,7 @@
 				1CAD65A41F158B6D00D1A289 /* QuestionJSONParser.swift in Sources */,
 				844E83371F2119C60081555B /* MainMenuViewController.swift in Sources */,
 				844E833B1F218C660081555B /* QuizModeStats.swift in Sources */,
+				844E833D1F2190820081555B /* QuizModeStatsViewController.swift in Sources */,
 				844E83391F2170150081555B /* QuizSettingsViewController.swift in Sources */,
 				1CAD659D1F1581AB00D1A289 /* Question.swift in Sources */,
 				1C2985C81F1EABCC007F96FC /* ReaderModeViewController.swift in Sources */,
