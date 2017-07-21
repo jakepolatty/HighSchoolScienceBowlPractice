@@ -60,6 +60,32 @@ class MainMenuViewController: UIViewController {
         return button
     }()
     
+    lazy var aboutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("About", for: .normal)
+        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.15)
+        button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 22
+        button.addTarget(self, action: #selector(MainMenuViewController.openAboutPage), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var helpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Help", for: .normal)
+        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.15)
+        button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 22
+        button.addTarget(self, action: #selector(MainMenuViewController.openHelpPage), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
@@ -98,6 +124,22 @@ class MainMenuViewController: UIViewController {
             studyModeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             studyModeButton.topAnchor.constraint(equalTo: readerModeButton.bottomAnchor, constant: 30)
         ])
+        
+        view.addSubview(aboutButton)
+        NSLayoutConstraint.activate([
+            aboutButton.widthAnchor.constraint(equalToConstant: 44),
+            aboutButton.heightAnchor.constraint(equalToConstant: 44),
+            aboutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            aboutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+        ])
+        
+        view.addSubview(helpButton)
+        NSLayoutConstraint.activate([
+            helpButton.widthAnchor.constraint(equalToConstant: 44),
+            helpButton.heightAnchor.constraint(equalToConstant: 44),
+            helpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            helpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+        ])
     }
     
     func startQuizMode() {
@@ -116,5 +158,13 @@ class MainMenuViewController: UIViewController {
         let studySettingsController = StudySettingsViewController()
         let navigationController = UINavigationController(rootViewController: studySettingsController)
         self.present(navigationController, animated: true, completion: nil)
+    }
+    
+    func openAboutPage() {
+    
+    }
+    
+    func openHelpPage() {
+    
     }
 }
