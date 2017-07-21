@@ -248,7 +248,6 @@ class QuizModeViewController: UIViewController {
         optionYButton.isEnabled = false
         optionZButton.isEnabled = false
         timer.invalidate()
-        timerLabel.isHidden = true
     }
     
     func makeCorrectAnswerButtonGreen() {
@@ -272,6 +271,7 @@ class QuizModeViewController: UIViewController {
     
     func selectOptionW() {
         optionSelected()
+        timerLabel.isHidden = true
         if question.getAnswerLetter() == "W" {
             statsTracker?.numberCorrect += 1
         } else {
@@ -282,6 +282,7 @@ class QuizModeViewController: UIViewController {
     
     func selectOptionX() {
         optionSelected()
+        timerLabel.isHidden = true
         if question.getAnswerLetter() == "X" {
             statsTracker?.numberCorrect += 1
         } else {
@@ -292,6 +293,7 @@ class QuizModeViewController: UIViewController {
     
     func selectOptionY() {
         optionSelected()
+        timerLabel.isHidden = true
         if question.getAnswerLetter() == "Y" {
             statsTracker?.numberCorrect += 1
         } else {
@@ -302,6 +304,7 @@ class QuizModeViewController: UIViewController {
     
     func selectOptionZ() {
         optionSelected()
+        timerLabel.isHidden = true
         if question.getAnswerLetter() == "Z" {
             statsTracker?.numberCorrect += 1
         } else {
@@ -321,7 +324,6 @@ class QuizModeViewController: UIViewController {
     
     func updateTimer() {
         if seconds < 1 {
-            timer.invalidate()
             timerLabel.text = "Time's Up"
             statsTracker?.numberNotAnswered += 1
             optionSelected()
