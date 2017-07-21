@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+extension Question {
+    func getAnswerLetter() -> String {
+        return String(self.answer.characters.first!)
+    }
+}
+
 class QuizModeViewController: UIViewController {
     var category: Category? = Category.physics
     lazy var question: Question = {
@@ -67,6 +73,7 @@ class QuizModeViewController: UIViewController {
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
+        button.titleLabel?.numberOfLines = 0
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
@@ -82,6 +89,7 @@ class QuizModeViewController: UIViewController {
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
+        button.titleLabel?.numberOfLines = 0
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
@@ -97,6 +105,7 @@ class QuizModeViewController: UIViewController {
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
+        button.titleLabel?.numberOfLines = 0
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
@@ -112,6 +121,7 @@ class QuizModeViewController: UIViewController {
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
+        button.titleLabel?.numberOfLines = 0
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
@@ -159,7 +169,7 @@ class QuizModeViewController: UIViewController {
             optionWButton.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 10),
             optionWButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             optionWButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            optionWButton.heightAnchor.constraint(equalToConstant: 60)
+            optionWButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         view.addSubview(optionXButton)
@@ -167,7 +177,7 @@ class QuizModeViewController: UIViewController {
             optionXButton.topAnchor.constraint(equalTo: optionWButton.bottomAnchor, constant: 7),
             optionXButton.leadingAnchor.constraint(equalTo: optionWButton.leadingAnchor),
             optionXButton.trailingAnchor.constraint(equalTo: optionWButton.trailingAnchor),
-            optionXButton.heightAnchor.constraint(equalToConstant: 60)
+            optionXButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         view.addSubview(optionYButton)
@@ -175,7 +185,7 @@ class QuizModeViewController: UIViewController {
             optionYButton.topAnchor.constraint(equalTo: optionXButton.bottomAnchor, constant: 7),
             optionYButton.leadingAnchor.constraint(equalTo: optionXButton.leadingAnchor),
             optionYButton.trailingAnchor.constraint(equalTo: optionXButton.trailingAnchor),
-            optionYButton.heightAnchor.constraint(equalToConstant: 60)
+            optionYButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         view.addSubview(optionZButton)
@@ -183,7 +193,7 @@ class QuizModeViewController: UIViewController {
             optionZButton.topAnchor.constraint(equalTo: optionYButton.bottomAnchor, constant: 7),
             optionZButton.leadingAnchor.constraint(equalTo: optionYButton.leadingAnchor),
             optionZButton.trailingAnchor.constraint(equalTo: optionYButton.trailingAnchor),
-            optionZButton.heightAnchor.constraint(equalToConstant: 60)
+            optionZButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -191,19 +201,63 @@ class QuizModeViewController: UIViewController {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
+    func disableButtons() {
+        optionWButton.isEnabled = false
+        optionXButton.isEnabled = false
+        optionYButton.isEnabled = false
+        optionZButton.isEnabled = false
+    }
+    
+    func makeCorrectAnswerButtonGreen() {
+        let answerletter = question.getAnswerLetter()
+        if answerletter == "W" {
+            optionWButton.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+        } else if answerletter == "X" {
+            optionXButton.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+        } else if answerletter == "Y" {
+            optionYButton.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+        } else if answerletter == "Z" {
+            optionZButton.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+        }
+    }
+    
     func selectOptionW() {
-        
+        disableButtons()
+        makeCorrectAnswerButtonGreen()
+        if question.getAnswerLetter() == "W" {
+            
+        } else {
+            optionWButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        }
     }
     
     func selectOptionX() {
+        disableButtons()
+        makeCorrectAnswerButtonGreen()
+        if question.getAnswerLetter() == "X" {
         
+        } else {
+            optionXButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        }
     }
     
     func selectOptionY() {
+        disableButtons()
+        makeCorrectAnswerButtonGreen()
+        if question.getAnswerLetter() == "Y" {
         
+        } else {
+            optionYButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        }
     }
     
     func selectOptionZ() {
+        disableButtons()
+        makeCorrectAnswerButtonGreen()
+        if question.getAnswerLetter() == "Z" {
         
+        } else {
+            optionZButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        }
     }
 }
