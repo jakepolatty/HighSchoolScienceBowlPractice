@@ -29,6 +29,11 @@ class QuizModeViewController: UIViewController {
         return button
     }()
     
+    lazy var nextQuestionButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Next Question", style: .plain, target: self, action: #selector(QuizModeViewController.loadNextQuestion))
+        return button
+    }()
+    
     lazy var roundSetNumLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -129,9 +134,19 @@ class QuizModeViewController: UIViewController {
         button.addTarget(self, action: #selector(QuizModeViewController.selectOptionZ), for: .touchUpInside)
         return button
     }()
+    
+    init(category: Category?) {
+        self.category = category
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Quiz Mode"
     }
@@ -221,9 +236,14 @@ class QuizModeViewController: UIViewController {
         }
     }
     
-    func selectOptionW() {
+    func optionSelected() {
         disableButtons()
         makeCorrectAnswerButtonGreen()
+        self.navigationItem.rightBarButtonItem = nextQuestionButton
+    }
+    
+    func selectOptionW() {
+        optionSelected()
         if question.getAnswerLetter() == "W" {
             
         } else {
@@ -232,8 +252,7 @@ class QuizModeViewController: UIViewController {
     }
     
     func selectOptionX() {
-        disableButtons()
-        makeCorrectAnswerButtonGreen()
+        optionSelected()
         if question.getAnswerLetter() == "X" {
         
         } else {
@@ -242,8 +261,7 @@ class QuizModeViewController: UIViewController {
     }
     
     func selectOptionY() {
-        disableButtons()
-        makeCorrectAnswerButtonGreen()
+        optionSelected()
         if question.getAnswerLetter() == "Y" {
         
         } else {
@@ -252,12 +270,16 @@ class QuizModeViewController: UIViewController {
     }
     
     func selectOptionZ() {
-        disableButtons()
-        makeCorrectAnswerButtonGreen()
+        optionSelected()
         if question.getAnswerLetter() == "Z" {
         
         } else {
             optionZButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
         }
+    }
+    
+    func loadNextQuestion() {
+        let nextQuestionController = QuizModeViewController(category: category)
+        navigationController?.pushViewController(nextQuestionController, animated: true)
     }
 }
