@@ -27,12 +27,12 @@ class StudyModeViewController: UIViewController {
     }()
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
         return button
     }()
     
     lazy var nextQuestionButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Next Question", style: .plain, target: self, action: #selector(ReaderModeViewController.loadNextQuestion))
+        let button = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReaderModeViewController.loadNextQuestion))
         return button
     }()
     
@@ -67,7 +67,7 @@ class StudyModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightMedium)
         label.textColor = UIColor.white
         label.text = self.question.questionText
         return label
@@ -77,7 +77,7 @@ class StudyModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightSemibold)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightSemibold)
         label.textColor = UIColor(colorLiteralRed: 212.0/255.0, green: 212.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         if let answerChoices = self.question.answerChoices {
             if answerChoices.count == 4 {
@@ -106,7 +106,7 @@ class StudyModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightHeavy)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightHeavy)
         label.textAlignment = NSTextAlignment.center
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
         label.text = "Answer: \(self.question.answer)"

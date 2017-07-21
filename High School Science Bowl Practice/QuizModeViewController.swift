@@ -34,7 +34,7 @@ class QuizModeViewController: UIViewController {
     }()
     
     lazy var nextQuestionButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Next Question", style: .plain, target: self, action: #selector(QuizModeViewController.loadNextQuestion))
+        let button = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(QuizModeViewController.loadNextQuestion))
         return button
     }()
     
@@ -69,7 +69,7 @@ class QuizModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightMedium)
         label.textColor = UIColor.white
         label.text = self.question.questionText
         return label
@@ -146,7 +146,7 @@ class QuizModeViewController: UIViewController {
     lazy var timerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightThin)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightThin)
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
         label.text = "\(self.seconds) Seconds Left"
         return label

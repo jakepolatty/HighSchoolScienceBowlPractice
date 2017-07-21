@@ -27,7 +27,7 @@ class QuizSettingsViewController: UIViewController {
     var category: Category?
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(QuizSettingsViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(QuizSettingsViewController.returnMainMenu))
         return button
     }()
     

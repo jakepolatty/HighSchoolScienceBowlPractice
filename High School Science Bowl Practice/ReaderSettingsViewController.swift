@@ -15,7 +15,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     ]
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(ReaderSettingsViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(ReaderSettingsViewController.returnMainMenu))
         return button
     }()
     
@@ -50,6 +50,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
+        self.navigationItem.title = "Reader Mode"
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         setRoundPicker.delegate = self
         setRoundPicker.dataSource = self

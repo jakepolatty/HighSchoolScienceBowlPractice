@@ -12,7 +12,7 @@ class QuizModeStatsViewController: UIViewController {
     var stats: QuizModeStats?
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(QuizModeStatsViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(QuizModeStatsViewController.returnMainMenu))
         return button
     }()
     

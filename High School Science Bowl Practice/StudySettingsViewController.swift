@@ -17,7 +17,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     var category: Category?
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudySettingsViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudySettingsViewController.returnMainMenu))
         return button
     }()
     
@@ -248,7 +248,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(roundHeader)
         NSLayoutConstraint.activate([
-            roundHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 15),
+            roundHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 10),
             roundHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         

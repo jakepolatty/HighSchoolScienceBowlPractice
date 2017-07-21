@@ -15,7 +15,7 @@ class MainMenuViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "High School Science Bowl Practice"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 40.0, weight: UIFontWeightHeavy)
+        label.font = UIFont.systemFont(ofSize: 39.0, weight: UIFontWeightHeavy)
         label.textAlignment = NSTextAlignment.center
         label.textColor = UIColor.white
         return label

@@ -15,7 +15,7 @@ class ReaderModeViewController: UIViewController {
     var timer = Timer()
     
     lazy var mainMenuButton: UIBarButtonItem? = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
         return button
     }()
     
@@ -25,7 +25,7 @@ class ReaderModeViewController: UIViewController {
         if self.index == count - 1 {
             button = UIBarButtonItem(title: "Finish Set", style: .done, target: self, action: #selector(ReaderModeViewController.finishSet))
         } else {
-            button = UIBarButtonItem(title: "Next Question", style: .plain, target: self, action: #selector(ReaderModeViewController.loadNextQuestion))
+            button = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReaderModeViewController.loadNextQuestion))
         }
         return button
     }()
@@ -67,7 +67,7 @@ class ReaderModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightMedium)
         label.textColor = UIColor.white
         if let questionText = self.questionSet?[self.index].questionText {
             label.text = questionText
@@ -79,7 +79,7 @@ class ReaderModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightSemibold)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightSemibold)
         label.textColor = UIColor(colorLiteralRed: 212.0/255.0, green: 212.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         if let answerChoices = self.questionSet?[self.index].answerChoices {
             if answerChoices.count > 0 {
@@ -97,7 +97,7 @@ class ReaderModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightHeavy)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightHeavy)
         label.textAlignment = NSTextAlignment.center
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.95)
         if let answerText = self.questionSet?[self.index].answer {
@@ -120,7 +120,7 @@ class ReaderModeViewController: UIViewController {
     lazy var timerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightThin)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightThin)
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
         label.isHidden = true
         label.text = "\(self.seconds) Seconds Left"
