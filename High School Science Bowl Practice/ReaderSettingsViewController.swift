@@ -102,8 +102,8 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         setRoundPicker.dataSource = self
         tossupTimePicker.delegate = self
         tossupTimePicker.dataSource = self
-        tossupTimePicker.delegate = self
-        tossupTimePicker.dataSource = self
+        bonusTimePicker.delegate = self
+        bonusTimePicker.dataSource = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -139,30 +139,30 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         
         view.addSubview(tossupTimeLabel)
         NSLayoutConstraint.activate([
-            tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 6),
-            tossupTimeLabel.topAnchor.constraint(equalTo: timePickerHeader.bottomAnchor, constant: 10)
+            tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 15),
+            tossupTimeLabel.topAnchor.constraint(equalTo: timePickerHeader.bottomAnchor, constant: 20)
         ])
         
         view.addSubview(tossupTimePicker)
         NSLayoutConstraint.activate([
-            tossupTimePicker.widthAnchor.constraint(equalToConstant: 100),
+            tossupTimePicker.widthAnchor.constraint(equalToConstant: 140),
             tossupTimePicker.heightAnchor.constraint(equalToConstant: 50),
-            tossupTimePicker.leadingAnchor.constraint(equalTo: tossupTimeLabel.trailingAnchor, constant: 15),
-            tossupTimePicker.centerXAnchor.constraint(equalTo: tossupTimeLabel.centerXAnchor)
+            tossupTimePicker.trailingAnchor.constraint(equalTo: timePickerHeader.trailingAnchor, constant: -15),
+            tossupTimePicker.centerYAnchor.constraint(equalTo: tossupTimeLabel.centerYAnchor)
         ])
         
         view.addSubview(bonusTimeLabel)
         NSLayoutConstraint.activate([
             bonusTimeLabel.leadingAnchor.constraint(equalTo: tossupTimeLabel.leadingAnchor),
-            bonusTimeLabel.topAnchor.constraint(equalTo: tossupTimeLabel.bottomAnchor, constant: 10)
+            bonusTimeLabel.topAnchor.constraint(equalTo: tossupTimeLabel.bottomAnchor, constant: 40)
         ])
         
         view.addSubview(bonusTimePicker)
         NSLayoutConstraint.activate([
-            bonusTimePicker.widthAnchor.constraint(equalToConstant: 100),
+            bonusTimePicker.widthAnchor.constraint(equalToConstant: 140),
             bonusTimePicker.heightAnchor.constraint(equalToConstant: 50),
-            bonusTimePicker.leadingAnchor.constraint(equalTo: bonusTimeLabel.trailingAnchor, constant: 15),
-            bonusTimePicker.centerXAnchor.constraint(equalTo: bonusTimeLabel.centerXAnchor)
+            bonusTimePicker.leadingAnchor.constraint(equalTo: tossupTimePicker.leadingAnchor),
+            bonusTimePicker.centerYAnchor.constraint(equalTo: bonusTimeLabel.centerYAnchor)
         ])
     }
     
@@ -206,12 +206,17 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     }
     
     // MARK: - Picker Delegate
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return roundPickerData[component][row]
-    }
-    
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let title = roundPickerData[component][row]
+        let title: String
+        if pickerView == setRoundPicker {
+            title = roundPickerData[component][row]
+        } else if pickerView == tossupTimePicker {
+            title = tossupTimePickerData[component][row]
+        } else if pickerView == bonusTimePicker {
+            title = bonusTimePickerData[component][row]
+        } else {
+            title = ""
+        }
         let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
         return attributedString
     }

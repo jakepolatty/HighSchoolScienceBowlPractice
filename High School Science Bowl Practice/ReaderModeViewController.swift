@@ -12,6 +12,8 @@ class ReaderModeViewController: UIViewController {
     var questionSet: [Question]?
     var index: Int = 0
     var seconds: Int = 0
+    var tossupTime: Int = 0
+    var bonusTime: Int = 0
     var timer = Timer()
     
     lazy var mainMenuButton: UIBarButtonItem? = {
@@ -127,13 +129,15 @@ class ReaderModeViewController: UIViewController {
         return label
     }()
     
-    init(questionSet: [Question], index: Int) {
+    init(questionSet: [Question], index: Int, tossupTime: Int, bonusTime: Int) {
         self.questionSet = questionSet
         self.index = index
+        self.tossupTime = tossupTime
+        self.bonusTime = bonusTime
         if questionSet[index].questionType == .tossup {
-            self.seconds = 5
+            self.seconds = tossupTime
         } else {
-            self.seconds = 20
+            self.seconds = bonusTime
         }
         super.init(nibName: nil, bundle: nil)
     }
