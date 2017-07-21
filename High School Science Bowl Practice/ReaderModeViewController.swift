@@ -215,7 +215,7 @@ class ReaderModeViewController: UIViewController {
     
     func loadNextQuestion() {
         if let questionSet = questionSet {
-            let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1)
+            let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1, tossupTime: self.tossupTime, bonusTime: self.bonusTime)
             navigationController?.pushViewController(nextQuestionController, animated: true)
         }
     }

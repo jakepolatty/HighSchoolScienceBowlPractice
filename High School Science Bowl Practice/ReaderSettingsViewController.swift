@@ -169,10 +169,12 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     func startReaderMode() {
         let questionSetNum = setRoundPicker.selectedRow(inComponent: 0) + 1
         let roundNum = setRoundPicker.selectedRow(inComponent: 1) + 1
+        let tossupTime = getTossupTimeSelected()
+        let bonusTime = getBonusTimeSelected()
         if ((roundNum == 16 || roundNum == 17) && (questionSetNum == 5 || questionSetNum == 6)) {
         } else {
             let questionSet = QuestionJSONParser.shared.getQuestionSet(questionSetNum, forRound: roundNum)
-            let readerController = ReaderModeViewController(questionSet: questionSet, index: 0)
+            let readerController = ReaderModeViewController(questionSet: questionSet, index: 0, tossupTime: tossupTime, bonusTime: bonusTime)
             navigationController?.pushViewController(readerController, animated: true)
         }
     }
@@ -219,5 +221,27 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         }
         let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
         return attributedString
+    }
+    
+    func getTossupTimeSelected() -> Int {
+        let index = tossupTimePicker.selectedRow(inComponent: 0)
+        switch index {
+        case 0: return 5
+        case 1: return 10
+        case 2: return 15
+        default: return 0
+        }
+    }
+    
+    func getBonusTimeSelected() -> Int {
+        let index = bonusTimePicker.selectedRow(inComponent: 0)
+        switch index {
+        case 0: return 20
+        case 1: return 25
+        case 2: return 30
+        case 3: return 35
+        case 4: return 40
+        default: return 0
+        }
     }
 }
