@@ -323,7 +323,7 @@ class QuizModeViewController: UIViewController {
     }
     
     func updateTimer() {
-        if seconds < 1 {
+        if seconds == 1 {
             timerLabel.text = "Time's Up"
             statsTracker?.numberNotAnswered += 1
             optionSelected()

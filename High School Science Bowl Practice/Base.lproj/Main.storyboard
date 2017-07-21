@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,87 +20,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High School Science Bowl Practice" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ode-hO-8Em">
-                                <rect key="frame" x="47" y="50" width="281" height="160"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="RBf-ui-XO2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXv-XU-YhU">
-                                <rect key="frame" x="112.5" y="311.5" width="150" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25102244127516776" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="2bz-EW-xi3"/>
-                                    <constraint firstAttribute="width" constant="150" id="Wj5-1o-bx3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Quiz Mode"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="startQuizMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40V-9o-Pmf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfl-0v-ktB">
-                                <rect key="frame" x="112.5" y="385.5" width="150" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25102244130000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="aKf-Vm-Oap"/>
-                                    <constraint firstAttribute="height" constant="44" id="gWf-7f-TKq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Reader Mode"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="startReaderMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sal-2h-Hsz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5w-b9-xA7">
-                                <rect key="frame" x="112.5" y="459.5" width="150" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25102244130000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="TR2-ng-DX5"/>
-                                    <constraint firstAttribute="height" constant="44" id="xWI-aW-Xdu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Study Mode"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="startStudyMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y0X-g0-XmK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" identifier="MainMenu"/>
-                        <constraints>
-                            <constraint firstItem="P5w-b9-xA7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Y6-A7-Y6o"/>
-                            <constraint firstItem="wfl-0v-ktB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8fS-Ec-sBl"/>
-                            <constraint firstItem="Ode-hO-8Em" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="GbT-k2-9jf"/>
-                            <constraint firstItem="gXv-XU-YhU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sar-7t-iGW"/>
-                            <constraint firstItem="gXv-XU-YhU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UhZ-uT-Olo"/>
-                            <constraint firstItem="P5w-b9-xA7" firstAttribute="top" secondItem="wfl-0v-ktB" secondAttribute="bottom" constant="30" id="XVy-BQ-ntZ"/>
-                            <constraint firstItem="wfl-0v-ktB" firstAttribute="top" secondItem="gXv-XU-YhU" secondAttribute="bottom" constant="30" id="dPF-jW-6xu"/>
-                            <constraint firstItem="Ode-hO-8Em" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gTa-9m-XBI"/>
-                            <constraint firstItem="Ode-hO-8Em" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="31" id="wXF-iv-nHC"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

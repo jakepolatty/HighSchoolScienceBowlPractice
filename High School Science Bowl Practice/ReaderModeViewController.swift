@@ -196,7 +196,7 @@ class ReaderModeViewController: UIViewController {
         view.addSubview(timerLabel)
         NSLayoutConstraint.activate([
             timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            timerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
+            timerLabel.centerYAnchor.constraint(equalTo: startTimerButton.centerYAnchor)
         ])
         
         if let answerOptionsLabel = answerOptionsLabel {
@@ -235,7 +235,7 @@ class ReaderModeViewController: UIViewController {
     }
     
     func updateTimer() {
-        if seconds < 1 {
+        if seconds == 1 {
             timer.invalidate()
             timerLabel.text = "Time's Up"
         } else {
