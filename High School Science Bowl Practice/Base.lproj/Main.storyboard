@@ -111,7 +111,7 @@
         <!--Quiz Mode-->
         <scene sceneID="sB8-2e-2YK">
             <objects>
-                <viewController id="8I6-ZF-NvF" sceneMemberID="viewController">
+                <viewController id="8I6-ZF-NvF" customClass="QuizSettingsViewController" customModule="High_School_Science_Bowl_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gkI-aU-oOC"/>
                         <viewControllerLayoutGuide type="bottom" id="wVg-SQ-gVa"/>
@@ -305,51 +305,8 @@
                     <view key="view" contentMode="scaleToFill" id="fKB-7d-kwg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMV-0G-ZU3">
-                                <rect key="frame" x="36" y="154" width="303" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth and Space Multiple Choice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00L-Q2-IWA">
-                                <rect key="frame" x="88.5" y="131" width="198" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="0.79996854026845643" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Set 1 Round 11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnt-Iu-ThY">
-                                <rect key="frame" x="114.5" y="79" width="146" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="0.79996854026845643" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 17 Tossup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-m5-ApM">
-                                <rect key="frame" x="128" y="105" width="119" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="0.79996854026845643" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Bnt-Iu-ThY" firstAttribute="centerX" secondItem="fKB-7d-kwg" secondAttribute="centerX" id="3KL-54-62f"/>
-                            <constraint firstItem="ySR-m5-ApM" firstAttribute="top" secondItem="Bnt-Iu-ThY" secondAttribute="bottom" constant="10" id="9bc-8P-8yB"/>
-                            <constraint firstItem="LMV-0G-ZU3" firstAttribute="top" secondItem="sZY-bA-tYm" secondAttribute="bottom" constant="90" id="Nqw-Yg-XRA"/>
-                            <constraint firstItem="ySR-m5-ApM" firstAttribute="centerX" secondItem="fKB-7d-kwg" secondAttribute="centerX" id="aRN-Fx-0B6"/>
-                            <constraint firstItem="00L-Q2-IWA" firstAttribute="top" secondItem="ySR-m5-ApM" secondAttribute="bottom" constant="10" id="hZk-Jg-xYc"/>
-                            <constraint firstItem="LMV-0G-ZU3" firstAttribute="leading" secondItem="fKB-7d-kwg" secondAttribute="leadingMargin" constant="20" id="i0x-9R-U4k"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LMV-0G-ZU3" secondAttribute="trailing" constant="20" id="iys-WF-48d"/>
-                            <constraint firstItem="Bnt-Iu-ThY" firstAttribute="top" secondItem="sZY-bA-tYm" secondAttribute="bottom" constant="15" id="ld8-u8-WKs"/>
-                            <constraint firstItem="00L-Q2-IWA" firstAttribute="centerX" secondItem="fKB-7d-kwg" secondAttribute="centerX" id="mCS-TO-9ff"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="catTypeLabel" destination="00L-Q2-IWA" id="sXY-Yf-1Hf"/>
-                        <outlet property="questionNumLabel" destination="ySR-m5-ApM" id="lnv-qn-NNr"/>
-                        <outlet property="questionTextLabel" destination="LMV-0G-ZU3" id="PYe-ld-HMU"/>
-                        <outlet property="roundSetNumLabel" destination="Bnt-Iu-ThY" id="mlt-kp-A1n"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eso-DS-2WQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

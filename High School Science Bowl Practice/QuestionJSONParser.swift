@@ -109,6 +109,24 @@ struct QuestionJSONParser {
         
         return thisFirst
     }
+    
+    func getMCQuestion() -> Question {
+        while true {
+            let question = QuestionJSONParser.shared.getRandomQuestion()
+            if question.answerType == .multipleChoice && question.answerChoices!.count == 4 {
+                return question
+            }
+        }
+    }
+    
+    func getMCQuestionForCategory(_ category: Category) -> Question {
+        while true {
+            let question = QuestionJSONParser.shared.getMCQuestion()
+            if question.category == category {
+                return question
+            }
+        }
+    }
 }
 
 
