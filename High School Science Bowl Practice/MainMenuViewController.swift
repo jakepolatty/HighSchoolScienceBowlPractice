@@ -20,6 +20,12 @@ class MainMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func startQuizMode(_ sender: Any) {
+        let quizSettingsController = QuizSettingsViewController()
+        let navigationController = UINavigationController(rootViewController: quizSettingsController)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
     @IBAction func startReaderMode(_ sender: Any) {
         let readerSettingsController = ReaderSettingsViewController()
         let navigationController = UINavigationController(rootViewController: readerSettingsController)

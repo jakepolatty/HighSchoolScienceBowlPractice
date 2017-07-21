@@ -8,19 +8,6 @@
 
 import UIKit
 
-extension UIButton {
-    
-    func setBackgroundColor(color: UIColor, forState: UIControlState) {
-        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
-        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
-        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        self.setBackgroundImage(colorImage, for: forState)
-    }
-}
-
 class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     let pickerData = [
         ["All Rounds", "Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
@@ -295,79 +282,54 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     
     // MARK: - Toggle Button Handlers
     
-    func toggleBiology() {
-        biologyButton.isSelected = true
+    func toggleOff() {
+        biologyButton.isSelected = false
         chemistryButton.isSelected = false
         earthAndSpaceButton.isSelected = false
         energyButton.isSelected = false
         mathButton.isSelected = false
         physicsButton.isSelected = false
         randomButton.isSelected = false
+    }
+    
+    func toggleBiology() {
+        toggleOff()
+        biologyButton.isSelected = true
         category = Category.biology
     }
     
     func toggleChemistry() {
-        biologyButton.isSelected = false
+        toggleOff()
         chemistryButton.isSelected = true
-        earthAndSpaceButton.isSelected = false
-        energyButton.isSelected = false
-        mathButton.isSelected = false
-        physicsButton.isSelected = false
-        randomButton.isSelected = false
         category = Category.chemistry
     }
     
     func toggleEarthAndSpace() {
-        biologyButton.isSelected = false
-        chemistryButton.isSelected = false
+        toggleOff()
         earthAndSpaceButton.isSelected = true
-        energyButton.isSelected = false
-        mathButton.isSelected = false
-        physicsButton.isSelected = false
-        randomButton.isSelected = false
         category = Category.earthAndSpace
     }
     
     func toggleEnergy() {
-        biologyButton.isSelected = false
-        chemistryButton.isSelected = false
-        earthAndSpaceButton.isSelected = false
+        toggleOff()
         energyButton.isSelected = true
-        mathButton.isSelected = false
-        physicsButton.isSelected = false
-        randomButton.isSelected = false
         category = Category.energy
     }
     
     func toggleMath() {
-        biologyButton.isSelected = false
-        chemistryButton.isSelected = false
-        earthAndSpaceButton.isSelected = false
-        energyButton.isSelected = false
+        toggleOff()
         mathButton.isSelected = true
-        physicsButton.isSelected = false
-        randomButton.isSelected = false
         category = Category.mathematics
     }
     
     func togglePhysics() {
-        biologyButton.isSelected = false
-        chemistryButton.isSelected = false
-        earthAndSpaceButton.isSelected = false
-        energyButton.isSelected = false
-        mathButton.isSelected = false
+        toggleOff()
         physicsButton.isSelected = true
-        randomButton.isSelected = false
         category = Category.physics
     }
     
     func toggleRandom() {
-        biologyButton.isSelected = false
-        chemistryButton.isSelected = false
-        earthAndSpaceButton.isSelected = false
-        energyButton.isSelected = false
-        mathButton.isSelected = false
-        physicsButton.isSelected = false
+        toggleOff()
         randomButton.isSelected = true
         category = nil
     }

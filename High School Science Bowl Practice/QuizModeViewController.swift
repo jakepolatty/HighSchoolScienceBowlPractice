@@ -16,7 +16,7 @@ extension Question {
 }
 
 class QuizModeViewController: UIViewController {
-    var category: Category? = Category.physics
+    var category: Category?
     lazy var question: Question = {
         guard let category = self.category else {
             return QuestionJSONParser.shared.getMCQuestion()
