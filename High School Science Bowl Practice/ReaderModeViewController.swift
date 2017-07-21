@@ -11,7 +11,7 @@ import UIKit
 class ReaderModeViewController: UIViewController {
     var questionSet: [Question]?
     var index: Int = 0
-    var seconds: Int = 10
+    var seconds: Int = 0
     var timer = Timer()
     var isTimerRunning = false
     
@@ -131,6 +131,11 @@ class ReaderModeViewController: UIViewController {
     init(questionSet: [Question], index: Int) {
         self.questionSet = questionSet
         self.index = index
+        if questionSet[index].questionType == .tossup {
+            self.seconds = 5
+        } else {
+            self.seconds = 20
+        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -176,7 +181,6 @@ class ReaderModeViewController: UIViewController {
         
         view.addSubview(questionAnswerLabel)
         NSLayoutConstraint.activate([
-            questionAnswerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
             questionAnswerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionAnswerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
@@ -186,7 +190,8 @@ class ReaderModeViewController: UIViewController {
             startTimerButton.widthAnchor.constraint(equalToConstant: 120),
             startTimerButton.heightAnchor.constraint(equalToConstant: 44),
             startTimerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startTimerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
+            startTimerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            questionAnswerLabel.bottomAnchor.constraint(equalTo: startTimerButton.topAnchor, constant: -10),
         ])
         
         view.addSubview(timerLabel)
