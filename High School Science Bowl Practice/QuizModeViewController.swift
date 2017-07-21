@@ -77,7 +77,8 @@ class QuizModeViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(self.question.answerChoices?[0], for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-        button.tintColor = UIColor.white
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.white, for: .disabled)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
         button.titleLabel?.numberOfLines = 0
         button.clipsToBounds = true
@@ -93,7 +94,8 @@ class QuizModeViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(self.question.answerChoices?[1], for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-        button.tintColor = UIColor.white
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.white, for: .disabled)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
         button.titleLabel?.numberOfLines = 0
         button.clipsToBounds = true
@@ -109,7 +111,8 @@ class QuizModeViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(self.question.answerChoices?[2], for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-        button.tintColor = UIColor.white
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.white, for: .disabled)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
         button.titleLabel?.numberOfLines = 0
         button.clipsToBounds = true
@@ -125,7 +128,8 @@ class QuizModeViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(self.question.answerChoices?[3], for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-        button.tintColor = UIColor.white
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.white, for: .disabled)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
         button.titleLabel?.numberOfLines = 0
         button.clipsToBounds = true
@@ -224,6 +228,7 @@ class QuizModeViewController: UIViewController {
         optionXButton.isEnabled = false
         optionYButton.isEnabled = false
         optionZButton.isEnabled = false
+        
     }
     
     func makeCorrectAnswerButtonGreen() {
