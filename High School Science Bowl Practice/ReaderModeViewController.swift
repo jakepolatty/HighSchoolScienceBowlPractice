@@ -13,7 +13,6 @@ class ReaderModeViewController: UIViewController {
     var index: Int = 0
     var seconds: Int = 0
     var timer = Timer()
-    var isTimerRunning = false
     
     lazy var mainMenuButton: UIBarButtonItem? = {
         let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))

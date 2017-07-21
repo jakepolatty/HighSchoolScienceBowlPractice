@@ -18,6 +18,9 @@ extension Question {
 class QuizModeViewController: UIViewController {
     var category: Category?
     var statsTracker: QuizModeStats?
+    var seconds: Int = 10
+    var timer = Timer()
+    
     lazy var question: Question = {
         guard let category = self.category else {
             return QuestionJSONParser.shared.getMCQuestion()
@@ -140,6 +143,15 @@ class QuizModeViewController: UIViewController {
         return button
     }()
     
+    lazy var timerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightThin)
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+        label.text = "\(self.seconds) Seconds Left"
+        return label
+    }()
+    
     init(category: Category?, stats: QuizModeStats?) {
         self.category = category
         self.statsTracker = stats
@@ -155,6 +167,7 @@ class QuizModeViewController: UIViewController {
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.leftBarButtonItem = finishSetButton
         self.navigationItem.title = "Quiz Mode"
+        runTimer()
     }
 
     override func viewWillLayoutSubviews() {
@@ -216,6 +229,12 @@ class QuizModeViewController: UIViewController {
             optionZButton.trailingAnchor.constraint(equalTo: optionYButton.trailingAnchor),
             optionZButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        view.addSubview(timerLabel)
+        NSLayoutConstraint.activate([
+            timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
+        ])
     }
     
     func finishSet() {
@@ -228,7 +247,8 @@ class QuizModeViewController: UIViewController {
         optionXButton.isEnabled = false
         optionYButton.isEnabled = false
         optionZButton.isEnabled = false
-        
+        timer.invalidate()
+        timerLabel.isHidden = true
     }
     
     func makeCorrectAnswerButtonGreen() {
@@ -293,5 +313,21 @@ class QuizModeViewController: UIViewController {
     func loadNextQuestion() {
         let nextQuestionController = QuizModeViewController(category: category, stats: statsTracker)
         navigationController?.pushViewController(nextQuestionController, animated: true)
+    }
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuizModeViewController.updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer() {
+        if seconds < 1 {
+            timer.invalidate()
+            timerLabel.text = "Time's Up"
+            statsTracker?.numberNotAnswered += 1
+            optionSelected()
+        } else {
+            seconds -= 1
+            timerLabel.text = "\(seconds) Seconds Left"
+        }
     }
 }
