@@ -111,7 +111,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         
         view.addSubview(setChooserHeader)
         NSLayoutConstraint.activate([
-            setChooserHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
+            setChooserHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20),
             setChooserHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -128,7 +128,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
             startSetButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 44),
             startSetButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 120),
             startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
+            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
         ])
         
         view.addSubview(timePickerHeader)

@@ -180,7 +180,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(topicHeader)
         NSLayoutConstraint.activate([
-            topicHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
+            topicHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20),
             topicHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -264,7 +264,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             roundPicker.bottomAnchor.constraint(equalTo: startSetButton.topAnchor, constant: -20),
             startSetButton.widthAnchor.constraint(equalToConstant: 120),
             startSetButton.heightAnchor.constraint(equalToConstant: 44),
-            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
             startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
