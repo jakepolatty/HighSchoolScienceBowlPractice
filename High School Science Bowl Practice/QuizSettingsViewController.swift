@@ -21,13 +21,16 @@ extension UIButton {
     }
 }
 
-class QuizSettingsViewController: UIViewController {
+class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
     static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+    
+    let tossupTimePickerData = [["10 Seconds", "15 Seconds", "20 Seconds", "25 Seconds", "30 Seconds"]]
+    let bonusTimePickerData = [["10 Seconds", "15 Seconds", "20 Seconds", "25 Seconds", "30 Seconds", "35 Seconds", "40 Seconds"]]
     var category: Category?
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(QuizSettingsViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(QuizSettingsViewController.returnMainMenu))
         return button
     }()
     
@@ -158,12 +161,59 @@ class QuizSettingsViewController: UIViewController {
         button.addTarget(self, action: #selector(QuizSettingsViewController.startQuizMode), for: .touchUpInside)
         return button
     }()
+    
+    lazy var timePickerHeader: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Select Question Time Limits:"
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
+        return label
+    }()
+    
+    lazy var tossupTimeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Tossup:"
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
+        return label
+    }()
+    
+    lazy var tossupTimePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.layer.cornerRadius = 10
+        return picker
+    }()
+    
+    lazy var bonusTimeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Bonus:"
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
+        return label
+    }()
+    
+    lazy var bonusTimePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.layer.cornerRadius = 10
+        return picker
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Quiz Mode"
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        tossupTimePicker.delegate = self
+        tossupTimePicker.dataSource = self
+        bonusTimePicker.delegate = self
+        bonusTimePicker.dataSource = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -171,7 +221,7 @@ class QuizSettingsViewController: UIViewController {
         
         view.addSubview(topicHeader)
         NSLayoutConstraint.activate([
-            topicHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
+            topicHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20),
             topicHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -241,14 +291,50 @@ class QuizSettingsViewController: UIViewController {
         NSLayoutConstraint.activate([
             startSetButton.widthAnchor.constraint(equalToConstant: 120),
             startSetButton.heightAnchor.constraint(equalToConstant: 44),
-            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
             startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        view.addSubview(timePickerHeader)
+        NSLayoutConstraint.activate([
+            timePickerHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timePickerHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 10)
+        ])
+        
+        view.addSubview(tossupTimeLabel)
+        NSLayoutConstraint.activate([
+            tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 15),
+            tossupTimeLabel.topAnchor.constraint(equalTo: timePickerHeader.bottomAnchor, constant: 20)
+        ])
+        
+        view.addSubview(tossupTimePicker)
+        NSLayoutConstraint.activate([
+            tossupTimePicker.widthAnchor.constraint(equalToConstant: 140),
+            tossupTimePicker.heightAnchor.constraint(equalToConstant: 50),
+            tossupTimePicker.trailingAnchor.constraint(equalTo: timePickerHeader.trailingAnchor, constant: -15),
+            tossupTimePicker.centerYAnchor.constraint(equalTo: tossupTimeLabel.centerYAnchor)
+        ])
+        
+        view.addSubview(bonusTimeLabel)
+        NSLayoutConstraint.activate([
+            bonusTimeLabel.leadingAnchor.constraint(equalTo: tossupTimeLabel.leadingAnchor),
+            bonusTimeLabel.topAnchor.constraint(equalTo: tossupTimeLabel.bottomAnchor, constant: 40)
+        ])
+        
+        view.addSubview(bonusTimePicker)
+        NSLayoutConstraint.activate([
+            bonusTimePicker.widthAnchor.constraint(equalToConstant: 140),
+            bonusTimePicker.heightAnchor.constraint(equalToConstant: 50),
+            bonusTimePicker.leadingAnchor.constraint(equalTo: tossupTimePicker.leadingAnchor),
+            bonusTimePicker.centerYAnchor.constraint(equalTo: bonusTimeLabel.centerYAnchor)
         ])
     }
     
     func startQuizMode() {
         let category = getCategoryForToggle()
-        let studyController = QuizModeViewController(category: category, stats: QuizModeStats())
+        let tossupTime = getTossupTimeSelected()
+        let bonusTime = getBonusTimeSelected()
+        let studyController = QuizModeViewController(category: category, stats: QuizModeStats(), tossupTime: tossupTime, bonusTime: bonusTime)
         navigationController?.pushViewController(studyController, animated: true)
     }
     
@@ -325,6 +411,66 @@ class QuizSettingsViewController: UIViewController {
             return Category.physics
         } else {
             return nil
+        }
+    }
+    
+    // MARK: - Picker Data Source
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if pickerView == tossupTimePicker {
+            return tossupTimePickerData.count
+        } else if pickerView == bonusTimePicker {
+            return bonusTimePickerData.count
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == tossupTimePicker {
+            return tossupTimePickerData[component].count
+        } else if pickerView == bonusTimePicker {
+            return bonusTimePickerData[component].count
+        } else {
+            return 0
+        }
+    }
+    
+    // MARK: - Picker Delegate
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let title: String
+        if pickerView == tossupTimePicker {
+            title = tossupTimePickerData[component][row]
+        } else if pickerView == bonusTimePicker {
+            title = bonusTimePickerData[component][row]
+        } else {
+            title = ""
+        }
+        let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
+        return attributedString
+    }
+    
+    func getTossupTimeSelected() -> Int {
+        let index = tossupTimePicker.selectedRow(inComponent: 0)
+        switch index {
+        case 0: return 10
+        case 1: return 15
+        case 2: return 20
+        case 3: return 25
+        case 4: return 30
+        default: return 0
+        }
+    }
+    
+    func getBonusTimeSelected() -> Int {
+        let index = bonusTimePicker.selectedRow(inComponent: 0)
+        switch index {
+        case 0: return 10
+        case 1: return 15
+        case 2: return 20
+        case 3: return 25
+        case 4: return 30
+        case 5: return 35
+        case 6: return 40
+        default: return 0
         }
     }
 }

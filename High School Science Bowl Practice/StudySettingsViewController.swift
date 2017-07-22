@@ -17,7 +17,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     var category: Category?
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(StudySettingsViewController.returnMainMenu))
+        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudySettingsViewController.returnMainMenu))
         return button
     }()
     
@@ -180,7 +180,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(topicHeader)
         NSLayoutConstraint.activate([
-            topicHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
+            topicHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20),
             topicHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -248,7 +248,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         
         view.addSubview(roundHeader)
         NSLayoutConstraint.activate([
-            roundHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 15),
+            roundHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 10),
             roundHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -264,7 +264,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             roundPicker.bottomAnchor.constraint(equalTo: startSetButton.topAnchor, constant: -20),
             startSetButton.widthAnchor.constraint(equalToConstant: 120),
             startSetButton.heightAnchor.constraint(equalToConstant: 44),
-            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
             startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }

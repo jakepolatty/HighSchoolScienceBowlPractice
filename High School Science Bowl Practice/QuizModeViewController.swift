@@ -18,12 +18,11 @@ extension Question {
 class QuizModeViewController: UIViewController {
     var category: Category?
     var statsTracker: QuizModeStats?
-    lazy var question: Question = {
-        guard let category = self.category else {
-            return QuestionJSONParser.shared.getMCQuestion()
-        }
-        return QuestionJSONParser.shared.getMCQuestionForCategory(category)
-    }()
+    var seconds: Int = 0
+    var tossupTime: Int = 0
+    var bonusTime: Int = 0
+    var timer = Timer()
+    var question: Question?
     
     lazy var finishSetButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Finish Set", style: .plain, target: self, action: #selector(QuizModeViewController.finishSet))
@@ -31,7 +30,7 @@ class QuizModeViewController: UIViewController {
     }()
     
     lazy var nextQuestionButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Next Question", style: .plain, target: self, action: #selector(QuizModeViewController.loadNextQuestion))
+        let button = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(QuizModeViewController.loadNextQuestion))
         return button
     }()
     
@@ -40,7 +39,9 @@ class QuizModeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        label.text = "Question Set \(self.question.setNumber) Round \(self.question.roundNumber)"
+        if let setNumber = self.question?.setNumber, let roundNumber = self.question?.roundNumber {
+            label.text = "Question Set \(setNumber) Round \(roundNumber)"
+        }
         return label
     }()
     
@@ -49,7 +50,9 @@ class QuizModeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        label.text = "Question \(self.question.questionNumber) \(self.question.questionType)"
+        if let questionNumber = self.question?.questionNumber, let questionType = self.question?.questionType {
+            label.text = "Question \(questionNumber) \(questionType)"
+        }
         return label
     }()
     
@@ -58,7 +61,9 @@ class QuizModeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        label.text = "\(String(describing: self.question.category)) \(String(describing: self.question.answerType))"
+        if let category = self.question?.category, let answerType = self.question?.answerType {
+            label.text = "\(category) \(answerType)"
+        }
         return label
     }()
     
@@ -66,16 +71,16 @@ class QuizModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightMedium)
         label.textColor = UIColor.white
-        label.text = self.question.questionText
+        label.text = self.question?.questionText
         return label
     }()
     
     lazy var optionWButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(self.question.answerChoices?[0], for: .normal)
+        button.setTitle(self.question?.answerChoices?[0], for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.white, for: .disabled)
@@ -92,7 +97,7 @@ class QuizModeViewController: UIViewController {
     lazy var optionXButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(self.question.answerChoices?[1], for: .normal)
+        button.setTitle(self.question?.answerChoices?[1], for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.white, for: .disabled)
@@ -109,7 +114,7 @@ class QuizModeViewController: UIViewController {
     lazy var optionYButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(self.question.answerChoices?[2], for: .normal)
+        button.setTitle(self.question?.answerChoices?[2], for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.white, for: .disabled)
@@ -126,7 +131,7 @@ class QuizModeViewController: UIViewController {
     lazy var optionZButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(self.question.answerChoices?[3], for: .normal)
+        button.setTitle(self.question?.answerChoices?[3], for: .normal)
         button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.white, for: .disabled)
@@ -140,9 +145,30 @@ class QuizModeViewController: UIViewController {
         return button
     }()
     
-    init(category: Category?, stats: QuizModeStats?) {
+    lazy var timerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightThin)
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+        label.text = "\(self.seconds) Seconds Left"
+        return label
+    }()
+    
+    init(category: Category?, stats: QuizModeStats?, tossupTime: Int, bonusTime: Int) {
         self.category = category
+        if let category = category {
+            self.question = QuestionJSONParser.shared.getMCQuestionForCategory(category)
+        } else {
+            self.question = QuestionJSONParser.shared.getMCQuestion()
+        }
         self.statsTracker = stats
+        self.tossupTime = tossupTime
+        self.bonusTime = bonusTime
+        if self.question?.questionType == .tossup {
+            self.seconds = tossupTime
+        } else {
+            self.seconds = bonusTime
+        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -155,6 +181,7 @@ class QuizModeViewController: UIViewController {
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.leftBarButtonItem = finishSetButton
         self.navigationItem.title = "Quiz Mode"
+        runTimer()
     }
 
     override func viewWillLayoutSubviews() {
@@ -216,6 +243,12 @@ class QuizModeViewController: UIViewController {
             optionZButton.trailingAnchor.constraint(equalTo: optionYButton.trailingAnchor),
             optionZButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        view.addSubview(timerLabel)
+        NSLayoutConstraint.activate([
+            timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
+        ])
     }
     
     func finishSet() {
@@ -228,11 +261,11 @@ class QuizModeViewController: UIViewController {
         optionXButton.isEnabled = false
         optionYButton.isEnabled = false
         optionZButton.isEnabled = false
-        
+        timer.invalidate()
     }
     
     func makeCorrectAnswerButtonGreen() {
-        let answerletter = question.getAnswerLetter()
+        let answerletter = question?.getAnswerLetter()
         if answerletter == "W" {
             optionWButton.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
         } else if answerletter == "X" {
@@ -252,7 +285,8 @@ class QuizModeViewController: UIViewController {
     
     func selectOptionW() {
         optionSelected()
-        if question.getAnswerLetter() == "W" {
+        timerLabel.isHidden = true
+        if question?.getAnswerLetter() == "W" {
             statsTracker?.numberCorrect += 1
         } else {
             optionWButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
@@ -262,7 +296,8 @@ class QuizModeViewController: UIViewController {
     
     func selectOptionX() {
         optionSelected()
-        if question.getAnswerLetter() == "X" {
+        timerLabel.isHidden = true
+        if question?.getAnswerLetter() == "X" {
             statsTracker?.numberCorrect += 1
         } else {
             optionXButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
@@ -272,7 +307,8 @@ class QuizModeViewController: UIViewController {
     
     func selectOptionY() {
         optionSelected()
-        if question.getAnswerLetter() == "Y" {
+        timerLabel.isHidden = true
+        if question?.getAnswerLetter() == "Y" {
             statsTracker?.numberCorrect += 1
         } else {
             optionYButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
@@ -282,7 +318,8 @@ class QuizModeViewController: UIViewController {
     
     func selectOptionZ() {
         optionSelected()
-        if question.getAnswerLetter() == "Z" {
+        timerLabel.isHidden = true
+        if question?.getAnswerLetter() == "Z" {
             statsTracker?.numberCorrect += 1
         } else {
             optionZButton.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
@@ -291,7 +328,22 @@ class QuizModeViewController: UIViewController {
     }
     
     func loadNextQuestion() {
-        let nextQuestionController = QuizModeViewController(category: category, stats: statsTracker)
+        let nextQuestionController = QuizModeViewController(category: category, stats: statsTracker, tossupTime: tossupTime, bonusTime: bonusTime)
         navigationController?.pushViewController(nextQuestionController, animated: true)
+    }
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuizModeViewController.updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer() {
+        if seconds == 1 {
+            timerLabel.text = "Time's Up"
+            statsTracker?.numberNotAnswered += 1
+            optionSelected()
+        } else {
+            seconds -= 1
+            timerLabel.text = "\(seconds) Seconds Left"
+        }
     }
 }
