@@ -371,4 +371,17 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
         return attributedString
     }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.textAlignment = .center
+            pickerLabel?.font = UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightRegular)
+        }
+        let title = pickerData[component][row]
+        pickerLabel?.text = title
+        pickerLabel?.textColor = UIColor.white
+        return pickerLabel!
+    }
 }
