@@ -161,10 +161,14 @@ class MainMenuViewController: UIViewController {
     }
     
     func openAboutPage() {
-    
+        let aboutPageController = AboutPageViewController()
+        let navigationController = UINavigationController(rootViewController: aboutPageController)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
     func openHelpPage() {
-    
+        let helpPageController = HelpPageViewController()
+        let navigationController = UINavigationController(rootViewController: helpPageController)
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
