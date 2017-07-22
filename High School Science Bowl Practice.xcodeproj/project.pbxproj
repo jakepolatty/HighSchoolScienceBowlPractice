@@ -24,8 +24,8 @@
 		844E83391F2170150081555B /* QuizSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E83381F2170150081555B /* QuizSettingsViewController.swift */; };
 		844E833B1F218C660081555B /* QuizModeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E833A1F218C660081555B /* QuizModeStats.swift */; };
 		844E833D1F2190820081555B /* QuizModeStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E833C1F2190820081555B /* QuizModeStatsViewController.swift */; };
-		8477B66F1F230E3300E2791F /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477B66E1F230E3300E2791F /* AboutPageViewController.swift */; };
-		8477B6711F230F0200E2791F /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477B6701F230F0200E2791F /* HelpPageViewController.swift */; };
+		8477B66F1F230E3300E2791F /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477B66E1F230E3300E2791F /* HelpPageViewController.swift */; };
+		8477B6711F230F0200E2791F /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477B6701F230F0200E2791F /* AboutPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +48,8 @@
 		844E83381F2170150081555B /* QuizSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSettingsViewController.swift; sourceTree = "<group>"; };
 		844E833A1F218C660081555B /* QuizModeStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizModeStats.swift; sourceTree = "<group>"; };
 		844E833C1F2190820081555B /* QuizModeStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizModeStatsViewController.swift; sourceTree = "<group>"; };
-		8477B66E1F230E3300E2791F /* AboutPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
-		8477B6701F230F0200E2791F /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
+		8477B66E1F230E3300E2791F /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
+		8477B6701F230F0200E2791F /* AboutPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +116,8 @@
 				1C2985CD1F1EE7B1007F96FC /* StudyModeViewController.swift */,
 				1C2985CB1F1EE64B007F96FC /* StudySettingsViewController.swift */,
 				844E83361F2119C60081555B /* MainMenuViewController.swift */,
-				8477B66E1F230E3300E2791F /* AboutPageViewController.swift */,
-				8477B6701F230F0200E2791F /* HelpPageViewController.swift */,
+				8477B66E1F230E3300E2791F /* HelpPageViewController.swift */,
+				8477B6701F230F0200E2791F /* AboutPageViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -204,10 +204,10 @@
 				1CAD659D1F1581AB00D1A289 /* Question.swift in Sources */,
 				1C2985C81F1EABCC007F96FC /* ReaderModeViewController.swift in Sources */,
 				1CAD658A1F1573C100D1A289 /* AppDelegate.swift in Sources */,
-				8477B66F1F230E3300E2791F /* AboutPageViewController.swift in Sources */,
+				8477B66F1F230E3300E2791F /* HelpPageViewController.swift in Sources */,
 				1CAD659F1F1581C200D1A289 /* Category.swift in Sources */,
 				1C2985CC1F1EE64B007F96FC /* StudySettingsViewController.swift in Sources */,
-				8477B6711F230F0200E2791F /* HelpPageViewController.swift in Sources */,
+				8477B6711F230F0200E2791F /* AboutPageViewController.swift in Sources */,
 				1CAD65A11F158B3100D1A289 /* QuizModeViewController.swift in Sources */,
 				1C2985CE1F1EE7B1007F96FC /* StudyModeViewController.swift in Sources */,
 			);
