@@ -8,14 +8,38 @@
 
 import UIKit
 
+extension UIImage {
+    class func imageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: 1, height: 1))
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()!
+        
+        context.setFillColor(color.cgColor)
+        context.fill(rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        let barColorPixel = UIImage.imageWithColor(color: UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.35))
+        UINavigationBar.appearance().setBackgroundImage(barColorPixel, for: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = barColorPixel
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().layer.cornerRadius = 10
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         return true
     }
 
@@ -40,7 +64,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

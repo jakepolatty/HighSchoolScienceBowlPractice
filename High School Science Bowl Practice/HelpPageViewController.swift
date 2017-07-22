@@ -18,7 +18,7 @@ class HelpPageViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "This help page provides information about the app's different modes and settings."
+        label.text = "This page provides information about the app's different modes and settings."
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightBold)
         return label
@@ -57,7 +57,7 @@ class HelpPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        self.navigationItem.title = "About"
+        self.navigationItem.title = "Help"
         self.navigationItem.leftBarButtonItem = mainMenuButton
     }
     

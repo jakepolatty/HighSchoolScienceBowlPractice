@@ -18,7 +18,7 @@ class AboutPageViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "This about page provides information about the app's creation and licensing."
+        label.text = "This page provides information about the app's creation and licensing."
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightBold)
         return label
