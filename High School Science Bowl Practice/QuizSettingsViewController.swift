@@ -303,15 +303,15 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         
         view.addSubview(tossupTimeLabel)
         NSLayoutConstraint.activate([
-            tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 15),
+            tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 30),
             tossupTimeLabel.topAnchor.constraint(equalTo: timePickerHeader.bottomAnchor, constant: 20)
         ])
         
         view.addSubview(tossupTimePicker)
         NSLayoutConstraint.activate([
-            tossupTimePicker.widthAnchor.constraint(equalToConstant: 140),
+            tossupTimePicker.widthAnchor.constraint(equalToConstant: 100),
             tossupTimePicker.heightAnchor.constraint(equalToConstant: 50),
-            tossupTimePicker.trailingAnchor.constraint(equalTo: timePickerHeader.trailingAnchor, constant: -15),
+            tossupTimePicker.trailingAnchor.constraint(equalTo: timePickerHeader.trailingAnchor, constant: -30),
             tossupTimePicker.centerYAnchor.constraint(equalTo: tossupTimeLabel.centerYAnchor)
         ])
         
@@ -323,7 +323,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         
         view.addSubview(bonusTimePicker)
         NSLayoutConstraint.activate([
-            bonusTimePicker.widthAnchor.constraint(equalToConstant: 140),
+            bonusTimePicker.widthAnchor.constraint(equalToConstant: 100),
             bonusTimePicker.heightAnchor.constraint(equalToConstant: 50),
             bonusTimePicker.leadingAnchor.constraint(equalTo: tossupTimePicker.leadingAnchor),
             bonusTimePicker.centerYAnchor.constraint(equalTo: bonusTimeLabel.centerYAnchor)
@@ -435,17 +435,25 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     // MARK: - Picker Delegate
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.textAlignment = .center
+        }
         let title: String
         if pickerView == tossupTimePicker {
             title = tossupTimePickerData[component][row]
+            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightRegular)
         } else if pickerView == bonusTimePicker {
             title = bonusTimePickerData[component][row]
+            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightRegular)
         } else {
             title = ""
         }
-        let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
-        return attributedString
+        pickerLabel?.text = title
+        pickerLabel?.textColor = UIColor.white
+        return pickerLabel!
     }
     
     func getTossupTimeSelected() -> Int {
