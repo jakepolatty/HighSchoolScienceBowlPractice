@@ -138,7 +138,8 @@ class StudyModeViewController: UIViewController {
         
         scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0)
+        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        scrollView.showsVerticalScrollIndicator = true
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
@@ -147,53 +148,48 @@ class StudyModeViewController: UIViewController {
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        let contentView = UIView()
-        contentView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(contentView)
-        
-        contentView.addSubview(roundSetNumLabel)
+        scrollView.addSubview(roundSetNumLabel)
         NSLayoutConstraint.activate([
-            roundSetNumLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 94),
+            roundSetNumLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
             roundSetNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
-        contentView.addSubview(questionNumLabel)
+        scrollView.addSubview(questionNumLabel)
         NSLayoutConstraint.activate([
             questionNumLabel.topAnchor.constraint(equalTo: roundSetNumLabel.bottomAnchor, constant: 10),
             questionNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        contentView.addSubview(catTypeLabel)
+        scrollView.addSubview(catTypeLabel)
         NSLayoutConstraint.activate([
             catTypeLabel.topAnchor.constraint(equalTo: questionNumLabel.bottomAnchor, constant: 10),
             catTypeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        contentView.addSubview(questionTextLabel)
+        scrollView.addSubview(questionTextLabel)
         NSLayoutConstraint.activate([
             questionTextLabel.topAnchor.constraint(equalTo: catTypeLabel.bottomAnchor, constant: 10),
             questionTextLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
-        contentView.addSubview(showAnswerButton)
+        scrollView.addSubview(showAnswerButton)
         NSLayoutConstraint.activate([
             showAnswerButton.heightAnchor.constraint(equalToConstant: 44),
             showAnswerButton.widthAnchor.constraint(equalToConstant: 120),
             showAnswerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
-        contentView.addSubview(questionAnswerLabel)
+        scrollView.addSubview(questionAnswerLabel)
         NSLayoutConstraint.activate([
-            questionAnswerLabel.centerYAnchor.constraint(equalTo: showAnswerButton.centerYAnchor),
+            questionAnswerLabel.topAnchor.constraint(equalTo: showAnswerButton.topAnchor),
             questionAnswerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionAnswerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         questionAnswerLabel.isHidden = true
         
         if let answerOptionsLabel = answerOptionsLabel {
-            contentView.addSubview(answerOptionsLabel)
+            scrollView.addSubview(answerOptionsLabel)
             NSLayoutConstraint.activate([
                 answerOptionsLabel.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 20),
                 answerOptionsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -206,24 +202,17 @@ class StudyModeViewController: UIViewController {
             ])
         }
         
-//        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: contentView.frame.height)
-//        if contentView.frame.height < view.bounds.height - 64 {
-//            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: view.bounds.height - 64)
-//            NSLayoutConstraint.activate([
-//                showAnswerButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
-//            ])
-//        } else {
-//            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: contentView.frame.height)
-//            if let answerOptionsLabel = answerOptionsLabel {
-//                NSLayoutConstraint.activate([
-//                    showAnswerButton.topAnchor.constraint(equalTo: answerOptionsLabel.bottomAnchor, constant: 30)
-//                ])
-//            } else {
-//                NSLayoutConstraint.activate([
-//                    showAnswerButton.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 30),
-//                ])
-//            }
-//        }
+        let height: CGFloat
+        if questionAnswerLabel.frame.height > showAnswerButton.frame.height {
+            height = questionAnswerLabel.frame.origin.y + questionAnswerLabel.frame.height + 30
+        } else {
+            height = showAnswerButton.frame.origin.y + showAnswerButton.frame.height + 30
+        }
+        if height <= scrollView.frame.height {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
+        } else {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: height)
+        }
     }
     
     func loadNextQuestion() {
