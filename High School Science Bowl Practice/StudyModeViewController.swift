@@ -25,6 +25,7 @@ class StudyModeViewController: UIViewController {
             return QuestionJSONParser.shared.getQuestionForCategory(category, andRound: self.round)
         }
     }()
+    var scrollView: UIScrollView!
     
     lazy var mainMenuButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
@@ -129,60 +130,100 @@ class StudyModeViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = nextQuestionButton
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Study Mode"
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        view.addSubview(roundSetNumLabel)
+        scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0)
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            roundSetNumLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
+            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        let contentView = UIView()
+        contentView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(roundSetNumLabel)
+        NSLayoutConstraint.activate([
+            roundSetNumLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 94),
             roundSetNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
-        view.addSubview(questionNumLabel)
+        contentView.addSubview(questionNumLabel)
         NSLayoutConstraint.activate([
             questionNumLabel.topAnchor.constraint(equalTo: roundSetNumLabel.bottomAnchor, constant: 10),
             questionNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(catTypeLabel)
+        contentView.addSubview(catTypeLabel)
         NSLayoutConstraint.activate([
             catTypeLabel.topAnchor.constraint(equalTo: questionNumLabel.bottomAnchor, constant: 10),
             catTypeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(questionTextLabel)
+        contentView.addSubview(questionTextLabel)
         NSLayoutConstraint.activate([
             questionTextLabel.topAnchor.constraint(equalTo: catTypeLabel.bottomAnchor, constant: 10),
             questionTextLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
-        view.addSubview(showAnswerButton)
+        contentView.addSubview(showAnswerButton)
         NSLayoutConstraint.activate([
             showAnswerButton.heightAnchor.constraint(equalToConstant: 44),
             showAnswerButton.widthAnchor.constraint(equalToConstant: 120),
-            showAnswerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
             showAnswerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
-        view.addSubview(questionAnswerLabel)
+        contentView.addSubview(questionAnswerLabel)
         NSLayoutConstraint.activate([
-            questionAnswerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            questionAnswerLabel.centerYAnchor.constraint(equalTo: showAnswerButton.centerYAnchor),
             questionAnswerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionAnswerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         questionAnswerLabel.isHidden = true
         
         if let answerOptionsLabel = answerOptionsLabel {
-            view.addSubview(answerOptionsLabel)
+            contentView.addSubview(answerOptionsLabel)
             NSLayoutConstraint.activate([
                 answerOptionsLabel.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 20),
                 answerOptionsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                answerOptionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+                answerOptionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                showAnswerButton.topAnchor.constraint(equalTo: answerOptionsLabel.bottomAnchor, constant: 30)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                showAnswerButton.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 30)
             ])
         }
+        
+//        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: contentView.frame.height)
+//        if contentView.frame.height < view.bounds.height - 64 {
+//            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: view.bounds.height - 64)
+//            NSLayoutConstraint.activate([
+//                showAnswerButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
+//            ])
+//        } else {
+//            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: contentView.frame.height)
+//            if let answerOptionsLabel = answerOptionsLabel {
+//                NSLayoutConstraint.activate([
+//                    showAnswerButton.topAnchor.constraint(equalTo: answerOptionsLabel.bottomAnchor, constant: 30)
+//                ])
+//            } else {
+//                NSLayoutConstraint.activate([
+//                    showAnswerButton.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 30),
+//                ])
+//            }
+//        }
     }
     
     func loadNextQuestion() {

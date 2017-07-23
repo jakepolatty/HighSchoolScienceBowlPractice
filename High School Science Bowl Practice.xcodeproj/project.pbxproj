@@ -154,6 +154,7 @@
 				TargetAttributes = {
 					1CAD65851F1573C100D1A289 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = ZJKZT23SAZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -332,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZJKZT23SAZ;
 				INFOPLIST_FILE = "High School Science Bowl Practice/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakepolatty.High-School-Science-Bowl-Practice";
@@ -345,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZJKZT23SAZ;
 				INFOPLIST_FILE = "High School Science Bowl Practice/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakepolatty.High-School-Science-Bowl-Practice";
