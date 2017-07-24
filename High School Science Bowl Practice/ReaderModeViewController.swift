@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ReaderModeViewController: UIViewController {
+class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     var questionSet: [Question]?
     var index: Int = 0
     var seconds: Int = 0
     var tossupTime: Int = 0
     var bonusTime: Int = 0
     var timer = Timer()
+    var contentOffset: CGFloat = 0
+    var scrollView: UIScrollView = UIScrollView()
     
     lazy var mainMenuButton: UIBarButtonItem? = {
         let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
@@ -152,65 +154,91 @@ class ReaderModeViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = nextQuestionButton
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Reader Mode"
+        scrollView.delegate = self
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        view.addSubview(roundSetNumLabel)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            roundSetNumLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
+            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        scrollView.addSubview(roundSetNumLabel)
+        NSLayoutConstraint.activate([
+            roundSetNumLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
             roundSetNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
-        view.addSubview(questionNumLabel)
+        scrollView.addSubview(questionNumLabel)
         NSLayoutConstraint.activate([
             questionNumLabel.topAnchor.constraint(equalTo: roundSetNumLabel.bottomAnchor, constant: 10),
             questionNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(catTypeLabel)
+        scrollView.addSubview(catTypeLabel)
         NSLayoutConstraint.activate([
             catTypeLabel.topAnchor.constraint(equalTo: questionNumLabel.bottomAnchor, constant: 10),
             catTypeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(questionTextLabel)
+        scrollView.addSubview(questionTextLabel)
         NSLayoutConstraint.activate([
             questionTextLabel.topAnchor.constraint(equalTo: catTypeLabel.bottomAnchor, constant: 10),
             questionTextLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
-        view.addSubview(questionAnswerLabel)
+        scrollView.addSubview(questionAnswerLabel)
         NSLayoutConstraint.activate([
             questionAnswerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionAnswerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
-        view.addSubview(startTimerButton)
+        scrollView.addSubview(startTimerButton)
         NSLayoutConstraint.activate([
             startTimerButton.widthAnchor.constraint(equalToConstant: 120),
             startTimerButton.heightAnchor.constraint(equalToConstant: 44),
             startTimerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startTimerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            questionAnswerLabel.bottomAnchor.constraint(equalTo: startTimerButton.topAnchor, constant: -10),
+            startTimerButton.topAnchor.constraint(equalTo: questionAnswerLabel.bottomAnchor, constant: 10),
         ])
         
-        view.addSubview(timerLabel)
+        scrollView.addSubview(timerLabel)
         NSLayoutConstraint.activate([
             timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             timerLabel.centerYAnchor.constraint(equalTo: startTimerButton.centerYAnchor)
         ])
         
         if let answerOptionsLabel = answerOptionsLabel {
-            view.addSubview(answerOptionsLabel)
+            scrollView.addSubview(answerOptionsLabel)
             NSLayoutConstraint.activate([
                 answerOptionsLabel.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 20),
                 answerOptionsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                answerOptionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+                answerOptionsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                questionAnswerLabel.topAnchor.constraint(equalTo: answerOptionsLabel.bottomAnchor, constant: 30)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                questionAnswerLabel.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 30)
             ])
         }
+        
+        let height = startTimerButton.frame.origin.y + startTimerButton.frame.height + 30
+        if height <= scrollView.frame.height {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
+        } else {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: height)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.contentOffset = CGPoint(x: 0, y: contentOffset)
     }
     
     func loadNextQuestion() {
@@ -246,5 +274,9 @@ class ReaderModeViewController: UIViewController {
             seconds -= 1
             timerLabel.text = "\(seconds) Seconds Left"
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        contentOffset = scrollView.contentOffset.y
     }
 }

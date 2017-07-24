@@ -25,7 +25,6 @@ class StudyModeViewController: UIViewController {
             return QuestionJSONParser.shared.getQuestionForCategory(category, andRound: self.round)
         }
     }()
-    var scrollView: UIScrollView!
     
     lazy var mainMenuButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
@@ -136,10 +135,9 @@ class StudyModeViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        scrollView = UIScrollView()
+        let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        scrollView.showsVerticalScrollIndicator = true
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),

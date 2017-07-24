@@ -15,7 +15,7 @@ extension Question {
     }
 }
 
-class QuizModeViewController: UIViewController {
+class QuizModeViewController: UIViewController, UIScrollViewDelegate {
     var category: Category?
     var statsTracker: QuizModeStats?
     var seconds: Int = 0
@@ -23,6 +23,8 @@ class QuizModeViewController: UIViewController {
     var bonusTime: Int = 0
     var timer = Timer()
     var question: Question?
+    var contentOffset: CGFloat = 0
+    var scrollView: UIScrollView = UIScrollView()
     
     lazy var finishSetButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Finish Set", style: .plain, target: self, action: #selector(QuizModeViewController.finishSet))
@@ -181,38 +183,49 @@ class QuizModeViewController: UIViewController {
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.leftBarButtonItem = finishSetButton
         self.navigationItem.title = "Quiz Mode"
+        scrollView.delegate = self
         runTimer()
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        view.addSubview(roundSetNumLabel)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            roundSetNumLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
+            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        scrollView.addSubview(roundSetNumLabel)
+        NSLayoutConstraint.activate([
+            roundSetNumLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
             roundSetNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
-        view.addSubview(questionNumLabel)
+        scrollView.addSubview(questionNumLabel)
         NSLayoutConstraint.activate([
             questionNumLabel.topAnchor.constraint(equalTo: roundSetNumLabel.bottomAnchor, constant: 10),
             questionNumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(catTypeLabel)
+        scrollView.addSubview(catTypeLabel)
         NSLayoutConstraint.activate([
             catTypeLabel.topAnchor.constraint(equalTo: questionNumLabel.bottomAnchor, constant: 10),
             catTypeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(questionTextLabel)
+        scrollView.addSubview(questionTextLabel)
         NSLayoutConstraint.activate([
             questionTextLabel.topAnchor.constraint(equalTo: catTypeLabel.bottomAnchor, constant: 10),
             questionTextLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             questionTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
-        view.addSubview(optionWButton)
+        scrollView.addSubview(optionWButton)
         NSLayoutConstraint.activate([
             optionWButton.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 10),
             optionWButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -220,7 +233,7 @@ class QuizModeViewController: UIViewController {
             optionWButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        view.addSubview(optionXButton)
+        scrollView.addSubview(optionXButton)
         NSLayoutConstraint.activate([
             optionXButton.topAnchor.constraint(equalTo: optionWButton.bottomAnchor, constant: 7),
             optionXButton.leadingAnchor.constraint(equalTo: optionWButton.leadingAnchor),
@@ -228,7 +241,7 @@ class QuizModeViewController: UIViewController {
             optionXButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        view.addSubview(optionYButton)
+        scrollView.addSubview(optionYButton)
         NSLayoutConstraint.activate([
             optionYButton.topAnchor.constraint(equalTo: optionXButton.bottomAnchor, constant: 7),
             optionYButton.leadingAnchor.constraint(equalTo: optionXButton.leadingAnchor),
@@ -236,7 +249,7 @@ class QuizModeViewController: UIViewController {
             optionYButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        view.addSubview(optionZButton)
+        scrollView.addSubview(optionZButton)
         NSLayoutConstraint.activate([
             optionZButton.topAnchor.constraint(equalTo: optionYButton.bottomAnchor, constant: 7),
             optionZButton.leadingAnchor.constraint(equalTo: optionYButton.leadingAnchor),
@@ -244,11 +257,22 @@ class QuizModeViewController: UIViewController {
             optionZButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        view.addSubview(timerLabel)
+        scrollView.addSubview(timerLabel)
         NSLayoutConstraint.activate([
             timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            timerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
+            timerLabel.topAnchor.constraint(equalTo: optionZButton.bottomAnchor, constant: 30)
         ])
+        
+        let height = timerLabel.frame.origin.y + 20.5 + 30
+        if height <= scrollView.frame.height {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
+        } else {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: height)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.contentOffset = CGPoint(x: 0, y: contentOffset)
     }
     
     func finishSet() {
@@ -345,5 +369,9 @@ class QuizModeViewController: UIViewController {
             seconds -= 1
             timerLabel.text = "\(seconds) Seconds Left"
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        contentOffset = scrollView.contentOffset.y
     }
 }
