@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ReaderModeViewController: UIViewController {
+class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     var questionSet: [Question]?
     var index: Int = 0
     var seconds: Int = 0
     var tossupTime: Int = 0
     var bonusTime: Int = 0
     var timer = Timer()
+    var contentOffset: CGFloat = 0
+    var scrollView: UIScrollView = UIScrollView()
     
     lazy var mainMenuButton: UIBarButtonItem? = {
         let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
@@ -152,12 +154,12 @@ class ReaderModeViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = nextQuestionButton
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Reader Mode"
+        scrollView.delegate = self
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         view.addSubview(scrollView)
@@ -235,6 +237,10 @@ class ReaderModeViewController: UIViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        scrollView.contentOffset = CGPoint(x: 0, y: contentOffset)
+    }
+    
     func loadNextQuestion() {
         if let questionSet = questionSet {
             let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1, tossupTime: tossupTime, bonusTime: bonusTime)
@@ -268,5 +274,9 @@ class ReaderModeViewController: UIViewController {
             seconds -= 1
             timerLabel.text = "\(seconds) Seconds Left"
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        contentOffset = scrollView.contentOffset.y
     }
 }

@@ -15,7 +15,7 @@ extension Question {
     }
 }
 
-class QuizModeViewController: UIViewController {
+class QuizModeViewController: UIViewController, UIScrollViewDelegate {
     var category: Category?
     var statsTracker: QuizModeStats?
     var seconds: Int = 0
@@ -23,6 +23,8 @@ class QuizModeViewController: UIViewController {
     var bonusTime: Int = 0
     var timer = Timer()
     var question: Question?
+    var contentOffset: CGFloat = 0
+    var scrollView: UIScrollView = UIScrollView()
     
     lazy var finishSetButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Finish Set", style: .plain, target: self, action: #selector(QuizModeViewController.finishSet))
@@ -181,13 +183,13 @@ class QuizModeViewController: UIViewController {
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.leftBarButtonItem = finishSetButton
         self.navigationItem.title = "Quiz Mode"
+        scrollView.delegate = self
         runTimer()
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         view.addSubview(scrollView)
@@ -261,12 +263,16 @@ class QuizModeViewController: UIViewController {
             timerLabel.topAnchor.constraint(equalTo: optionZButton.bottomAnchor, constant: 30)
         ])
         
-        let height = timerLabel.frame.origin.y + timerLabel.frame.height + 30
+        let height = timerLabel.frame.origin.y + 20.5 + 30
         if height <= scrollView.frame.height {
             scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
         } else {
             scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: height)
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.contentOffset = CGPoint(x: 0, y: contentOffset)
     }
     
     func finishSet() {
@@ -363,5 +369,9 @@ class QuizModeViewController: UIViewController {
             seconds -= 1
             timerLabel.text = "\(seconds) Seconds Left"
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        contentOffset = scrollView.contentOffset.y
     }
 }
