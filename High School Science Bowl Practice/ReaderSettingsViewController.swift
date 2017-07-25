@@ -177,6 +177,10 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let tossupTime = getTossupTimeSelected()
         let bonusTime = getBonusTimeSelected()
         if ((roundNum == 16 || roundNum == 17) && (questionSetNum == 5 || questionSetNum == 6)) {
+            let alertController = UIAlertController(title: "Invalid Set", message: "The chosen question set is not available.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
         } else {
             let questionSet = QuestionJSONParser.shared.getQuestionSet(questionSetNum, forRound: roundNum)
             let readerController = ReaderModeViewController(questionSet: questionSet, index: 0, tossupTime: tossupTime, bonusTime: bonusTime)
