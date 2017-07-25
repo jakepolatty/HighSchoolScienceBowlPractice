@@ -54,13 +54,26 @@ class QuizModeStatsViewController: UIViewController {
         return pieChart
     }()
     
+    lazy var noResultsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "No Results Available"
+        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightLight)
+        if self.stats?.numberCorrect == 0 && self.stats?.numberIncorrect == 0 && self.stats?.numberNotAnswered == 0 {
+            label.isHidden = false
+        } else {
+            label.isHidden = true
+        }
+        return label
+    }()
+    
     func setChart() {
         var dataEntries: [PieChartDataEntry] = []
         var colors: [UIColor] = []
         if let correct = stats?.numberCorrect, let incorrect = stats?.numberIncorrect, let notAnswered = stats?.numberNotAnswered  {
             if correct > 0 {
                 let correctEntry = PieChartDataEntry(value: Double(correct), label: "Correct")
-                let percent = Int(correct / (correct + incorrect + notAnswered) * 100)
                 dataEntries.append(correctEntry)
                 colors.append(UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 0.5))
             }
@@ -77,6 +90,10 @@ class QuizModeStatsViewController: UIViewController {
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: nil)
         pieChartDataSet.colors = colors
         let pieChartData = PieChartData(dataSets: [pieChartDataSet])
+        let format = NumberFormatter()
+        format.maximumFractionDigits = 0
+        let formatter = DefaultValueFormatter(formatter: format)
+        pieChartData.setValueFormatter(formatter)
         statsPieChart.data = pieChartData
     }
     
@@ -119,6 +136,12 @@ class QuizModeStatsViewController: UIViewController {
             statsPieChart.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             statsPieChart.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             statsPieChart.heightAnchor.constraint(equalToConstant: view.frame.width - 40)
+        ])
+        
+        view.addSubview(noResultsLabel)
+        NSLayoutConstraint.activate([
+            noResultsLabel.centerXAnchor.constraint(equalTo: statsPieChart.centerXAnchor),
+            noResultsLabel.centerYAnchor.constraint(equalTo: statsPieChart.centerYAnchor)
         ])
     }
     
