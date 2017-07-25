@@ -12,7 +12,6 @@
 		1C2985CC1F1EE64B007F96FC /* StudySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2985CB1F1EE64B007F96FC /* StudySettingsViewController.swift */; };
 		1C2985CE1F1EE7B1007F96FC /* StudyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2985CD1F1EE7B1007F96FC /* StudyModeViewController.swift */; };
 		1CAD658A1F1573C100D1A289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD65891F1573C100D1A289 /* AppDelegate.swift */; };
-		1CAD658F1F1573C100D1A289 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD658D1F1573C100D1A289 /* Main.storyboard */; };
 		1CAD65911F1573C100D1A289 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD65901F1573C100D1A289 /* Assets.xcassets */; };
 		1CAD65941F1573C100D1A289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAD65921F1573C100D1A289 /* LaunchScreen.storyboard */; };
 		1CAD659D1F1581AB00D1A289 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD659C1F1581AB00D1A289 /* Question.swift */; };
@@ -50,7 +49,6 @@
 		1C2985CD1F1EE7B1007F96FC /* StudyModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyModeViewController.swift; sourceTree = "<group>"; };
 		1CAD65861F1573C100D1A289 /* High School Science Bowl Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "High School Science Bowl Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAD65891F1573C100D1A289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1CAD658E1F1573C100D1A289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CAD65901F1573C100D1A289 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CAD65931F1573C100D1A289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CAD65951F1573C100D1A289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				1CAD659B1F15819200D1A289 /* Data Model */,
 				1CAD65891F1573C100D1A289 /* AppDelegate.swift */,
 				1CAD65A51F158D3B00D1A289 /* questions.json */,
-				1CAD658D1F1573C100D1A289 /* Main.storyboard */,
 				1CAD65901F1573C100D1A289 /* Assets.xcassets */,
 				1CAD65921F1573C100D1A289 /* LaunchScreen.storyboard */,
 				1CAD65951F1573C100D1A289 /* Info.plist */,
@@ -226,7 +223,6 @@
 				1CAD65941F1573C100D1A289 /* LaunchScreen.storyboard in Resources */,
 				1CAD65A61F158D3B00D1A289 /* questions.json in Resources */,
 				1CAD65911F1573C100D1A289 /* Assets.xcassets in Resources */,
-				1CAD658F1F1573C100D1A289 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,14 +302,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1CAD658D1F1573C100D1A289 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1CAD658E1F1573C100D1A289 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1CAD65921F1573C100D1A289 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

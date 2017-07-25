@@ -31,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let mainMenuController = MainMenuViewController()
+        window?.rootViewController = mainMenuController
+        window?.makeKeyAndVisible()
+        
         UIApplication.shared.statusBarStyle = .lightContent
         
         let barColorPixel = UIImage.imageWithColor(color: UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.35))
