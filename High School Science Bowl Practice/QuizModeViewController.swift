@@ -27,13 +27,26 @@ class QuizModeViewController: UIViewController, UIScrollViewDelegate {
     var scrollView: UIScrollView = UIScrollView()
     
     lazy var finishSetButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Finish Set", style: .plain, target: self, action: #selector(QuizModeViewController.finishSet))
-        return button
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
+        button.setTitle(" Finish Set", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(QuizModeViewController.finishSet), for: .touchUpInside)
+        return UIBarButtonItem(customView: button)
     }()
     
     lazy var nextQuestionButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(QuizModeViewController.loadNextQuestion))
-        return button
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "Forward Chevron"), for: .normal)
+        button.setTitle("Next ", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.sizeToFit()
+        button.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        button.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        button.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        button.addTarget(self, action: #selector(QuizModeViewController.loadNextQuestion), for: .touchUpInside)
+        return UIBarButtonItem(customView: button)
     }()
     
     lazy var roundSetNumLabel: UILabel = {

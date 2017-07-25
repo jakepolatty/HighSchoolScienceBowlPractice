@@ -27,13 +27,26 @@ class StudyModeViewController: UIViewController {
     }()
     
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(StudyModeViewController.returnMainMenu))
-        return button
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
+        button.setTitle(" Menu", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(StudyModeViewController.returnMainMenu), for: .touchUpInside)
+        return UIBarButtonItem(customView: button)
     }()
     
     lazy var nextQuestionButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReaderModeViewController.loadNextQuestion))
-        return button
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "Forward Chevron"), for: .normal)
+        button.setTitle("Next ", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.sizeToFit()
+        button.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        button.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        button.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        button.addTarget(self, action: #selector(StudyModeViewController.loadNextQuestion), for: .touchUpInside)
+        return UIBarButtonItem(customView: button)
     }()
     
     lazy var roundSetNumLabel: UILabel = {
