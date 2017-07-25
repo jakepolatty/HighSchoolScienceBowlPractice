@@ -276,7 +276,7 @@ class QuizModeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func finishSet() {
-        let statsController = QuizModeStatsViewController(stats: statsTracker)
+        let statsController = QuizModeStatsViewController(stats: statsTracker, category: category)
         navigationController?.pushViewController(statsController, animated: true)
     }
     
