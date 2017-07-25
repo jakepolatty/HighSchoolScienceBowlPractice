@@ -10,8 +10,13 @@ import UIKit
 
 class AboutPageViewController: UIViewController {
     lazy var mainMenuButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(AboutPageViewController.returnMainMenu))
-        return button
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
+        button.setTitle(" Menu", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(AboutPageViewController.returnMainMenu), for: .touchUpInside)
+        return UIBarButtonItem(customView: button)
     }()
     
     lazy var topHeader: UILabel = {
