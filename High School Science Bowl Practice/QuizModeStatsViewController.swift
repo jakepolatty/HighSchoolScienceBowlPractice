@@ -57,19 +57,17 @@ class QuizModeStatsViewController: UIViewController {
     func setChart() {
         var dataEntries: [PieChartDataEntry] = []
         var colors: [UIColor] = []
-        if let correct = stats?.numberCorrect{
+        if let correct = stats?.numberCorrect, let incorrect = stats?.numberIncorrect, let notAnswered = stats?.numberNotAnswered  {
             if correct > 0 {
-                dataEntries.append(PieChartDataEntry(value: Double(correct), label: "Correct"))
+                let correctEntry = PieChartDataEntry(value: Double(correct), label: "Correct")
+                let percent = Int(correct / (correct + incorrect + notAnswered) * 100)
+                dataEntries.append(correctEntry)
                 colors.append(UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 0.5))
             }
-        }
-        if let incorrect = stats?.numberIncorrect {
             if incorrect > 0 {
                 dataEntries.append(PieChartDataEntry(value: Double(incorrect), label: "Incorrect"))
                 colors.append(UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.5))
             }
-        }
-        if let notAnswered = stats?.numberNotAnswered {
             if notAnswered > 0 {
                 dataEntries.append(PieChartDataEntry(value: Double(notAnswered), label: "Not Answered"))
                 colors.append(UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25))
