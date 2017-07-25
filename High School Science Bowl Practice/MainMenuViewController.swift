@@ -86,6 +86,13 @@ class MainMenuViewController: UIViewController {
         return button
     }()
     
+    lazy var logoImage: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
@@ -106,7 +113,7 @@ class MainMenuViewController: UIViewController {
             quizModeButton.widthAnchor.constraint(equalToConstant: 150),
             quizModeButton.heightAnchor.constraint(equalToConstant: 44),
             quizModeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            quizModeButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            quizModeButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20)
         ])
         
         view.addSubview(readerModeButton)
@@ -139,6 +146,14 @@ class MainMenuViewController: UIViewController {
             helpButton.heightAnchor.constraint(equalToConstant: 44),
             helpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             helpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+        ])
+        
+        view.addSubview(logoImage)
+        NSLayoutConstraint.activate([
+            logoImage.widthAnchor.constraint(equalToConstant: 80),
+            logoImage.heightAnchor.constraint(equalToConstant: 80),
+            logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
         ])
     }
     
