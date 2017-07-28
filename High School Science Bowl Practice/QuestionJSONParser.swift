@@ -19,12 +19,8 @@ struct QuestionJSONParser {
     static func parseJsonFile(withName name: String) -> [[String: Any]] {
         let file = Bundle.main.path(forResource: name, ofType: "json")
         let data = try! Data.init(contentsOf: URL(fileURLWithPath: file!))
-        let jsonData = try! JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
-        if let jsonData = jsonData {
-            return jsonData
-        } else {
-            return [[String: Any]]()
-        }
+        let jsonData = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+        return jsonData
     }
     
     static func parseJSONToQuestions() -> [Question] {
