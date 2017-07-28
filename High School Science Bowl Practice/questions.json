@@ -1,5 +1,4 @@
-[
-  {
+[{
     "qTxt": "If it takes you 50 minutes to walk uphill 2 miles to school but only 30 minutes to walk back, which of the following is your average speed, in miles per hour, for the round trip?",
     "qAns": "W) 3",
     "ansCh": [
@@ -1114,13 +1113,13 @@
     "tb": "T"
   },
   {
-    "qTxt": "If f(x) = (1+x)\x [f of x equals the fraction with numerator one plus x and denominator x], which of the following is equivalent to f(x)?",
+    "qTxt": "If f(x) = (1+x)/x [f of x equals the fraction with numerator one plus x and denominator x], which of the following is equivalent to f(x)?",
     "qAns": "Z) 1/x*f(1/x)",
     "ansCh": [
       "W) f (-x) [f of negative x]",
       "X) f (1/x) [f of the quantity one divided by x]",
       "Y) f (-1/x) [f of the quantity negative one divided by x]",
-      "Z) 1/x*f(1/x) [the fraction with numerator f of the quantity one divided by x and denominator x]",
+      "Z) 1/x*f(1/x) [the fraction with numerator f of the quantity one divided by x and denominator x]"
     ],
     "cat": "MATH",
     "sNum": 8,
@@ -1999,7 +1998,7 @@
   },
   {
     "qTxt": "What is the polar form of the equation: y=x",
-    "qAns": "θ=45º or θ=π/4",
+    "qAns": "θ=45º or θ=π\/4",
     "cat": "MATH",
     "sNum": 8,
     "rNum": 11,
@@ -2024,7 +2023,7 @@
       "W) Cytochrome oxidase",
       "X) Cytochrome b-c1",
       "Y) ATP synthase",
-      "Z) NAD dehydrogenase [dee-HY-druh-juh-nays]",
+      "Z) NAD dehydrogenase [dee-HY-druh-juh-nays]"
     ],
     "cat": "BIO",
     "sNum": 8,
@@ -3059,10 +3058,10 @@
     "qTxt": "The only continent without conditions favorable for the formation of tornadoes is",
     "qAns": "Z) ANTARCTICA",
     "ansCh": [
-        "W) South America",
-        "X) Australia",
-        "Y) Asia",
-        "Z) Antarctica"
+      "W) South America",
+      "X) Australia",
+      "Y) Asia",
+      "Z) Antarctica"
     ],
     "cat": "EAS",
     "sNum": 8,
@@ -4197,10 +4196,10 @@
     "qTxt": ". If ∫ 2->5 f(x) dx = 18 [the integral from 2 to 5 of f of x dx equals 18], then ∫ 2->5 f(x)+4 dx = [the integral from 2 to 5 of the quantity f of x plus 4 dx equals]",
     "qAns": "Z) 30",
     "ansCh": [
-        "W) 18",
-        "X) 22",
-        "Y) 25",
-        "Z) 30"
+      "W) 18",
+      "X) 22",
+      "Y) 25",
+      "Z) 30"
     ],
     "cat": "MATH",
     "sNum": 8,
@@ -5062,10 +5061,10 @@
     "qTxt": "A long narrow bay with an irregular outline, such as Chesapeake Bay, was formed by",
     "qAns": "X) STREAM EROSION AND LATER SUBMERSION",
     "ansCh": [
-        "W) Wave action",
-        "X) Steam erosion and later submersion",
-        "Y) Glacier erosion and later submersion",
-        "Z) Faulting"
+      "W) Wave action",
+      "X) Steam erosion and later submersion",
+      "Y) Glacier erosion and later submersion",
+      "Z) Faulting"
     ],
     "cat": "EAS",
     "sNum": 8,
@@ -5110,10 +5109,10 @@
     "qTxt": "Photosynthesis requires water as a reactant. In which of the following product molecules do the oxygen atoms from the water end up?",
     "qAns": "W) O2",
     "ansCh": [
-        "W) O2",
-        "X) H2O",
-        "Y) C6H12O6 [C- six H- twelve O- six]",
-        "Z) ATP"
+      "W) O2",
+      "X) H2O",
+      "Y) C6H12O6 [C- six H- twelve O- six]",
+      "Z) ATP"
     ],
     "cat": "BIO",
     "sNum": 8,
@@ -5280,10 +5279,10 @@
     "qTxt": "Identify the statement that does NOT describe a prostaglandin [pros-tuh-LAN-din] lipid function.",
     "qAns": "X) PROSTAGLANDINS PLAY A ROLE IN BLOOD CLOT FORMATION BUT NOT CLOT REDUCTION",
     "ansCh": [
-        "W) Prostaglandins are involved in the inflammatory response process",
-        "X) Prostaglandins play a role in blood clot formation but not clot reduction",
-        "Y) Prostaglandins can induce labor contractions",
-        "Z) Prostaglandins can help to increase kidney blood flow"
+      "W) Prostaglandins are involved in the inflammatory response process",
+      "X) Prostaglandins play a role in blood clot formation but not clot reduction",
+      "Y) Prostaglandins can induce labor contractions",
+      "Z) Prostaglandins can help to increase kidney blood flow"
     ],
     "cat": "CHEM",
     "sNum": 8,
@@ -7148,10 +7147,10 @@
     "qTxt": "Which of the following is the sum of the first three nonzero terms of the Taylor series of sin(x) around 0?",
     "qAns": "X) x - x^3/3! + x^5/5!",
     "ansCh": [
-        "W) x + x^3/3! + x^5/5! (read as: x plus x cubed over 3 factorial plus x to the fifth over 5 factorial)",
-        "X) x - x^3/3! + x^5/5!",
-        "Y) 1 - x^2/2! + x^4/4!",
-        "Z) 1 + x^2/2! + x^4/4!"
+      "W) x + x^3/3! + x^5/5! (read as: x plus x cubed over 3 factorial plus x to the fifth over 5 factorial)",
+      "X) x - x^3/3! + x^5/5!",
+      "Y) 1 - x^2/2! + x^4/4!",
+      "Z) 1 + x^2/2! + x^4/4!"
     ],
     "cat": "MATH",
     "sNum": 5,
@@ -8697,7 +8696,7 @@
       "W) Hydrochloric acid",
       "X) Hydrocyanic acid",
       "Y) Acetic acid",
-      "Z) Sulfuric",
+      "Z) Sulfuric"
     ],
     "cat": "CHEM",
     "sNum": 4,
@@ -9790,8 +9789,7 @@
     "qTxt": "Find the derivative of 2xe^x (read as: 2x e to the x).",
     "qAns": "Y) 2xe^x + 2e^x",
     "ansCh": [
-
-      "W) 2e^x+2x
+      "W) 2e^x+2x",
       "X) 2xe^x + e^x",
       "Y) 2xe^x + 2e^x",
       "Z) 2xe^x"
@@ -10122,7 +10120,7 @@
       "W) Sodium bromide",
       "X) Magnesium iodide",
       "Y) Sucrose",
-      "Z) Potassium",
+      "Z) Potassium"
     ],
     "cat": "CHEM",
     "sNum": 4,
@@ -11873,10 +11871,10 @@
     "qTxt": "Determine the solubility product constant (or Ksp) of silver bromide, given that its molar solubility is 5.71 x 10^-7 moles per liter.",
     "qAns": "W) 3.26 x 10^-13",
     "ansCh": [
-        "W) 3.26 x 10^-13",
-        "X) 5.71 x 10^-7",
-        "Y) 1.14 x 10^-6",
-        "Z) 2.14 x 10^-4"
+      "W) 3.26 x 10^-13",
+      "X) 5.71 x 10^-7",
+      "Y) 1.14 x 10^-6",
+      "Z) 2.14 x 10^-4"
     ],
     "cat": "CHEM",
     "sNum": 4,
@@ -12582,7 +12580,7 @@
     "tb": "T"
   },
   {
- "qTxt": "Given that the specific heat of iron is 0.12 calories per gram degree Celsius, what will be the final temperature in degrees Celsius of 100 grams of 20 degree Celsius water when 100 grams of 40 degree Celsius iron nails are submerged in it? Provide your answer to the nearest whole number.",
+    "qTxt": "Given that the specific heat of iron is 0.12 calories per gram degree Celsius, what will be the final temperature in degrees Celsius of 100 grams of 20 degree Celsius water when 100 grams of 40 degree Celsius iron nails are submerged in it? Provide your answer to the nearest whole number.",
     "qAns": "22",
     "cat": "PHY",
     "sNum": 4,
@@ -12973,10 +12971,10 @@
     "qTxt": "An electric vehicle has two stages. If the first stage, the battery, has an efficiency of 90% and the second stage, the inverter, has an efficiency of 80%, calculate the approximate overall efficiency of the vehicle.",
     "qAns": "X) 72%",
     "ansCh": [
-        "W) 56%",
-        "X) 72%",
-        "Y) 89%",
-        "Z) 113%"
+      "W) 56%",
+      "X) 72%",
+      "Y) 89%",
+      "Z) 113%"
     ],
     "cat": "ENG",
     "sNum": 4,
@@ -19885,10 +19883,10 @@
     "qTxt": "Which choice represents the electron configuration for the magnesium 2+ ion?",
     "qAns": "Z) 1s2 2s2 2p6",
     "ansCh": [
-        "W) 1s2 2s2 2p6 3s2",
-        "X) 1s2 2s2 2p6 3s2 3p2",
-        "Y) 1s2 2s2 2p6 3s1",
-        "Z) 1s2 2s2 2p6"
+      "W) 1s2 2s2 2p6 3s2",
+      "X) 1s2 2s2 2p6 3s2 3p2",
+      "Y) 1s2 2s2 2p6 3s1",
+      "Z) 1s2 2s2 2p6"
     ],
     "cat": "CHEM",
     "sNum": 4,
@@ -23332,7 +23330,7 @@
     "ansCh": [
       "W) It is proportional to L",
       "X) It is inversely proportional to L",
-      "Y) It is proportional to L²
+      "Y) It is proportional to L²",
       "Z) It is inversely proportional to L²"
     ],
     "cat": "ENG",
@@ -23367,7 +23365,7 @@
     "qAns": "W) sin(x)",
     "ansCh": [
       "W) sin(x)",
-      "X) x²
+      "X) x²",
       "Y) cos(x)",
       "Z) e^x"
     ],
@@ -32515,7 +32513,7 @@
       "W) (e^x-e^-x)/2",
       "X) (e^x+e^-x)/2",
       "Y) 2/(e^x+e^-x)",
-      "Z) 2/(e^x-e^-x)",
+      "Z) 2/(e^x-e^-x)"
     ],
     "cat": "MATH",
     "sNum": 2,
@@ -34815,7 +34813,7 @@
       "W) gE/gM",
       "X) 1",
       "Y) gM/gE",
-      "Z) (gM/gE)²",
+      "Z) (gM/gE)²"
     ],
     "cat": "PHY",
     "sNum": 5,
@@ -50721,7 +50719,7 @@
       "W)  30, 6, 6/5...",
       "X)  a², a³b, a⁴b²...",
       "Y)  6, 13, 20...",
-      "Z) 3/2, 3/4, 3/8...",
+      "Z) 3/2, 3/4, 3/8..."
     ],
     "cat": "MATH",
     "sNum": 3,
@@ -54435,7 +54433,7 @@
       "W) Hydrochloric Acid",
       "X) Phosphoric Acid",
       "Y) Sulfuric Acid",
-      "Z) Perchloric",
+      "Z) Perchloric"
     ],
     "cat": "CHEM",
     "sNum": 4,
@@ -58687,7 +58685,7 @@
       "W) (x-5)³",
       "X) x³-5",
       "Y) (x-5)^1/3",
-      "Z) (1/(x-5))³",
+      "Z) (1/(x-5))³"
     ],
     "cat": "MATH",
     "sNum": 1,
@@ -62027,7 +62025,7 @@
       "W)  frequency",
       "X)  wavelength",
       "Y)  loudness",
-      "Z)  overtones",
+      "Z)  overtones"
     ],
     "cat": "PHY",
     "sNum": 3,
@@ -66971,10 +66969,10 @@
     "qTxt": "Which of the following values for a and b provide a counterexample to the statement \"If 4 divides a + b, then 4 divides a or 4 divides b.\"",
     "qAns": "W) a = 5 AND b = 7",
     "ansCh": [
-        "W) a = 5 and b = 7",
-        "X) a = 5 and b = 6",
-        "Y) a = 4 and b = 8",
-        "Z) a = 4 and b = 6"
+      "W) a = 5 and b = 7",
+      "X) a = 5 and b = 6",
+      "Y) a = 4 and b = 8",
+      "Z) a = 4 and b = 6"
     ],
     "cat": "MATH",
     "sNum": 6,
@@ -67649,10 +67647,10 @@
     "qTxt": "Which of the following is not an antiderivative for sin(x)cos(x) [sine of x times cosine of x]?",
     "qAns": "Y) sin(2x)/4",
     "ansCh": [
-        "W) sin²(x)/2 [one-half sine squared of x]",
-        "X) -(cos²(x))/2 [negative one-half cosine squared of x]",
-        "Y) sin(2x)/4 [one-fourth sine of two x]",
-        "Z) -(cos(2x))/4 [negative one-fourth cosine of two x]"
+      "W) sin²(x)/2 [one-half sine squared of x]",
+      "X) -(cos²(x))/2 [negative one-half cosine squared of x]",
+      "Y) sin(2x)/4 [one-fourth sine of two x]",
+      "Z) -(cos(2x))/4 [negative one-fourth cosine of two x]"
     ],
     "cat": "MATH",
     "sNum": 8,
@@ -68623,10 +68621,10 @@
     "qTxt": "If the average fur thickness of wild foxes in the northern hemisphere increased with increasing latitude, this variation would be an example of which of the following.",
     "qAns": "W) DIRECTIONAL SELECTION",
     "ansCh": [
-        "W) Directional selection",
-        "X) Genetic drift",
-        "Y) Balancing selection",
-        "Z) Polymorphism"
+      "W) Directional selection",
+      "X) Genetic drift",
+      "Y) Balancing selection",
+      "Z) Polymorphism"
     ],
     "cat": "BIO",
     "sNum": 8,
@@ -70363,10 +70361,10 @@
     "qTxt": "What is the limit as x approaches 3 of (x²-9)/(x⁴-81) [open parenthesis x squared minus nine close parenthesis divided by open parenthesis x to the fourth minus eighty-one close parenthesis]?",
     "qAns": "Y) 1/18",
     "ansCh": [
-        "W) 1",
-        "X) 1/9",
-        "Y) 1/18",
-        "Z) 1/27"
+      "W) 1",
+      "X) 1/9",
+      "Y) 1/18",
+      "Z) 1/27"
     ],
     "cat": "MATH",
     "sNum": 8,
@@ -70877,10 +70875,10 @@
     "qTxt": "Identify which one of the following statements about Boltzmann distribution of energy is false.",
     "qAns": "X) AN EXPONENTIAL INCREASE IN POPULATION WITH INCREASING TEMPERATURE IS PREDICTED",
     "ansCh": [
-        "W) Degenerate states have the same energy and will be equally populated",
-        "X) An exponential increase in population with increasing temperature is predicted",
-        "Y) More states are significantly populated if energy level spacings are near kT",
-        "Z) At T = 0, only the lowest energy state is occupied"
+      "W) Degenerate states have the same energy and will be equally populated",
+      "X) An exponential increase in population with increasing temperature is predicted",
+      "Y) More states are significantly populated if energy level spacings are near kT",
+      "Z) At T = 0, only the lowest energy state is occupied"
     ],
     "cat": "CHEM",
     "sNum": 8,
@@ -79148,10 +79146,10 @@
     "qTxt": "Find the radius of a circle in which a 30º arc is 2π units long.",
     "qAns": "W) 12",
     "ansCh": [
-        "W) 12",
-        "X) 15",
-        "Y) 15π",
-        "Z) 60π"
+      "W) 12",
+      "X) 15",
+      "Y) 15π",
+      "Z) 60π"
     ],
     "cat": "MATH",
     "sNum": 7,
