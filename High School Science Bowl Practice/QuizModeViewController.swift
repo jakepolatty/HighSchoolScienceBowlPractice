@@ -100,7 +100,7 @@ class QuizModeViewController: UIViewController, UIScrollViewDelegate {
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.white, for: .disabled)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.numberOfLines = 3
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
@@ -117,7 +117,7 @@ class QuizModeViewController: UIViewController, UIScrollViewDelegate {
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.white, for: .disabled)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.numberOfLines = 3
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
@@ -134,7 +134,7 @@ class QuizModeViewController: UIViewController, UIScrollViewDelegate {
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.white, for: .disabled)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.numberOfLines = 3
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
@@ -151,7 +151,7 @@ class QuizModeViewController: UIViewController, UIScrollViewDelegate {
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.white, for: .disabled)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.numberOfLines = 3
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left

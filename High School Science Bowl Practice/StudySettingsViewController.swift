@@ -15,6 +15,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
     static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
     var category: Category?
+    var scrollView: UIScrollView = UIScrollView()
     
     lazy var mainMenuButton: UIBarButtonItem = {
         let button = UIButton(type: .system)
@@ -175,6 +176,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Study Mode"
+        self.automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         roundPicker.delegate = self
         roundPicker.dataSource = self
@@ -183,13 +185,23 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        view.addSubview(topicHeader)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            topicHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20),
+            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        scrollView.addSubview(topicHeader)
+        NSLayoutConstraint.activate([
+            topicHeader.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
             topicHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(biologyButton)
+        scrollView.addSubview(biologyButton)
         NSLayoutConstraint.activate([
             biologyButton.widthAnchor.constraint(equalToConstant: 130),
             biologyButton.heightAnchor.constraint(equalToConstant: 44),
@@ -197,7 +209,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             biologyButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -15)
         ])
         
-        view.addSubview(chemistryButton)
+        scrollView.addSubview(chemistryButton)
         NSLayoutConstraint.activate([
             chemistryButton.widthAnchor.constraint(equalToConstant: 130),
             chemistryButton.heightAnchor.constraint(equalToConstant: 44),
@@ -205,7 +217,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             chemistryButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 15)
         ])
         
-        view.addSubview(earthAndSpaceButton)
+        scrollView.addSubview(earthAndSpaceButton)
         NSLayoutConstraint.activate([
             earthAndSpaceButton.widthAnchor.constraint(equalToConstant: 130),
             earthAndSpaceButton.heightAnchor.constraint(equalToConstant: 44),
@@ -213,7 +225,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             earthAndSpaceButton.leadingAnchor.constraint(equalTo: biologyButton.leadingAnchor)
         ])
         
-        view.addSubview(energyButton)
+        scrollView.addSubview(energyButton)
         NSLayoutConstraint.activate([
             energyButton.widthAnchor.constraint(equalToConstant: 130),
             energyButton.heightAnchor.constraint(equalToConstant: 44),
@@ -221,7 +233,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             energyButton.trailingAnchor.constraint(equalTo: chemistryButton.trailingAnchor)
         ])
         
-        view.addSubview(mathButton)
+        scrollView.addSubview(mathButton)
         NSLayoutConstraint.activate([
             mathButton.widthAnchor.constraint(equalToConstant: 130),
             mathButton.heightAnchor.constraint(equalToConstant: 44),
@@ -229,7 +241,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             mathButton.leadingAnchor.constraint(equalTo: earthAndSpaceButton.leadingAnchor)
         ])
         
-        view.addSubview(physicsButton)
+        scrollView.addSubview(physicsButton)
         NSLayoutConstraint.activate([
             physicsButton.widthAnchor.constraint(equalToConstant: 130),
             physicsButton.heightAnchor.constraint(equalToConstant: 44),
@@ -237,13 +249,13 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             physicsButton.trailingAnchor.constraint(equalTo: energyButton.trailingAnchor),
         ])
         
-        view.addSubview(randomHeader)
+        scrollView.addSubview(randomHeader)
         NSLayoutConstraint.activate([
             randomHeader.topAnchor.constraint(equalTo: mathButton.bottomAnchor, constant: 10),
             randomHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(randomButton)
+        scrollView.addSubview(randomButton)
         NSLayoutConstraint.activate([
             randomButton.widthAnchor.constraint(equalToConstant: 130),
             randomButton.heightAnchor.constraint(equalToConstant: 44),
@@ -251,27 +263,34 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
             randomButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(roundHeader)
+        scrollView.addSubview(roundHeader)
         NSLayoutConstraint.activate([
             roundHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 10),
             roundHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(roundPicker)
+        scrollView.addSubview(roundPicker)
         NSLayoutConstraint.activate([
             roundPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             roundPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             roundPicker.topAnchor.constraint(equalTo: roundHeader.bottomAnchor, constant: 10),
+            roundPicker.heightAnchor.constraint(equalToConstant: 140)
         ])
         
-        view.addSubview(startSetButton)
+        scrollView.addSubview(startSetButton)
         NSLayoutConstraint.activate([
-            roundPicker.bottomAnchor.constraint(equalTo: startSetButton.topAnchor, constant: -20),
             startSetButton.widthAnchor.constraint(equalToConstant: 120),
             startSetButton.heightAnchor.constraint(equalToConstant: 44),
-            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            startSetButton.topAnchor.constraint(equalTo: roundPicker.bottomAnchor, constant: 40),
             startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+        
+        let height = startSetButton.frame.origin.y + startSetButton.frame.height + 30
+        if height <= scrollView.frame.height {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
+        } else {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: height)
+        }
     }
     
     func startStudyMode() {
