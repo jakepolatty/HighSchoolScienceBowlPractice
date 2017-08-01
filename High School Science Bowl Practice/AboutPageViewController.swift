@@ -53,7 +53,7 @@ class AboutPageViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "All practice questions used in the app are in the public domain and are taken from the Department of Energy's online database at science.energy.com."
+        label.text = "All practice questions used in the app are in the public domain and are taken from the Department of Energy's online database at science.energy.gov."
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightMedium)
         return label

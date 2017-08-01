@@ -16,6 +16,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     
     let tossupTimePickerData = [["5 Seconds", "10 Seconds", "15 Seconds"]]
     let bonusTimePickerData = [["20 Seconds", "25 Seconds", "30 Seconds", "35 Seconds", "40 Seconds"]]
+    var scrollView: UIScrollView = UIScrollView()
     
     lazy var mainMenuButton: UIBarButtonItem = {
         let button = UIButton(type: .system)
@@ -103,6 +104,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Reader Mode"
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        self.automaticallyAdjustsScrollViewInsets = false
         setRoundPicker.delegate = self
         setRoundPicker.dataSource = self
         tossupTimePicker.delegate = self
@@ -114,13 +116,23 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        view.addSubview(setChooserHeader)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            setChooserHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20),
+            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        scrollView.addSubview(setChooserHeader)
+        NSLayoutConstraint.activate([
+            setChooserHeader.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
             setChooserHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(setRoundPicker)
+        scrollView.addSubview(setRoundPicker)
         NSLayoutConstraint.activate([
             setRoundPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             setRoundPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
@@ -128,27 +140,19 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
             setRoundPicker.heightAnchor.constraint(greaterThanOrEqualToConstant: 140)
         ])
         
-        view.addSubview(startSetButton)
-        NSLayoutConstraint.activate([
-            startSetButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 44),
-            startSetButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 120),
-            startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
-        ])
-        
-        view.addSubview(timePickerHeader)
+        scrollView.addSubview(timePickerHeader)
         NSLayoutConstraint.activate([
             timePickerHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             timePickerHeader.topAnchor.constraint(equalTo: setRoundPicker.bottomAnchor, constant: 10)
         ])
         
-        view.addSubview(tossupTimeLabel)
+        scrollView.addSubview(tossupTimeLabel)
         NSLayoutConstraint.activate([
             tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 30),
             tossupTimeLabel.topAnchor.constraint(equalTo: timePickerHeader.bottomAnchor, constant: 20)
         ])
         
-        view.addSubview(tossupTimePicker)
+        scrollView.addSubview(tossupTimePicker)
         NSLayoutConstraint.activate([
             tossupTimePicker.widthAnchor.constraint(equalToConstant: 100),
             tossupTimePicker.heightAnchor.constraint(equalToConstant: 50),
@@ -156,19 +160,34 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
             tossupTimePicker.centerYAnchor.constraint(equalTo: tossupTimeLabel.centerYAnchor)
         ])
         
-        view.addSubview(bonusTimeLabel)
+        scrollView.addSubview(bonusTimeLabel)
         NSLayoutConstraint.activate([
             bonusTimeLabel.leadingAnchor.constraint(equalTo: tossupTimeLabel.leadingAnchor),
             bonusTimeLabel.topAnchor.constraint(equalTo: tossupTimeLabel.bottomAnchor, constant: 40)
         ])
         
-        view.addSubview(bonusTimePicker)
+        scrollView.addSubview(bonusTimePicker)
         NSLayoutConstraint.activate([
             bonusTimePicker.widthAnchor.constraint(equalToConstant: 100),
             bonusTimePicker.heightAnchor.constraint(equalToConstant: 50),
             bonusTimePicker.leadingAnchor.constraint(equalTo: tossupTimePicker.leadingAnchor),
             bonusTimePicker.centerYAnchor.constraint(equalTo: bonusTimeLabel.centerYAnchor)
         ])
+        
+        scrollView.addSubview(startSetButton)
+        NSLayoutConstraint.activate([
+            startSetButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 44),
+            startSetButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 120),
+            startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            startSetButton.topAnchor.constraint(equalTo: bonusTimePicker.bottomAnchor, constant: 40)
+        ])
+        
+        let height = startSetButton.frame.origin.y + startSetButton.frame.height + 30
+        if height <= scrollView.frame.height {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
+        } else {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: height)
+        }
     }
     
     func startReaderMode() {

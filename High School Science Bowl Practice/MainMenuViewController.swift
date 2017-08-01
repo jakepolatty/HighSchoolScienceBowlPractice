@@ -105,7 +105,7 @@ class MainMenuViewController: UIViewController {
         NSLayoutConstraint.activate([
             header.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             header.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            header.topAnchor.constraint(equalTo: view.topAnchor, constant: 50)
+            header.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20)
         ])
         
         view.addSubview(quizModeButton)
@@ -113,7 +113,7 @@ class MainMenuViewController: UIViewController {
             quizModeButton.widthAnchor.constraint(equalToConstant: 150),
             quizModeButton.heightAnchor.constraint(equalToConstant: 44),
             quizModeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            quizModeButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20)
+            quizModeButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -35)
         ])
         
         view.addSubview(readerModeButton)
@@ -121,7 +121,7 @@ class MainMenuViewController: UIViewController {
             readerModeButton.widthAnchor.constraint(equalToConstant: 150),
             readerModeButton.heightAnchor.constraint(equalToConstant: 44),
             readerModeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            readerModeButton.topAnchor.constraint(equalTo: quizModeButton.bottomAnchor, constant: 30)
+            readerModeButton.topAnchor.constraint(equalTo: quizModeButton.bottomAnchor, constant: 25)
         ])
         
         view.addSubview(studyModeButton)
@@ -129,7 +129,7 @@ class MainMenuViewController: UIViewController {
             studyModeButton.widthAnchor.constraint(equalToConstant: 150),
             studyModeButton.heightAnchor.constraint(equalToConstant: 44),
             studyModeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            studyModeButton.topAnchor.constraint(equalTo: readerModeButton.bottomAnchor, constant: 30)
+            studyModeButton.topAnchor.constraint(equalTo: readerModeButton.bottomAnchor, constant: 25)
         ])
         
         view.addSubview(aboutButton)
@@ -153,7 +153,7 @@ class MainMenuViewController: UIViewController {
             logoImage.widthAnchor.constraint(equalToConstant: 80),
             logoImage.heightAnchor.constraint(equalToConstant: 80),
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            logoImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -14)
         ])
     }
     

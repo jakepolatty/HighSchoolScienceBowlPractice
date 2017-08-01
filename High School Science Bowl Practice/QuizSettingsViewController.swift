@@ -28,6 +28,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
     let tossupTimePickerData = [["10 Seconds", "15 Seconds", "20 Seconds", "25 Seconds", "30 Seconds"]]
     let bonusTimePickerData = [["10 Seconds", "15 Seconds", "20 Seconds", "25 Seconds", "30 Seconds", "35 Seconds", "40 Seconds"]]
     var category: Category?
+    var scrollView: UIScrollView = UIScrollView()
     
     lazy var mainMenuButton: UIBarButtonItem = {
         let button = UIButton(type: .system)
@@ -214,6 +215,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Quiz Mode"
+        self.automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         tossupTimePicker.delegate = self
         tossupTimePicker.dataSource = self
@@ -224,13 +226,23 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        view.addSubview(topicHeader)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            topicHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20),
+            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        scrollView.addSubview(topicHeader)
+        NSLayoutConstraint.activate([
+            topicHeader.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
             topicHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(biologyButton)
+        scrollView.addSubview(biologyButton)
         NSLayoutConstraint.activate([
             biologyButton.widthAnchor.constraint(equalToConstant: 130),
             biologyButton.heightAnchor.constraint(equalToConstant: 44),
@@ -238,7 +250,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
             biologyButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -15)
         ])
         
-        view.addSubview(chemistryButton)
+        scrollView.addSubview(chemistryButton)
         NSLayoutConstraint.activate([
             chemistryButton.widthAnchor.constraint(equalToConstant: 130),
             chemistryButton.heightAnchor.constraint(equalToConstant: 44),
@@ -246,7 +258,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
             chemistryButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 15)
         ])
         
-        view.addSubview(earthAndSpaceButton)
+        scrollView.addSubview(earthAndSpaceButton)
         NSLayoutConstraint.activate([
             earthAndSpaceButton.widthAnchor.constraint(equalToConstant: 130),
             earthAndSpaceButton.heightAnchor.constraint(equalToConstant: 44),
@@ -254,7 +266,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
             earthAndSpaceButton.leadingAnchor.constraint(equalTo: biologyButton.leadingAnchor)
         ])
         
-        view.addSubview(energyButton)
+        scrollView.addSubview(energyButton)
         NSLayoutConstraint.activate([
             energyButton.widthAnchor.constraint(equalToConstant: 130),
             energyButton.heightAnchor.constraint(equalToConstant: 44),
@@ -262,7 +274,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
             energyButton.trailingAnchor.constraint(equalTo: chemistryButton.trailingAnchor)
         ])
         
-        view.addSubview(mathButton)
+        scrollView.addSubview(mathButton)
         NSLayoutConstraint.activate([
             mathButton.widthAnchor.constraint(equalToConstant: 130),
             mathButton.heightAnchor.constraint(equalToConstant: 44),
@@ -270,7 +282,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
             mathButton.leadingAnchor.constraint(equalTo: earthAndSpaceButton.leadingAnchor)
         ])
         
-        view.addSubview(physicsButton)
+        scrollView.addSubview(physicsButton)
         NSLayoutConstraint.activate([
             physicsButton.widthAnchor.constraint(equalToConstant: 130),
             physicsButton.heightAnchor.constraint(equalToConstant: 44),
@@ -278,13 +290,13 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
             physicsButton.trailingAnchor.constraint(equalTo: energyButton.trailingAnchor),
         ])
         
-        view.addSubview(randomHeader)
+        scrollView.addSubview(randomHeader)
         NSLayoutConstraint.activate([
             randomHeader.topAnchor.constraint(equalTo: mathButton.bottomAnchor, constant: 10),
             randomHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(randomButton)
+        scrollView.addSubview(randomButton)
         NSLayoutConstraint.activate([
             randomButton.widthAnchor.constraint(equalToConstant: 130),
             randomButton.heightAnchor.constraint(equalToConstant: 44),
@@ -292,27 +304,19 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
             randomButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        view.addSubview(startSetButton)
-        NSLayoutConstraint.activate([
-            startSetButton.widthAnchor.constraint(equalToConstant: 120),
-            startSetButton.heightAnchor.constraint(equalToConstant: 44),
-            startSetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
-            startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        
-        view.addSubview(timePickerHeader)
+        scrollView.addSubview(timePickerHeader)
         NSLayoutConstraint.activate([
             timePickerHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             timePickerHeader.topAnchor.constraint(equalTo: randomButton.bottomAnchor, constant: 10)
         ])
         
-        view.addSubview(tossupTimeLabel)
+        scrollView.addSubview(tossupTimeLabel)
         NSLayoutConstraint.activate([
             tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 30),
             tossupTimeLabel.topAnchor.constraint(equalTo: timePickerHeader.bottomAnchor, constant: 20)
         ])
         
-        view.addSubview(tossupTimePicker)
+        scrollView.addSubview(tossupTimePicker)
         NSLayoutConstraint.activate([
             tossupTimePicker.widthAnchor.constraint(equalToConstant: 100),
             tossupTimePicker.heightAnchor.constraint(equalToConstant: 50),
@@ -320,19 +324,34 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
             tossupTimePicker.centerYAnchor.constraint(equalTo: tossupTimeLabel.centerYAnchor)
         ])
         
-        view.addSubview(bonusTimeLabel)
+        scrollView.addSubview(bonusTimeLabel)
         NSLayoutConstraint.activate([
             bonusTimeLabel.leadingAnchor.constraint(equalTo: tossupTimeLabel.leadingAnchor),
             bonusTimeLabel.topAnchor.constraint(equalTo: tossupTimeLabel.bottomAnchor, constant: 40)
         ])
         
-        view.addSubview(bonusTimePicker)
+        scrollView.addSubview(bonusTimePicker)
         NSLayoutConstraint.activate([
             bonusTimePicker.widthAnchor.constraint(equalToConstant: 100),
             bonusTimePicker.heightAnchor.constraint(equalToConstant: 50),
             bonusTimePicker.leadingAnchor.constraint(equalTo: tossupTimePicker.leadingAnchor),
             bonusTimePicker.centerYAnchor.constraint(equalTo: bonusTimeLabel.centerYAnchor)
         ])
+        
+        scrollView.addSubview(startSetButton)
+        NSLayoutConstraint.activate([
+            startSetButton.widthAnchor.constraint(equalToConstant: 120),
+            startSetButton.heightAnchor.constraint(equalToConstant: 44),
+            startSetButton.topAnchor.constraint(equalTo: bonusTimePicker.bottomAnchor, constant: 40),
+            startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        let height = startSetButton.frame.origin.y + startSetButton.frame.height + 30
+        if height <= scrollView.frame.height {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
+        } else {
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: height)
+        }
     }
     
     func startQuizMode() {

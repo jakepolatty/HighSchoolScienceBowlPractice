@@ -9,6 +9,8 @@
 import UIKit
 
 class HelpPageViewController: UIViewController {
+    var scrollView: UIScrollView = UIScrollView()
+    
     lazy var mainMenuButton: UIBarButtonItem = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
@@ -64,38 +66,52 @@ class HelpPageViewController: UIViewController {
         view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.title = "Help"
         self.navigationItem.leftBarButtonItem = mainMenuButton
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        view.addSubview(topHeader)
+        scrollView = UIScrollView(frame: view.frame)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            topHeader.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 30),
+            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+        ])
+        
+        scrollView.addSubview(topHeader)
+        NSLayoutConstraint.activate([
+            topHeader.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
             topHeader.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             topHeader.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
-        view.addSubview(quizModeLabel)
+        scrollView.addSubview(quizModeLabel)
         NSLayoutConstraint.activate([
             quizModeLabel.topAnchor.constraint(equalTo: topHeader.bottomAnchor, constant: 10),
             quizModeLabel.leadingAnchor.constraint(equalTo: topHeader.leadingAnchor, constant: 4),
             quizModeLabel.trailingAnchor.constraint(equalTo: topHeader.trailingAnchor, constant: -4)
         ])
         
-        view.addSubview(readerModeLabel)
+        scrollView.addSubview(readerModeLabel)
         NSLayoutConstraint.activate([
             readerModeLabel.topAnchor.constraint(equalTo: quizModeLabel.bottomAnchor, constant: 10),
             readerModeLabel.leadingAnchor.constraint(equalTo: quizModeLabel.leadingAnchor),
             readerModeLabel.trailingAnchor.constraint(equalTo: quizModeLabel.trailingAnchor)
         ])
         
-        view.addSubview(studyModeLabel)
+        scrollView.addSubview(studyModeLabel)
         NSLayoutConstraint.activate([
             studyModeLabel.topAnchor.constraint(equalTo: readerModeLabel.bottomAnchor, constant: 10),
             studyModeLabel.leadingAnchor.constraint(equalTo: readerModeLabel.leadingAnchor),
             studyModeLabel.trailingAnchor.constraint(equalTo: readerModeLabel.trailingAnchor)
         ])
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
     }
     
     func returnMainMenu() {

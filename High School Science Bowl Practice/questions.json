@@ -54631,8 +54631,14 @@
     "tb": "T"
   },
   {
-    "qTxt": "Gas to liquids, or GTL, fuels are produced by converting natural gas into liquid fuels. Which of the following is NOT a benefit for production and use of GTL fuels?  W) They are cleaner than conventional petroleum-based diesel fuel X) They are compatible with the current petroleum infrastructure Y) They can be produced domestically Z) GTL plants are relatively inexpensive to build",
+    "qTxt": "Gas to liquids, or GTL, fuels are produced by converting natural gas into liquid fuels. Which of the following is NOT a benefit for production and use of GTL fuels?",
     "qAns": "Z) GTL PLANTS ARE RELATIVELY INEXPENSIVE TO BUILD",
+    "ansCh": [
+        "W) They are cleaner than conventional petroleum-based diesel fuel",
+        "X) They are compatible with the current petroleum infrastructure",
+        "Y) They can be produced domestically",
+        "Z) GTL plants are relatively inexpensive to build"
+    ],
     "cat": "ENG",
     "sNum": 4,
     "rNum": 3,
