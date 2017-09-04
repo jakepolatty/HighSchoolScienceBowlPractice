@@ -155,7 +155,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "At what point in time is a CFL's [C-F- elz] energy consumption greatest, compared to its light output?",
+    "qTxt": "At what point in time is a CFL's [C-F-elz] energy consumption greatest, compared to its light output?",
     "qAns": "W) RIGHT AFTER BEING TURNED ON",
     "ansCh": [
       "W) Right after being turned on",
@@ -881,7 +881,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Which of the following would be the most appropriate SN2   [S- N- two] leaving group?",
+    "qTxt": "Which of the following would be the most appropriate SN2   [S-N-two] leaving group?",
     "qAns": "X) O-TRIFLUOROMETHANESULFONATE",
     "ansCh": [
       "W) Hydroxyl",
@@ -1103,7 +1103,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Differentiate the following expression with respect to x, provided x is not 0: x|x| [ x over the quantity the absolute value of x].",
+    "qTxt": "Differentiate the following expression with respect to x, provided x is not 0: x/|x| [ x over the quantity the absolute value of x].",
     "qAns": "0",
     "cat": "MATH",
     "sNum": 8,
@@ -1555,7 +1555,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "In a standard cell, a zinc electrode placed in a 1 molar Zn2+ solution is connected to a nickel electrode placed in a 1 molar Ni2+ solution.  The 2 solutions are connected with a salt bridge.  The standard reduction potential of Zn2+[Z-N two plus] is  -0.76 Volts.  If the standard electromotive force of this cell is +0.48 Volts, what is the standard reduction potential of Ni2+[N-i two plus] in volts?",
+    "qTxt": "In a standard cell, a zinc electrode placed in a 1 molar Zn^2+ solution is connected to a nickel electrode placed in a 1 molar Ni^2+ solution.  The 2 solutions are connected with a salt bridge.  The standard reduction potential of Zn^2+[Z-N two plus] is  -0.76 Volts.  If the standard electromotive force of this cell is +0.48 Volts, what is the standard reduction potential of Ni^2+[N-i two plus] in volts?",
     "qAns": "-0.28",
     "cat": "CHEM",
     "sNum": 8,
@@ -1689,7 +1689,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If the equation x2 - 2Kx + 9 = 0 [x squared minus two K x plus nine equals zero] has two equal roots, which of the following is a possible value of K?",
+    "qTxt": "If the equation x^2 - 2Kx + 9 = 0 [x squared minus two K x plus nine equals zero] has two equal roots, which of the following is a possible value of K?",
     "qAns": "W) -3",
     "ansCh": [
       "W) -3",
@@ -1998,7 +1998,7 @@
   },
   {
     "qTxt": "What is the polar form of the equation: y=x",
-    "qAns": "θ=45º or θ=π\/4",
+    "qAns": "θ=45º or θ=π/4",
     "cat": "MATH",
     "sNum": 8,
     "rNum": 11,
@@ -2221,8 +2221,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Suppose the atoms of a polar diatomic molecule have partial charges of ±0.25 e [plus or minus zero point two five e], equivalent to ±4.0x10-20 [plus or minus four point zero times ten to the negative twentieth] coulombs.  If the bond length is 1.5 angstroms, to two significant figures, what is the dipole moment of the molecule in coulomb-meters?",
-    "qAns": "6.0x10-30",
+    "qTxt": "Suppose the atoms of a polar diatomic molecule have partial charges of ±0.25 e [plus or minus zero point two five e], equivalent to ±4.0x10^-20 [plus or minus four point zero times ten to the negative twentieth] coulombs.  If the bond length is 1.5 angstroms, to two significant figures, what is the dipole moment of the molecule in coulomb-meters?",
+    "qAns": "6.0x10^-30",
     "cat": "CHEM",
     "sNum": 8,
     "rNum": 11,
@@ -2263,7 +2263,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Which of the following is closest to the value of free-fall acceleration, in meters per second squared, at an altitude distance of 2REarth [two times the radius of earth] above the surface of the Earth?",
+    "qTxt": "Which of the following is closest to the value of free-fall acceleration, in meters per second squared, at an altitude distance of 2R_Earth [two times the radius of earth] above the surface of the Earth?",
     "qAns": "W) 1",
     "ansCh": [
       "W) 1",
@@ -2931,7 +2931,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "An ideal refrigerator absorbs heat at -23 ºC and exhausts it at 27 ºC. What is its coefficient of performance?",
+    "qTxt": "An ideal refrigerator absorbs heat at -23ºC and exhausts it at 27ºC. What is its coefficient of performance?",
     "qAns": "5",
     "cat": "PHY",
     "sNum": 8,
@@ -3254,7 +3254,7 @@
   },
   {
     "qTxt": "To the nearest power of ten and in meters, what is the diameter of the hydrogen atom?",
-    "qAns": "10-10",
+    "qAns": "10^-10",
     "cat": "CHEM",
     "sNum": 8,
     "rNum": 1,
@@ -3641,7 +3641,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Solve for x in (2x - 9)2 = 81 [two x minus 9 quantity squared equals 81]",
+    "qTxt": "Solve for x in (2x - 9)² = 81 [two x minus 9 quantity squared equals 81]",
     "qAns": "x = 0 or x = 9 (must give both answers)",
     "cat": "MATH",
     "sNum": 8,
@@ -4762,8 +4762,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "The following three ions are all isoelectronic with neon:  O2-, F-, Na+ [O two minus, F minus, N A plus].  Rank them in terms of their ionic radii, from smallest to largest.",
-    "qAns": "Na+, F-, O2-",
+    "qTxt": "The following three ions are all isoelectronic with neon:  O^2-, F-, Na+ [O two minus, F minus, N A plus].  Rank them in terms of their ionic radii, from smallest to largest.",
+    "qAns": "Na+, F-, O^2-",
     "cat": "CHEM",
     "sNum": 8,
     "rNum": 5,
@@ -5413,11 +5413,11 @@
   },
   {
     "qTxt": "What would be the total kinetic energy of an object rolling down a ramp with no slippage?",
-    "qAns": "Y) 1/2 MV2 + 1/2 I OMEGA2",
+    "qAns": "Y) 1/2 MV² + 1/2 I OMEGA²",
     "ansCh": [
-      "W) 1/2 MV2 [half M-V squared]",
-      "X) 1/2 I omega2 [half I omega squared]",
-      "Y) 1/2 MV2 + 1/2 I omega2 [half M-V- squared plus half I omega squared]",
+      "W) 1/2 MV² [half M-V squared]",
+      "X) 1/2 I omega² [half I omega squared]",
+      "Y) 1/2 MV² + 1/2 I omega² [half M-V- squared plus half I omega squared]",
       "Z) 0"
     ],
     "cat": "ENG",
@@ -6712,7 +6712,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "The frequency of light from a laser radiation source is 6 X 1014 hertz. Using 3 X 108 meters per second as the speed of light, what is the wavelength of this light in nanometers?",
+    "qTxt": "The frequency of light from a laser radiation source is 6 X 10^14 hertz. Using 3 X 10^8 meters per second as the speed of light, what is the wavelength of this light in nanometers?",
     "qAns": "500",
     "cat": "PHY",
     "sNum": 5,
@@ -6821,7 +6821,7 @@
   },
   {
     "qTxt": "In the atmosphere, what ion is formed by the oxidation of sulfur oxides?",
-    "qAns": "SULFATE (ACCEPT: SO42-)",
+    "qAns": "SULFATE (ACCEPT: SO4^2-)",
     "cat": "EAS",
     "sNum": 5,
     "rNum": 1,
@@ -7134,7 +7134,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the circumference of the circle with equation (x + 3)² + (y - 5)2 = 25 ?",
+    "qTxt": "What is the circumference of the circle with equation (x + 3)² + (y - 5)² = 25 ?",
     "qAns": "10π",
     "cat": "MATH",
     "sNum": 5,
@@ -7306,7 +7306,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Considering the function f(x) = x2, use a left Riemann sum with 4 equal subintervals to estimate the integral from 2 to 10 to the nearest integer.",
+    "qTxt": "Considering the function f(x) = x², use a left Riemann sum with 4 equal subintervals to estimate the integral from 2 to 10 to the nearest integer.",
     "qAns": "240",
     "cat": "MATH",
     "sNum": 5,
@@ -8276,13 +8276,19 @@
     "tb": "T"
   },
   {
-    "qTxt": "Thermohaline circulation is an important moderator of Earth's climate. Approximately how long in years does it take for a parcel of water to transit this circulation pathway?  W) 1 X) 10 Y) 100 Z) 1000",
+    "qTxt": "Thermohaline circulation is an important moderator of Earth's climate. Approximately how long in years does it take for a parcel of water to transit this circulation pathway?",
     "qAns": "Z) 1000",
+    "ansCh": [
+        "W) 1",
+        "X) 10",
+        "Y) 100",
+        "Z) 1000"
+    ],
     "cat": "EAS",
     "sNum": 4,
     "rNum": 8,
     "qNum": 20,
-    "mc": "SA",
+    "mc": "MC",
     "tb": "B"
   },
   {
@@ -8390,7 +8396,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Determine the oxidation state of each of the elements in the polyatomic ion C2O42-.",
+    "qTxt": "Determine the oxidation state of each of the elements in the polyatomic ion C2O4^2-.",
     "qAns": "CARBON = 3+; OXYGEN = 2-",
     "cat": "CHEM",
     "sNum": 4,
@@ -8474,7 +8480,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What are the complex roots of the equation (x + 2)2 = -1?",
+    "qTxt": "What are the complex roots of the equation (x + 2)² = -1?",
     "qAns": "-2 + i AND -2 - i (ACCEPT: -2 ± i )",
     "cat": "MATH",
     "sNum": 4,
@@ -9085,7 +9091,7 @@
   },
   {
     "qTxt": "Chlorophyll pigments contain which metal ion at the center of their chlorine ring?",
-    "qAns": "MAGNESIUM (ACCEPT: Mg2+)",
+    "qAns": "MAGNESIUM (ACCEPT: Mg^2+)",
     "cat": "ENG",
     "sNum": 4,
     "rNum": 11,
@@ -9638,7 +9644,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Which of the following intervals contains both solutions of x2 - 3x = 0?",
+    "qTxt": "Which of the following intervals contains both solutions of x² - 3x = 0?",
     "qAns": "Y) 0 less than or equal to x less than 4",
     "ansCh": [
       "W) 0 less than x less than 2",
@@ -9802,8 +9808,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "What matrix is the multiplicative inverse of the 2 by 2 matrix   (read as: row 1: 3, 1; row 2: 5, 2).",
-    "qAns": "",
+    "qTxt": "What matrix is the multiplicative inverse of the 2 by 2 matrix [[3 1],[5 2]]  (read as: row 1: 3, 1; row 2: 5, 2).",
+    "qAns": "[[2 -1], [-5 3]]",
     "cat": "MATH",
     "sNum": 4,
     "rNum": 10,
@@ -10084,8 +10090,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Factor the following expression completely over the integers:",
-    "qAns": "(a - 2)(",
+    "qTxt": "Factor the following expression completely over the integers: a^3-8",
+    "qAns": "(a - 2)(a²+2a+4)",
     "cat": "MATH",
     "sNum": 4,
     "rNum": 10,
@@ -10094,8 +10100,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Factor the following expression completely over the integers:    .",
-    "qAns": "(a + 2)",
+    "qTxt": "Factor the following expression completely over the integers: a^5+32",
+    "qAns": "(a + 2)(a^4-2a^3+4a²-8a+16)",
     "cat": "MATH",
     "sNum": 4,
     "rNum": 10,
@@ -10536,7 +10542,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find (1 + i)12 (read as the quantity 1 plus i to the twelfth).",
+    "qTxt": "Find (1 + i)^12 (read as the quantity 1 plus i to the twelfth).",
     "qAns": "-64",
     "cat": "MATH",
     "sNum": 5,
@@ -10680,8 +10686,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Convert the complex number -2 - 2i3 to trigonometric form.",
-    "qAns": "4 cos4π3+ isin4π3",
+    "qTxt": "Convert the complex number -2 - 2i^3 to trigonometric form.",
+    "qAns": "4cos(4π/3)+ isin(4π/3)",
     "cat": "MATH",
     "sNum": 5,
     "rNum": 5,
@@ -13372,7 +13378,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Expressing your answer in simplest radical form; evaluate   (read as: sine of the quantity 7 pi over 4).",
+    "qTxt": "Expressing your answer in simplest radical form; evaluate sin(7π/4) (read as: sine of the quantity 7 pi over 4).",
     "qAns": "",
     "cat": "MATH",
     "sNum": 4,
@@ -13508,8 +13514,14 @@
     "tb": "B"
   },
   {
-    "qTxt": "Evaluate log  (read as: log of the quantity 10 to the x times 100 over 10 thousand)  W) 2 - x X) x - 2 Y) x + 3 Z) 10x",
+    "qTxt": "Evaluate log(10^x * 100/10000)  (read as: log of the quantity 10 to the x times 100 over 10 thousand)",
     "qAns": "X) x - 2",
+    "ansCh": [
+        "W) 2-x",
+        "X) x-2",
+        "Y) x+3",
+        "Z) 10x"
+    ],
     "cat": "MATH",
     "sNum": 4,
     "rNum": 16,
@@ -13708,7 +13720,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Factor the following polynomial completely over the real numbers:  x3 + 3x2 - 5x - 15.",
+    "qTxt": "Factor the following polynomial completely over the real numbers:  x^3 + 3x² - 5x - 15.",
     "qAns": "(x + 3)(x +5)(x -5) (IN ANY ORDER)",
     "cat": "MATH",
     "sNum": 5,
@@ -13976,7 +13988,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Providing your answer as an improper fraction in simplest form in terms of π, what is the volume of the solid generated when the area bounded by y = x3 , x = 2, and the x axis is revolved around the x-axis?",
+    "qTxt": "Providing your answer as an improper fraction in simplest form in terms of π, what is the volume of the solid generated when the area bounded by y = x^3 , x = 2, and the x axis is revolved around the x-axis?",
     "qAns": "128/7 π",
     "cat": "MATH",
     "sNum": 5,
@@ -14313,7 +14325,7 @@
   },
   {
     "qTxt": "1 bar equals how many Pascals?",
-    "qAns": "100,000  (ACCEPT:  1 x 105 or 105)",
+    "qAns": "100,000  (ACCEPT:  1 x 10^5 or 10^5)",
     "cat": "GS",
     "sNum": 1,
     "rNum": 4,
@@ -14430,8 +14442,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Simplify the following expression:  5221xx",
-    "qAns": "109x  (ACCEPT:  109x)",
+    "qTxt": "Simplify the following expression:  x^(1/5)*x^(2/5)",
+    "qAns": "x^(9/10)  (ACCEPT:  10√(x^9))",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 4,
@@ -14761,7 +14773,7 @@
   },
   {
     "qTxt": "Give the  electronic configuration for sulfur, located in Period 3 and Group 16 of the Periodic Table:",
-    "qAns": "1s22s22p63s23p4  (ACCEPT:  [Ne] 3s23p4)",
+    "qAns": "1s2 2s2 2p6 3s2 3p4  (ACCEPT:  [Ne] 3s2 3p4)",
     "cat": "CHEM",
     "sNum": 1,
     "rNum": 4,
@@ -15053,12 +15065,12 @@
   },
   {
     "qTxt": "One-fifth of 0.04% is equal to:",
-    "qAns": "Z)  8 x 10-5",
+    "qAns": "Z)  8 x 10^-5",
     "ansCh": [
-      "W)  8 x 10-2",
-      "X)  8 x 10-3",
-      "Y)  8 x 10-4",
-      "Z)  8 x 10-5"
+      "W)  8 x 10^-2",
+      "X)  8 x 10^-3",
+      "Y)  8 x 10^-4",
+      "Z)  8 x 10^-5"
     ],
     "cat": "MATH",
     "sNum": 1,
@@ -15069,7 +15081,7 @@
   },
   {
     "qTxt": "Find the prime factorization of 240:",
-    "qAns": "2 x 2 x 2 x 2 x 3 x 5  (ACCEPT:  24 x 3 x 5)",
+    "qAns": "2 x 2 x 2 x 2 x 3 x 5  (ACCEPT:  2^4 x 3 x 5)",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 2,
@@ -15529,7 +15541,7 @@
   },
   {
     "qTxt": "Convert 0.001 grams per cubic millimeter into kilograms per cubic meter:",
-    "qAns": "1,000  (ACCEPT:  1 x 103)",
+    "qAns": "1,000  (ACCEPT:  1 x 10^3)",
     "cat": "GS",
     "sNum": 1,
     "rNum": 5,
@@ -15645,7 +15657,7 @@
   },
   {
     "qTxt": "If a wave has a frequency of 500 hertz, what is its period, in seconds?",
-    "qAns": "0.002  (ACCEPT:  2 x 10-3)",
+    "qAns": "0.002  (ACCEPT:  2 x 10^-3)",
     "cat": "PHY",
     "sNum": 1,
     "rNum": 5,
@@ -16022,7 +16034,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Factor the following expression completely:  100x2 - 25y2",
+    "qTxt": "Factor the following expression completely:  100x² - 25y²",
     "qAns": "25(2x + y)(2x - y)",
     "cat": "MATH",
     "sNum": 1,
@@ -16438,8 +16450,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Name all of the following 4 species that contain an odd number of electrons:  O21-;  O22-;  SO2;  CO",
-    "qAns": "O21-",
+    "qTxt": "Name all of the following 4 species that contain an odd number of electrons:  O2^1-;  O2^2-;  SO2;  CO",
+    "qAns": "O2^1-",
     "cat": "CHEM",
     "sNum": 1,
     "rNum": 9,
@@ -16906,7 +16918,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Giving your answer as up, down, left, or right, the graph of the equation x = 5y - 8y2 - 1 opens in what direction?",
+    "qTxt": "Giving your answer as up, down, left, or right, the graph of the equation x = 5y - 8y² - 1 opens in what direction?",
     "qAns": "LEFT",
     "cat": "MATH",
     "sNum": 1,
@@ -17086,7 +17098,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Solve the following equation for all real values of x:   0141812=--xx",
+    "qTxt": "Solve the following equation for all real values of x: 1/8x²-1/4x-1=0",
     "qAns": "4 OR -2",
     "cat": "MATH",
     "sNum": 1,
@@ -17342,8 +17354,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Divide the following and give your answer in scientific notation:   2147)104(108xx",
-    "qAns": "4 x 105",
+    "qTxt": "Divide the following and give your answer in scientific notation: (8x10^7)/(4x10^4)^1/2",
+    "qAns": "4 x 10^5",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 1,
@@ -17928,8 +17940,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Simplify the following, giving your answer in proper scientific notation:  (6.0 x 1012)(2.0 x 1010)2",
-    "qAns": "2.4 x 1033",
+    "qTxt": "Simplify the following, giving your answer in proper scientific notation:  (6.0 x 10^12)(2.0 x 10^10)^2",
+    "qAns": "2.4 x 10^33",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 3,
@@ -17938,7 +17950,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Factor the following expression completely:  81x2 + 180xy + 100y2",
+    "qTxt": "Factor the following expression completely:  81x² + 180xy + 100y²",
     "qAns": "(9x + 10y)2",
     "cat": "MATH",
     "sNum": 1,
@@ -18050,7 +18062,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What is the molecular formula for the conjugate acid of the following Brønsted-Lowry base:  SO42-",
+    "qTxt": "What is the molecular formula for the conjugate acid of the following Brønsted-Lowry base:  SO4^2-",
     "qAns": "HSO4-",
     "cat": "CHEM",
     "sNum": 1,
@@ -18090,8 +18102,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the following product, giving your answer in standard form:   (4x3 + x)(7x3 + 4x2)",
-    "qAns": "28x6 + 16x5 + 7x4 + 4x3  (ACCEPT:  x3(28x3 + 16x2 + 7x + 4))",
+    "qTxt": "Find the following product, giving your answer in standard form:   (4x^3 + x)(7x^3 + 4x^2)",
+    "qAns": "28x^6 + 16x^5 + 7x^4 + 4x^3  (ACCEPT:  x^3(28x^3 + 16x^2 + 7x + 4))",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 3,
@@ -18472,7 +18484,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Find (read as: the limit as x approaches infinity of the quantity x squared plus 10 over the quantity 7 x squared minus 5)",
+    "qTxt": "Find lim x->∞ (x²+10)/(7x²-5) (read as: the limit as x approaches infinity of the quantity x squared plus 10 over the quantity 7 x squared minus 5)",
     "qAns": "1/7",
     "cat": "MATH",
     "sNum": 4,
@@ -18482,7 +18494,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the equation of the line in slope intercept form of the tangent to423y+-=xx2at 1=x.",
+    "qTxt": "Find the equation of the line in slope intercept form of the tangent to y=3x²-2x+4 at x=1",
     "qAns": "14+=xy",
     "cat": "MATH",
     "sNum": 4,
@@ -18518,7 +18530,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Find  (read as: the limit as x approaches infinity of e to the negative x)",
+    "qTxt": "Find lim x->∞ e^-x (read as: the limit as x approaches infinity of e to the negative x)",
     "qAns": "0",
     "cat": "MATH",
     "sNum": 4,
@@ -18528,7 +18540,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "A particle moves so its position s in kilometers at time t in hours can be expressed as s(t) = 6t2 + 25. After 5 hours, what is its speed in kilometers per hour and its acceleration in kilometers per hour squared, respectively?",
+    "qTxt": "A particle moves so its position s in kilometers at time t in hours can be expressed as s(t) = 6t² + 25. After 5 hours, what is its speed in kilometers per hour and its acceleration in kilometers per hour squared, respectively?",
     "qAns": "SPEED: 60, ACCELERATION: 12",
     "cat": "MATH",
     "sNum": 4,
@@ -19072,8 +19084,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Give the measure of angle  (read as: theta), if 0 ≤≤ 2π, sin  =  and cos  =  .",
-    "qAns": "",
+    "qTxt": "Give the measure of angle  (read as: theta), if 0 ≤ θ ≤ 2π, sinθ = 1/2 and cosθ = -√3/2",
+    "qAns": "5π/6",
     "cat": "MATH",
     "sNum": 4,
     "rNum": 9,
@@ -19082,8 +19094,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "What is the perimeter of a sector of angle π/3 radians in a circle with circumference 2π2? Provide your answer in simplest form in terms of π.",
-    "qAns": "2π+ π2/3 (ACCEPT: )",
+    "qTxt": "What is the perimeter of a sector of angle π/3 radians in a circle with circumference 2π²? Provide your answer in simplest form in terms of π.",
+    "qAns": "2π+ π²/3 (ACCEPT: (6π+π²)/3)",
     "cat": "MATH",
     "sNum": 4,
     "rNum": 9,
@@ -19218,7 +19230,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What matrix of integers is equal to 3  -  (read as: 3 times the 2 by 2 matrix with row 1: -2, 1, and row 2: 0, 5 minus the 2 by 2 matrix row 1: 4, 0, and row 2: negative 4, 1)",
+    "qTxt": "What matrix of integers is equal to 3[[-2 1], [0 5]]  - [[4 0], [-4 1]] (read as: 3 times the 2 by 2 matrix with row 1: -2, 1, and row 2: 0, 5 minus the 2 by 2 matrix row 1: 4, 0, and row 2: negative 4, 1)",
     "qAns": "",
     "cat": "MATH",
     "sNum": 4,
@@ -20039,7 +20051,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What is the derivative of cos ( + w) (read as: cosine of open parenthesis pi over 2 plus w close parenthesis) with respect to w, in terms of cos(w)?",
+    "qTxt": "What is the derivative of cos (π/2 + w) (read as: cosine of open parenthesis pi over 2 plus w close parenthesis) with respect to w, in terms of cos(w)?",
     "qAns": "-cos(w) (DO NOT ACCEPT: OTHER ANSWERS)",
     "cat": "MATH",
     "sNum": 4,
@@ -20195,7 +20207,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the limit as x approaches -2 of (x3 + 8)/(2x + 4) (read as: the quantity x cubed plus 8 divided by the quantity 2x plus 4).",
+    "qTxt": "Find the limit as x approaches -2 of (x^3 + 8)/(2x + 4) (read as: the quantity x cubed plus 8 divided by the quantity 2x plus 4).",
     "qAns": "6",
     "cat": "MATH",
     "sNum": 4,
@@ -20206,7 +20218,7 @@
   },
   {
     "qTxt": "Which of the following ions are NOT isoelectronic with an argon atom?",
-    "qAns": "X) Ti2+",
+    "qAns": "X) Ti^2+",
     "ansCh": [
       "W) K+",
       "X) Ti2+",
@@ -20341,7 +20353,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Which one or ones of the following are aquatic insect nymphs that have external gills on either the thorax or the abdomen: 1) stoneflies, 2) damselflies,                 3) dragonflies, or 4) mayflies?",
+    "qTxt": "Which one or ones of the following are aquatic insect nymphs that have external gills on either the thorax or the abdomen: 1) stoneflies, 2) damselflies, 3) dragonflies, or 4) mayflies?",
     "qAns": "STONEFLIES, DAMSELFLIES, AND MAYFLIES (ACCEPT: 1, 2, 4)",
     "cat": "BIO",
     "sNum": 4,
@@ -20603,7 +20615,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the numerical value of 1152?",
+    "qTxt": "What is the numerical value of 115²?",
     "qAns": "13225",
     "cat": "MATH",
     "sNum": 5,
@@ -20613,7 +20625,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What is the coefficient corresponding to x3 in the binomial expansion of (x + 2)5 (read as: the quantity x plus 2 to the power of 5)?",
+    "qTxt": "What is the coefficient corresponding to x^3 in the binomial expansion of (x + 2)^5 (read as: the quantity x plus 2 to the power of 5)?",
     "qAns": "40",
     "cat": "MATH",
     "sNum": 5,
@@ -21053,7 +21065,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the solution set of the following inequality:  x2 - x - 2 ≤ 0",
+    "qTxt": "Find the solution set of the following inequality:  x² - x - 2 ≤ 0",
     "qAns": "-1 ≤ x ≤ 2",
     "cat": "MATH",
     "sNum": 2,
@@ -22745,7 +22757,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the radius and the center, respectively, of the circle with the equation: x2 + y2 - 16x + 12y + 75 = 0?",
+    "qTxt": "Find the radius and the center, respectively, of the circle with the equation: x² + y² - 16x + 12y + 75 = 0?",
     "qAns": "RADIUS = 5; CENTER = (8, -6)",
     "cat": "MATH",
     "sNum": 5,
@@ -22755,7 +22767,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What element corresponds to the electron configuration 1s22s22p5?",
+    "qTxt": "What element corresponds to the electron configuration 1s2 2s2 2p5?",
     "qAns": "FLUORINE",
     "cat": "CHEM",
     "sNum": 5,
@@ -23961,7 +23973,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Solve the following equation for all real values of x:  (x + 3)2 = 16",
+    "qTxt": "Solve the following equation for all real values of x:  (x + 3)² = 16",
     "qAns": "1 AND -7",
     "cat": "MATH",
     "sNum": 1,
@@ -24294,7 +24306,7 @@
   },
   {
     "qTxt": "A 25-microliter blood serum sample contains 50 micrograms of an enzyme.  What is the enzyme concentration in parts per million?",
-    "qAns": "2,000  (ACCEPT:  2 x 103)",
+    "qAns": "2,000  (ACCEPT:  2 x 10^3)",
     "cat": "GS",
     "sNum": 1,
     "rNum": 10,
@@ -24413,7 +24425,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What are the leading coefficient and degree, respectively, of the following polynomial:  3x2 - 6x5 + 7",
+    "qTxt": "What are the leading coefficient and degree, respectively, of the following polynomial:  3x² - 6x^5 + 7",
     "qAns": "LEADING COEFFICIENT = -6;  DEGREE = 5",
     "cat": "MATH",
     "sNum": 1,
@@ -24424,7 +24436,7 @@
   },
   {
     "qTxt": "The terminal side of angle θ (read as: theta) in standard position passes through the point (-5, 12).  Find the sine, cosine and tangent, in fractional form:",
-    "qAns": "SIN = 1312;  COS = 135-;  TAN = 512-",
+    "qAns": "SIN = 12/13;  COS = -5/13;  TAN = -5/12",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 10,
@@ -24607,7 +24619,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Identify the type of conic section represented by the equation,  x2 - 16y2 = 64:",
+    "qTxt": "Identify the type of conic section represented by the equation,  x² - 16y² = 64:",
     "qAns": "HYPERBOLA",
     "cat": "MATH",
     "sNum": 1,
@@ -24865,7 +24877,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "The graph of the relation y = )25(2x-- is a:",
+    "qTxt": "The graph of the relation y = -√(25-x²) is a:",
     "qAns": "X)  SEMI-CIRCLE",
     "ansCh": [
       "W)  circle",
@@ -25247,7 +25259,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Identify the type of conic section represented by the equation,  x2 + y2 + 10y + 16 = 0:",
+    "qTxt": "Identify the type of conic section represented by the equation,  x² + y² + 10y + 16 = 0:",
     "qAns": "CIRCLE",
     "cat": "MATH",
     "sNum": 1,
@@ -25393,7 +25405,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Simplify i17  (read as: i to the 17th power):",
+    "qTxt": "Simplify i^17  (read as: i to the 17th power):",
     "qAns": "i",
     "cat": "MATH",
     "sNum": 1,
@@ -25403,8 +25415,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Solve the following equation for x:  21)2(72222=x-x",
-    "qAns": "4 OR -4  (ACCEPT: 4±=x)",
+    "qTxt": "Solve the following equation for x:  2^7 * 2^(x²-2) = 2^21",
+    "qAns": "4 OR -4  (ACCEPT: x=±4)",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 11,
@@ -25460,7 +25472,7 @@
     "ansCh": [
       "W)  diluting a buffer with water can change the pH of the water",
       "X)  metal cations can act as weak acids in water solutions",
-      "Y)  an acid whose Ka = 6 x 10-10 is weaker than an acid whose Ka = 5.8 x 10-4",
+      "Y)  an acid whose Ka = 6 x 10^-10 is weaker than an acid whose Ka = 5.8 x 10^-4",
       "Z)  an acid whose pKa is 3.0 is stronger than an acid whose pKa is 7.0"
     ],
     "cat": "CHEM",
@@ -25895,7 +25907,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Factor the following expression completely over the integers:  x4 - 16",
+    "qTxt": "Factor the following expression completely over the integers:  x^4 - 16",
     "qAns": "(x - 2)(x + 2)(x² + 4)",
     "cat": "MATH",
     "sNum": 1,
@@ -26323,7 +26335,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Find the center of the circle given by the following equation:  x2 + y2 + 4x + 16y + 3 = 0",
+    "qTxt": "Find the center of the circle given by the following equation:  x² + y² + 4x + 16y + 3 = 0",
     "qAns": "(-2, -8)",
     "cat": "MATH",
     "sNum": 1,
@@ -26333,7 +26345,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What are the coordinates of the vertex in the graph of the following equation:  y = 4x2 + 8x - 5",
+    "qTxt": "What are the coordinates of the vertex in the graph of the following equation:  y = 4x² + 8x - 5",
     "qAns": "(-1,  -9)",
     "cat": "MATH",
     "sNum": 1,
@@ -27275,8 +27287,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Assuming the universal gravitational constant is 6.67 x 10-11  newton-meters squared per kilogram squared, what is the gravitational attraction, in newtons, between two, 10-kilogram perfectly uniform spheres separated by a center-to-center distance of 10 meters?",
-    "qAns": "6.67 x 10-11",
+    "qTxt": "Assuming the universal gravitational constant is 6.67 x 10^-11  newton-meters squared per kilogram squared, what is the gravitational attraction, in newtons, between two, 10-kilogram perfectly uniform spheres separated by a center-to-center distance of 10 meters?",
+    "qAns": "6.67 x 10^-11",
     "cat": "PHY",
     "sNum": 1,
     "rNum": 16,
@@ -28933,7 +28945,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What is the smallest integer that satisfies the following inequality:  532>+xx",
+    "qTxt": "What is the smallest integer that satisfies the following inequality:  x/2 + x/3 > 5",
     "qAns": "7",
     "cat": "MATH",
     "sNum": 2,
@@ -29033,7 +29045,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "A substance with an acid dissociation constant, or Ka, of  1 x 10-9 would be considered a:",
+    "qTxt": "A substance with an acid dissociation constant, or Ka, of  1 x 10^-9 would be considered a:",
     "qAns": "W)  WEAK ACID",
     "ansCh": [
       "W)  weak acid",
@@ -29553,8 +29565,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Subtract the following 2 polynomials:                                      (-4x3y + 2x3y2 + 2x2y3 + 2y) - (4x3y - 7x3y2 + x2y3 - y)",
-    "qAns": "-8x3y + 9x3y2 + x2y3 + 3y",
+    "qTxt": "Subtract the following 2 polynomials: (-4x^3y + 2x^3y^2 + 2x^2y^3 + 2y) - (4x^3y - 7x^3y^2 + x^2y^3 - y)",
+    "qAns": "-8x^3y + 9x^3y^2 + x^2y^3 + 3y",
     "cat": "MATH",
     "sNum": 2,
     "rNum": 4,
@@ -30191,8 +30203,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Use the Binomial Theorem to expand and simplify the following equation:  (x - 1)4",
-    "qAns": "x4 - 4x3 + 6x2 - 4x +1",
+    "qTxt": "Use the Binomial Theorem to expand and simplify the following equation:  (x - 1)^4",
+    "qAns": "x^4 - 4x^3 + 6x^2 - 4x +1",
     "cat": "MATH",
     "sNum": 2,
     "rNum": 6,
@@ -30611,7 +30623,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "How many real solutions does the equation x5 + x + 1 = 0 (read as: x to the fifth plus x plus 1 equals 0) have?",
+    "qTxt": "How many real solutions does the equation x^5 + x + 1 = 0 (read as: x to the fifth plus x plus 1 equals 0) have?",
     "qAns": "1",
     "cat": "MATH",
     "sNum": 5,
@@ -31021,8 +31033,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "By name or number, identify all of the following three species that are predicted by the molecular orbital model to be stable and diatomic: 1) He22+ (read as: He 2 [pause] 2 plus), 2) He21+ (read as: He 2 [pause] 1 plus), 3) He2.",
-    "qAns": "He22+ AND He2+ (ACCEPT: 1 AND 2)",
+    "qTxt": "By name or number, identify all of the following three species that are predicted by the molecular orbital model to be stable and diatomic: 1) He2^2+ (read as: He 2 [pause] 2 plus), 2) He2^1+ (read as: He 2 [pause] 1 plus), 3) He2.",
+    "qAns": "He2^2+ AND He2^+ (ACCEPT: 1 AND 2)",
     "cat": "CHEM",
     "sNum": 5,
     "rNum": 9,
@@ -31185,7 +31197,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the greatest common factor of the terms in the expression 3x5y2 + 6x3y5 (read as: 3 x to the fifth y squared plus 6 x cubed y to the fifth)?",
+    "qTxt": "What is the greatest common factor of the terms in the expression 3x^5y^2 + 6x^3y^5 (read as: 3 x to the fifth y squared plus 6 x cubed y to the fifth)?",
     "qAns": "23yx3",
     "cat": "MATH",
     "sNum": 4,
@@ -31195,7 +31207,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "At what value of x is there a minimum for the function f(x)= x2 - 6x (read as: f of x equals x squared minus 6x)?",
+    "qTxt": "At what value of x is there a minimum for the function f(x)= x² - 6x (read as: f of x equals x squared minus 6x)?",
     "qAns": "x = 3",
     "cat": "MATH",
     "sNum": 4,
@@ -31585,7 +31597,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "The equation x2 + y2 = 121 with x > 0 and y < 0 would result in the graph of:",
+    "qTxt": "The equation x² + y² = 121 with x > 0 and y < 0 would result in the graph of:",
     "qAns": "Y) A QUARTER CIRCLE IN THE 4TH QUADRANT",
     "ansCh": [
       "W) A semicircle below the x-axis",
@@ -32088,7 +32100,7 @@
   },
   {
     "qTxt": "Find the prime factorization of 1050:",
-    "qAns": "2x3x5x5x7  (ACCEPT:  2x3x52x7)",
+    "qAns": "2x3x5x5x7  (ACCEPT:  2x3x5²x7)",
     "cat": "MATH",
     "sNum": 2,
     "rNum": 3,
@@ -32660,14 +32672,10 @@
     "qTxt": "Which of the following is TRUE concerning objects moving down an inclined plane:",
     "qAns": "W)  A SOLID DISK WILL ROLL FASTER THAN A HOLLOW DISK REGARDLESS OF THE MASS OR OUTER DIAMETER OF EITHER DISK",
     "ansCh": [
-      "W)  a solid disk will roll faster than a hollow disk regardless of the mass or outer diameter of either",
-      "disk",
-      "X)  a hollow disk will roll faster than a solid disk regardless of the mass or outer diameter of either",
-      "disk",
-      "Y) regardless of the mass or outer diameter of either disk, a solid disk will roll at the same rate as a",
-      "hollow cylinder",
-      "Z)  a solid disk will roll slower than a hollow disk of twice the mass and outer diameter of the solid",
-      "disk"
+      "W)  a solid disk will roll faster than a hollow disk regardless of the mass or outer diameter of either disk",
+      "X)  a hollow disk will roll faster than a solid disk regardless of the mass or outer diameter of either disk",
+      "Y) regardless of the mass or outer diameter of either disk, a solid disk will roll at the same rate as a hollow cylinder",
+      "Z)  a solid disk will roll slower than a hollow disk of twice the mass and outer diameter of the solid disk"
     ],
     "cat": "PHY",
     "sNum": 2,
@@ -34719,7 +34727,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Nitrogen molecules of mass 4.65 x 10-26 kilograms are contained in a cube with sides that have an area of 6 x 10-4 square meters. If 5.0 x 1023 molecules collide head on elastically each second with one wall at a speed of 300 meters per second, what is the pressure exerted on the wall to the nearest kilopascal?",
+    "qTxt": "Nitrogen molecules of mass 4.65 x 10^-26 kilograms are contained in a cube with sides that have an area of 6 x 10^-4 square meters. If 5.0 x 10^23 molecules collide head on elastically each second with one wall at a speed of 300 meters per second, what is the pressure exerted on the wall to the nearest kilopascal?",
     "qAns": "23",
     "cat": "PHY",
     "sNum": 5,
@@ -35110,7 +35118,7 @@
   },
   {
     "qTxt": "What is the speed of light in meters per second for monochromatic light of 780 nanometers in glass with a refractive index of 1.55:",
-    "qAns": "X) 1.9 x 108",
+    "qAns": "X) 1.9 x 10^8",
     "ansCh": [
       "W)  1.5 x 10^8",
       "X)  1.9 x 10^8",
@@ -35183,7 +35191,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the degree of the following monomial:  -6x2y4z3",
+    "qTxt": "What is the degree of the following monomial:  -6x^2y^4z^3",
     "qAns": "9",
     "cat": "MATH",
     "sNum": 3,
@@ -35541,7 +35549,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the pH of a solution having a hydroxide ion concentration of 1 x 10-5 M?",
+    "qTxt": "What is the pH of a solution having a hydroxide ion concentration of 1 x 10^-5 M?",
     "qAns": "9",
     "cat": "CHEM",
     "sNum": 3,
@@ -35817,7 +35825,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Name all of the quadrants that contain solutions of the inequality      2x - y > 4 .",
+    "qTxt": "Name all of the quadrants that contain solutions of the inequality 2x - y > 4 .",
     "qAns": "I, III, IV (ACCEPT: 1, 3, 4 or FIRST, THIRD, FOURTH)",
     "cat": "MATH",
     "sNum": 6,
@@ -36584,7 +36592,7 @@
   },
   {
     "qTxt": "The breakdown electric field of air is approximately 3 million volts per meter. Assuming that lightning moves uniformly through a cylinder of air with a cross-sectional area of 1 square meter and providing your answer in scientific notation with one significant digit, if a typical storm cloud is at an altitude of 2,000 meters and the resistivity of air is about 10 ohm-meters at breakdown, what is the current in amperes of a cloud-to-cloud lightning strike?",
-    "qAns": "3 x 105",
+    "qAns": "3 x 10^5",
     "cat": "PHY",
     "sNum": 7,
     "rNum": 1,
@@ -36593,7 +36601,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If f(x) = sin2x + cos2x [f of x equals sine squared of x plus cosine squared of x], what is f '(x) [f prime of x]?",
+    "qTxt": "If f(x) = sin²x + cos²x [f of x equals sine squared of x plus cosine squared of x], what is f '(x) [f prime of x]?",
     "qAns": "W) 0",
     "ansCh": [
       "W) 0",
@@ -36635,7 +36643,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "At 23o Celsius and 1 atmosphere, what are the physical states, respectively, of ethane, butane, and octane?",
+    "qTxt": "At 23º Celsius and 1 atmosphere, what are the physical states, respectively, of ethane, butane, and octane?",
     "qAns": "ETHANE = GAS, BUTANE = GAS, OCTANE = LIQUID",
     "cat": "ENG",
     "sNum": 7,
@@ -36761,7 +36769,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Solve the following equation for x over the real numbers: 27(3x) = 81 [27 times 3 to the power of x equals 81].",
+    "qTxt": "Solve the following equation for x over the real numbers: 27(3^x) = 81 [27 times 3 to the power of x equals 81].",
     "qAns": "1",
     "cat": "MATH",
     "sNum": 7,
@@ -37001,8 +37009,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the derivative with respect to x of xe2 [x times e squared]?",
-    "qAns": "e2",
+    "qTxt": "What is the derivative with respect to x of xe² [x times e squared]?",
+    "qAns": "e²",
     "cat": "MATH",
     "sNum": 7,
     "rNum": 2,
@@ -37089,7 +37097,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Which quantum number is allowed values ranging from 0 to n -1 and is associated with atomic orbital shape?",
+    "qTxt": "Which quantum number is allowed values ranging from 0 to n-1 and is associated with atomic orbital shape?",
     "qAns": "ANGULAR MOMENTUM QUANTUM NUMBER (ACCEPT: l, AZIMUTHAL, SUBSIDIARY)",
     "cat": "CHEM",
     "sNum": 7,
@@ -37181,7 +37189,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What is the wavelength in nanometers of a photon of period 3.33 x 10-18 seconds?",
+    "qTxt": "What is the wavelength in nanometers of a photon of period 3.33 x 10^-18 seconds?",
     "qAns": "W) 1",
     "ansCh": [
       "W) 1",
@@ -37609,7 +37617,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Assuming that 1 atmosphere = 1.01 x 105 pascals and the density of water is 1000 kilograms per cubic meter, at what depth of water will the absolute pressure be 10.8 times the atmospheric pressure?",
+    "qTxt": "Assuming that 1 atmosphere = 1.01 x 10^5 pascals and the density of water is 1000 kilograms per cubic meter, at what depth of water will the absolute pressure be 10.8 times the atmospheric pressure?",
     "qAns": "X) 101 METERS",
     "ansCh": [
       "W) 10.1 meters",
@@ -37875,7 +37883,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Simplify: x1/2 (x1/2 + x1/2) [x to the power of one half times open parenthesis x to the power of one half plus x to the power of one half close parenthesis].",
+    "qTxt": "Simplify: x^1/2(x^1/2 + x^1/2) [x to the power of one half times open parenthesis x to the power of one half plus x to the power of one half close parenthesis].",
     "qAns": "2x",
     "cat": "MATH",
     "sNum": 7,
@@ -37921,8 +37929,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Assuming h = 6.63 x 10-34 joule seconds, what is the approximate energy of a photon in joules in a 1000 nanometer light beam?",
-    "qAns": "W) 2 x 10-19",
+    "qTxt": "Assuming h = 6.63 x 10^-34 joule seconds, what is the approximate energy of a photon in joules in a 1000 nanometer light beam?",
+    "qAns": "W) 2 x 10^-19",
     "ansCh": [
       "W) 2 x 10^-19",
       "X) 2 x 10^-18",
@@ -38015,7 +38023,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the derivative of y = (3x + 1)2 [y equals 3x plus 1 quantity squared]?",
+    "qTxt": "What is the derivative of y = (3x + 1)² [y equals 3x plus 1 quantity squared]?",
     "qAns": "W) 18x + 6",
     "ansCh": [
       "W) 18x + 6",
@@ -39459,7 +39467,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "A 35.4 x 10-11 coulomb charge is placed into a spherical Gaussian [GOUS-ee-uhn] surface with a radius of 5 meters. Given that epsilon naught is 8.85 x 10-12 farads per meter, what is the electric flux through this surface in newton meters squared per coulomb?",
+    "qTxt": "A 35.4 x 10^-11 coulomb charge is placed into a spherical Gaussian [GOUS-ee-uhn] surface with a radius of 5 meters. Given that epsilon naught is 8.85 x 10^-12 farads per meter, what is the electric flux through this surface in newton meters squared per coulomb?",
     "qAns": "40",
     "cat": "PHY",
     "sNum": 7,
@@ -39787,8 +39795,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Simplify the following, giving your answer in proper scientific notation:  (2.0 x 10-6)4",
-    "qAns": "1.6 x 10-23",
+    "qTxt": "Simplify the following, giving your answer in proper scientific notation:  (2.0 x 10^-6)^4",
+    "qAns": "1.6 x 10^-23",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 2,
@@ -41101,8 +41109,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "What is the derivative of the following expression with respect to the variable x:  212354xx-  (Read as:  4x to the 3/2 power minus 5x to the 1/2 power)",
-    "qAns": "21215.26--xx  (ACCEPT:  6x0.5 - 2.5x  -0.5)",
+    "qTxt": "What is the derivative of the following expression with respect to the variable x: 4x^(3/2) - 5x^(1/2)  (Read as:  4x to the 3/2 power minus 5x to the 1/2 power)",
+    "qAns": "6x^(1/2) - 2.5x^(-1/2)  (ACCEPT:  6x^0.5 - 2.5x^-0.5)",
     "cat": "MATH",
     "sNum": 2,
     "rNum": 15,
@@ -42286,7 +42294,7 @@
   },
   {
     "qTxt": "If you were to evaporate 1 liter or kilogram of water, how many calories of latent heat are stored in the vapor?",
-    "qAns": "540,000  (ACCEPT:  5.4 x 105)",
+    "qAns": "540,000  (ACCEPT:  5.4 x 10^5)",
     "cat": "CHEM",
     "sNum": 3,
     "rNum": 6,
@@ -42321,7 +42329,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Solve the following equation for x:   x2 - 20x + 19 = 0",
+    "qTxt": "Solve the following equation for x:   x² - 20x + 19 = 0",
     "qAns": "19 AND 1",
     "cat": "MATH",
     "sNum": 3,
@@ -42331,8 +42339,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Express the following radical in its simplest radical form:  )80(2342cba!",
-    "qAns": "ccab582!",
+    "qTxt": "Express the following radical in its simplest radical form:  -2√(80a^2b^4c^3)",
+    "qAns": "-8ab^2c√(5c)",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 6,
@@ -42374,7 +42382,7 @@
   },
   {
     "qTxt": "One metric ton equals how many grams?",
-    "qAns": "ONE MILLION  (ACCEPT:  1 x 106 or 106)",
+    "qAns": "ONE MILLION  (ACCEPT:  1 x 10^6 or 10^6)",
     "cat": "GS",
     "sNum": 3,
     "rNum": 6,
@@ -42666,7 +42674,7 @@
   },
   {
     "qTxt": "In standard chemical nomenclature, what is the complete electron configuration for the sodium ion, Na+?",
-    "qAns": "1s22s22p6  (ACCEPT:  1s22s22p63s0)",
+    "qAns": "1s2 2s2 2p6  (ACCEPT:  1s2 2s2 2p6 3s0)",
     "cat": "CHEM",
     "sNum": 3,
     "rNum": 6,
@@ -43798,7 +43806,7 @@
   },
   {
     "qTxt": "A mixture of gases with an average molecular weight of 30grams per mole is contained in a 480 liter tank.  What is the mass of the gases, in grams, if the temperature of the gas is 300K and the pressure is 2 atmospheres:",
-    "qAns": "1200  (ACCEPT:  1.2 x 103 g)",
+    "qAns": "1200  (ACCEPT:  1.2 x 10^3 g)",
     "cat": "CHEM",
     "sNum": 2,
     "rNum": 17,
@@ -44237,7 +44245,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Solve the following inequality for x:  x2 < 3x",
+    "qTxt": "Solve the following inequality for x:  x² < 3x",
     "qAns": "0 < x < 3",
     "cat": "MATH",
     "sNum": 3,
@@ -44300,7 +44308,7 @@
   },
   {
     "qTxt": "Giving your answer in proper scientific notation, convert 100 millimeters into kilometers:",
-    "qAns": "1 x 10-4    (DO NOT ACCEPT 10-4)",
+    "qAns": "1 x 10^-4    (DO NOT ACCEPT 10^-4)",
     "cat": "GS",
     "sNum": 3,
     "rNum": 3,
@@ -45028,7 +45036,7 @@
   },
   {
     "qTxt": "In standard chemical nomenclature, what is the ground-state electron configuration for fluorine?",
-    "qAns": "1s22s22p5  (ACCEPT:  [He]2s22p5)",
+    "qAns": "1s2 2s2 2p5  (ACCEPT:  [He] 2s2 2p5)",
     "cat": "CHEM",
     "sNum": 3,
     "rNum": 4,
@@ -45057,8 +45065,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Simplify the following, giving your answer in simplest radical form:  96x (read as: the ninth root of x to the sixth power)",
-    "qAns": "32x",
+    "qTxt": "Simplify the following, giving your answer in simplest radical form:  9√(x^6) (read as: the ninth root of x to the sixth power)",
+    "qAns": "3√(x^2)",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 4,
@@ -45067,8 +45075,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Multiply the following, giving your answer in standard form and without negative exponents or radicals: 23232)(ba+",
-    "qAns": "343232342bbaa++",
+    "qTxt": "Multiply the following, giving your answer in standard form and without negative exponents or radicals: (a^2/3+b^2/3)^2",
+    "qAns": "a^4/3 + 2a^2/3b^2/3 + b^4/3",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 4,
@@ -46055,7 +46063,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If 1/x3 - 1/x2 - 1/x - 1 = 0 [one over x cubed minus one over x squared minus one over x minus one equals zero], then find the value of x3 + x2 + x + 1 [x cubed plus x squared plus x plus one]",
+    "qTxt": "If 1/x^3 - 1/x^2 - 1/x - 1 = 0 [one over x cubed minus one over x squared minus one over x minus one equals zero], then find the value of x^3 + x^2 + x + 1 [x cubed plus x squared plus x plus one]",
     "qAns": "2",
     "cat": "MATH",
     "sNum": 8,
@@ -46319,7 +46327,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "In the expansion of (2x - y)⁵ [two x minus y quantity raised to the fifth power], what is the coefficient of the x3y2 [x cubed y squared] term?",
+    "qTxt": "In the expansion of (2x - y)⁵ [two x minus y quantity raised to the fifth power], what is the coefficient of the x^3y^2 [x cubed y squared] term?",
     "qAns": "Z) 80",
     "ansCh": [
       "W) -80",
@@ -46855,7 +46863,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "You are given that xy = 6 and x2y + xy2 + x + y = 63 [x times y equals six and x squared times y plus x times y squared plus x plus y equals sixty-three].  Calculate: x2 + y2 [x squared plus y squared].",
+    "qTxt": "You are given that xy = 6 and x²y + xy² + x + y = 63 [x times y equals six and x squared times y plus x times y squared plus x plus y equals sixty-three].  Calculate: x² + y² [x squared plus y squared].",
     "qAns": "69",
     "cat": "MATH",
     "sNum": 8,
@@ -48538,12 +48546,12 @@
   },
   {
     "qTxt": "Which of the following functions has an oblique asymptote?",
-    "qAns": "W) f(x) = (x5 + 1)/(x4 + 3x2 + 2)",
+    "qAns": "W) f(x) = (x^5 + 1)/(x^4 + 3x^2 + 2)",
     "ansCh": [
-      "W) f(x) = (x5 + 1)/(x4 + 3x2 + 2) [f of x equals open parenthesis x to the fifth plus 1 close parenthesis over open parenthesis x to the fourth plus 3 x squared plus 2 close parenthesis]",
-      "X) f(x) = (x2 + 1)/(x3 - x2 - 1) [f of x equals open parenthesis x squared plus 1 close parenthesis over open parenthesis x cubed minus x squared minus 1 close parenthesis]",
-      "Y) f(x) = (4x2 + x + 1)/x2 [f of x equals open parenthesis 4 x squared plus x plus 1 close parenthesis over x squared]",
-      "Z) f(x) = x5/(x2 - 1) [f of x equals x to the fifth over open parenthesis x squared minus 1 close parenthesis]"
+      "W) f(x) = (x^5 + 1)/(x^4 + 3x^2 + 2) [f of x equals open parenthesis x to the fifth plus 1 close parenthesis over open parenthesis x to the fourth plus 3 x squared plus 2 close parenthesis]",
+      "X) f(x) = (x^2 + 1)/(x^3 - x^2 - 1) [f of x equals open parenthesis x squared plus 1 close parenthesis over open parenthesis x cubed minus x squared minus 1 close parenthesis]",
+      "Y) f(x) = (4x^2 + x + 1)/x^2 [f of x equals open parenthesis 4 x squared plus x plus 1 close parenthesis over x squared]",
+      "Z) f(x) = x^5/(x^2 - 1) [f of x equals x to the fifth over open parenthesis x squared minus 1 close parenthesis]"
     ],
     "cat": "MATH",
     "sNum": 6,
@@ -48583,8 +48591,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "If g(b) = 6b3 - 4b2 + b + 4b -1 [g of b equals 6 b cubed minus 4 b squared plus b plus 4 b to the negative 1], what is g'(b) [g prime of b]?",
-    "qAns": "18b2 - 8b + 1 - 4b-2 (ACCEPT: 18b2 - 8b + 1 -  )",
+    "qTxt": "If g(b) = 6b^3 - 4b^2 + b + 4b^-1 [g of b equals 6 b cubed minus 4 b squared plus b plus 4 b to the negative 1], what is g'(b) [g prime of b]?",
+    "qAns": "18b^2 - 8b + 1 - 4b^-2 (ACCEPT: 18b^2 - 8b + 1 -  )",
     "cat": "MATH",
     "sNum": 6,
     "rNum": 8,
@@ -49863,8 +49871,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Simplify the following radical expression, giving your answer in standard bi form:49144!",
-    "qAns": "i712",
+    "qTxt": "Simplify the following radical expression, giving your answer in standard bi form: √(-144/49)",
+    "qAns": "12/7i",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 13,
@@ -49873,8 +49881,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Multiply the following complex numbers, giving your answer in standard form:  (2 + i2)(3 -  i2)",
-    "qAns": "8 + 2i  (ACCEPT:  8 + i2)",
+    "qTxt": "Multiply the following complex numbers, giving your answer in standard form:  (2 + i^2)(3 -  i^2)",
+    "qAns": "8 + √2i  (ACCEPT:  8 + i√2)",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 13,
@@ -50073,7 +50081,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Given the function f(x) = x3 + 3x - k and f(3) = 31, solve for k:",
+    "qTxt": "Given the function f(x) = x^3 + 3x - k and f(3) = 31, solve for k:",
     "qAns": "5",
     "cat": "MATH",
     "sNum": 3,
@@ -50283,7 +50291,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Arrange the following 4 cations in order of increasing ionic radii:  Mg2+;  Rb+;   Al3+;  Na+",
+    "qTxt": "Arrange the following 4 cations in order of increasing ionic radii:  Mg^2+;  Rb^+;   Al^3+;  Na^+",
     "qAns": "Al3+;  Mg2+;  Na+;  Rb+",
     "cat": "CHEM",
     "sNum": 3,
@@ -50389,8 +50397,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Expand the following expression, giving your answer in standard binomial form:  (6x + 3y)2",
-    "qAns": "36x2 + 36xy + 9y2",
+    "qTxt": "Expand the following expression, giving your answer in standard binomial form:  (6x + 3y)²",
+    "qAns": "36x² + 36xy + 9y²",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 10,
@@ -50516,7 +50524,7 @@
   },
   {
     "qTxt": "Giving your answer in proper scientific notation to the first decimal place, how many joules of work are required to move a charge of +60 microcoulombs through a potential difference of 8 volts?",
-    "qAns": "4.8 x 10-4",
+    "qAns": "4.8 x 10^-4",
     "cat": "PHY",
     "sNum": 3,
     "rNum": 10,
@@ -50525,8 +50533,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Factor the following expression:   49x2 - 169y4",
-    "qAns": "(7x + 13y2)( 7x - 13y2)",
+    "qTxt": "Factor the following expression:   49x^2 - 169y^4",
+    "qAns": "(7x + 13y^2)(7x - 13y^2)",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 10,
@@ -50952,7 +50960,7 @@
   },
   {
     "qTxt": "Give the net ionic equation that occurs when aqueous solutions of ammonium sulfate and barium nitrate are mixed:",
-    "qAns": "Ba2+ + SO42- -> BaSO4",
+    "qAns": "Ba^2+ + SO4^2- -> BaSO4",
     "cat": "CHEM",
     "sNum": 3,
     "rNum": 15,
@@ -51182,7 +51190,7 @@
   },
   {
     "qTxt": "Giving your answer in standard form, give the equation of a circle with center at (12, 7) and a radius of 4:",
-    "qAns": "(x - 12)2 + (y - 7)2 = 16",
+    "qAns": "(x - 12)² + (y - 7)² = 16",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 15,
@@ -51191,7 +51199,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find every value of k such that the following equation has exactly one real number root:  16x2 + kx + 9 = 0",
+    "qTxt": "Find every value of k such that the following equation has exactly one real number root:  16x² + kx + 9 = 0",
     "qAns": "24 AND -24",
     "cat": "MATH",
     "sNum": 3,
@@ -51516,7 +51524,7 @@
   },
   {
     "qTxt": "Knowing that gallium is in group 13 and Period 4, give the simplified ground-state electron configuration, starting with the last filled noble gas configuration of argon:",
-    "qAns": "[Ar]4s23d104p1  (ACCEPT:  [Ar]3d104s24p1 or 4s23d104p1 or 3d104s24p1)",
+    "qAns": "[Ar]4s2 3d10 4p1  (ACCEPT:  [Ar] 3d10 4s2 4p1 or 4s2 3d10 4p1 or 3d10 4s2 4p1)",
     "cat": "CHEM",
     "sNum": 3,
     "rNum": 15,
@@ -52072,7 +52080,7 @@
   },
   {
     "qTxt": "If the height of a cone is equal to the diameter of its base, express the volume of the cone in terms of its radius r and as a fraction in terms of pi.",
-    "qAns": "(2/3) πr3         (ALSO ACCEPT::  2πr3/3)",
+    "qAns": "(2/3)πr^3 (ALSO ACCEPT::  2πr^3/3)",
     "cat": "MATH",
     "sNum": 6,
     "rNum": 14,
@@ -52113,8 +52121,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "The equilibrium constant K for the following reaction is 6 x 10-4: (CH3)2NH + H2O →*(CH3)2NH2+ + OH- [CH 3 2 NH plus H 2 O yields star C H 3 2 N H 2 plus plus O H minus].   Providing your answer in scientific notation, find K for the reaction (CH3)2NH2+ →*(CH3)2NH + H+ [C H 3 2 N H 2 plus yields star C H 3 2 N H plus H plus].",
-    "qAns": "1.7 x 10-11",
+    "qTxt": "The equilibrium constant K for the following reaction is 6 x 10^-4: (CH3)2NH + H2O →*(CH3)2NH2+ + OH- [CH 3 2 NH plus H 2 O yields star C H 3 2 N H 2 plus plus O H minus].   Providing your answer in scientific notation, find K for the reaction (CH3)2NH2+ →*(CH3)2NH + H+ [C H 3 2 N H 2 plus yields star C H 3 2 N H plus H plus].",
+    "qAns": "1.7 x 10^-11",
     "cat": "CHEM",
     "sNum": 6,
     "rNum": 14,
@@ -52321,7 +52329,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If f(x) = -2x2 + 8x - 4, which of the following is true?",
+    "qTxt": "If f(x) = -2x² + 8x - 4, which of the following is true?",
     "qAns": "W) f IS NOT A ONE TO ONE FUNCTION",
     "ansCh": [
       "W) f is not a one to one function",
@@ -52471,7 +52479,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If function f is defined by f(x) = (4x2 - 12x)/(x2 - 9) [f of x equals a fraction with numerator 4 x squared minus 12 x and denominator x squared minus 9], then at x = 3, which of the following is true?",
+    "qTxt": "If function f is defined by f(x) = (4x² - 12x)/(x² - 9) [f of x equals a fraction with numerator 4 x squared minus 12 x and denominator x squared minus 9], then at x = 3, which of the following is true?",
     "qAns": "Y) THE GRAPH OF F HAS A HOLE AT (3, 2)",
     "ansCh": [
       "W) The graph of f has a vertical asymptote",
@@ -52619,7 +52627,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What is the electron-pair geometry for ICl4- [eye C L 4 minus]?",
+    "qTxt": "What is the electron-pair geometry for ICl^4- [eye C L 4 minus]?",
     "qAns": "OCTAHEDRAL",
     "cat": "CHEM",
     "sNum": 6,
@@ -52645,7 +52653,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Providing your answers as fractions in lowest terms, what are the x-intercepts of the graph of y = 12x2 - 5x - 2?",
+    "qTxt": "Providing your answers as fractions in lowest terms, what are the x-intercepts of the graph of y = 12x² - 5x - 2?",
     "qAns": "2/3 AND -1/4",
     "cat": "MATH",
     "sNum": 6,
@@ -53005,7 +53013,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Give the interval or intervals of values of x for which the graph of the function f(x) = 5 - x2 is above the graph of g(x)= 2x - 3?",
+    "qTxt": "Give the interval or intervals of values of x for which the graph of the function f(x) = 5 - x² is above the graph of g(x)= 2x - 3?",
     "qAns": "(-4, 2)",
     "cat": "MATH",
     "sNum": 5,
@@ -53170,7 +53178,7 @@
   },
   {
     "qTxt": "A spring mass system is vibrating along a frictionless horizontal floor. The spring constant is 8 newtons per meter, the amplitude is 5 centimeters, and the period is 4 seconds. What is the mass of the system in newtons in terms of pi?",
-    "qAns": "32π2",
+    "qAns": "32π²",
     "cat": "PHY",
     "sNum": 5,
     "rNum": 13,
@@ -53903,7 +53911,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If 8x3 - 4y = -16x, express y as a function of x in simplest form.",
+    "qTxt": "If 8x^3 - 4y = -16x, express y as a function of x in simplest form.",
     "qAns": "y = 2x3 + 4x",
     "cat": "MATH",
     "sNum": 4,
@@ -54033,7 +54041,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Determine the slope of the line that has the equation:  y - 14 = 7 (x + 2) - 5.",
+    "qTxt": "Determine the slope of the line that has the equation:  y - 14 = 7(x + 2) - 5.",
     "qAns": "7",
     "cat": "MATH",
     "sNum": 4,
@@ -54271,7 +54279,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What type of growth does y = 36  7x (read as: y equals 36 times 7 to the power of x) represent?",
+    "qTxt": "What type of growth does y = 36 * 7^x (read as: y equals 36 times 7 to the power of x) represent?",
     "qAns": "EXPONENTIAL",
     "cat": "MATH",
     "sNum": 4,
@@ -54459,7 +54467,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "When the discriminant of a quadratic function ax2 + bx + c = 0 is greater than 0, how many x intercepts does the graph have?",
+    "qTxt": "When the discriminant of a quadratic function ax² + bx + c = 0 is greater than 0, how many x intercepts does the graph have?",
     "qAns": "2",
     "cat": "MATH",
     "sNum": 4,
@@ -54469,7 +54477,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Give all solutions for h in the following equation: h2 + 3h = - 2.",
+    "qTxt": "Give all solutions for h in the following equation: h² + 3h = - 2.",
     "qAns": "h = -2 AND h = -1",
     "cat": "MATH",
     "sNum": 4,
@@ -54574,7 +54582,7 @@
   },
   {
     "qTxt": "A clothes dryer can be a high consumer of household electricity. Which of the following options is NOT a way in which to reduce energy consumption when using your clothes dryer?",
-    "qAns": "W) PURCHASE A DRYER MODEL THAT HAS AN ENERGY STAR LABEL*  [*NOTE: THERE ARE NO ENERGY STAR DRYERS- SEE WWW.ENERGYSTAR.GOV]",
+    "qAns": "W) PURCHASE A DRYER MODEL THAT HAS AN ENERGY STAR LABEL*  [*NOTE: THERE ARE NO ENERGY STAR DRYERS]",
     "ansCh": [
       "W) Purchase a dryer model that has an ENERGY STAR label",
       "X) Use the moisture sensor option, if you have one",
@@ -54773,7 +54781,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Evaluate y = 5x2 + 4x3 + 12 (read as: 5x squared plus 4 x cubed plus 12) when x = -2.",
+    "qTxt": "Evaluate y = 5x^2 + 4x^3 + 12 (read as: 5x squared plus 4 x cubed plus 12) when x = -2.",
     "qAns": "0",
     "cat": "MATH",
     "sNum": 4,
@@ -54815,7 +54823,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "In the graph of the function f(x) =sin () [f of x equals three halves the sine of the quantity x over 2], at which of the following x coordinates would f(x) = 0?",
+    "qTxt": "In the graph of the function f(x) = 3/2sin(x/2) [f of x equals three halves the sine of the quantity x over 2], at which of the following x coordinates would f(x) = 0?",
     "qAns": "Y) 2π",
     "ansCh": [
       "W) π/2",
@@ -54950,7 +54958,7 @@
   },
   {
     "qTxt": "Differentiate sin(cosx) [sine of cosine of x].",
-    "qAns": "-cos(cos x)sinx [ACCEPT: cos (cos x)(-sin x) or -sinx cos(cos(x)); DO NOT ACCEPT: -cos2x sinx]",
+    "qAns": "-cos(cos x)sinx [ACCEPT: cos (cos x)(-sin x) or -sinx cos(cos(x)); DO NOT ACCEPT: -cos²x sinx]",
     "cat": "MATH",
     "sNum": 6,
     "rNum": 10,
@@ -55151,7 +55159,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the remainder when f(x) = x6 + 5x5 - x3 + x - 6 is divided by  (x + 1).",
+    "qTxt": "Find the remainder when f(x) = x^6 + 5x^5 - x^3 + x - 6 is divided by  (x + 1).",
     "qAns": "-10",
     "cat": "MATH",
     "sNum": 6,
@@ -55717,8 +55725,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "If f(x) = 2x - 1 and g(x) = 6 + 2x - x2, what is the standard polynomial form for g(f(x)) (read as: g of f of x)?",
-    "qAns": "-4x2 + 8x + 3",
+    "qTxt": "If f(x) = 2x - 1 and g(x) = 6 + 2x - x², what is the standard polynomial form for g(f(x)) (read as: g of f of x)?",
+    "qAns": "-4x² + 8x + 3",
     "cat": "MATH",
     "sNum": 5,
     "rNum": 7,
@@ -56112,7 +56120,7 @@
   },
   {
     "qTxt": "Name the following compound: N2O4.",
-    "qAns": "DINITROGEN TETROXIDE   (ALSO ACCEPT: NITROGEN TETROXIDE, NITROGEN PEROXIDE)",
+    "qAns": "DINITROGEN TETROXIDE (ALSO ACCEPT: NITROGEN TETROXIDE, NITROGEN PEROXIDE)",
     "cat": "CHEM",
     "sNum": 4,
     "rNum": 5,
@@ -56122,7 +56130,7 @@
   },
   {
     "qTxt": "What is the equation for the combustion of octane?",
-    "qAns": "2C8H18 + 25O2            18H2O + 16CO2",
+    "qAns": "2C8H18 + 25O2 -> 18H2O + 16CO2",
     "cat": "CHEM",
     "sNum": 4,
     "rNum": 5,
@@ -56375,7 +56383,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Consider the polynomial 5x2 + 13x + 10. How many and what kind of roots does it have?",
+    "qTxt": "Consider the polynomial 5x² + 13x + 10. How many and what kind of roots does it have?",
     "qAns": "TWO COMPLEX ROOTS",
     "cat": "MATH",
     "sNum": 4,
@@ -56651,8 +56659,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is   + (- ) as a fraction in simplest form?",
-    "qAns": "",
+    "qTxt": "What is 3/4 + (-5/6) as a fraction in simplest form?",
+    "qAns": "-1/12",
     "cat": "MATH",
     "sNum": 4,
     "rNum": 5,
@@ -56707,7 +56715,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If the electromotive force of the anode in a galvanic cell is       -0.76 volts and the electromotive force of the cathode is 0.34 volts, calculate the electromotive force of the cell in volts. Provide your answer as a decimal to the nearest hundredth.",
+    "qTxt": "If the electromotive force of the anode in a galvanic cell is -0.76 volts and the electromotive force of the cathode is 0.34 volts, calculate the electromotive force of the cell in volts. Provide your answer as a decimal to the nearest hundredth.",
     "qAns": "+1.10 (DO NOT ACCEPT: -1.10)",
     "cat": "CHEM",
     "sNum": 4,
@@ -56837,7 +56845,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "The polynomial p(x) = x4 + 5x3 - 2x2 - 24x has a zero at x = 2. Factor p completely.",
+    "qTxt": "The polynomial p(x) = x^4 + 5x^3 - 2x^2 - 24x has a zero at x = 2. Factor p completely.",
     "qAns": "x(x - 2)(x + 3)(x + 4)   [NOTE: EXPRESSIONS IN ANSWER CAN BE IN ANY ORDER]",
     "cat": "MATH",
     "sNum": 6,
@@ -56988,7 +56996,7 @@
   },
   {
     "qTxt": "In terms of x and in standard polynomial form, what is the volume of a right rectangular prism with dimensions (x + 4), (x + 1), and (x + 6)?",
-    "qAns": "x3 + 11x2 + 34x + 24",
+    "qAns": "x^3 + 11x^2 + 34x + 24",
     "cat": "MATH",
     "sNum": 6,
     "rNum": 3,
@@ -57335,7 +57343,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If ln [natural log of the quantity x cubed equals 6], what is ln [the natural log of the quantity x squared]?",
+    "qTxt": "If ln(x^3) = 6 [natural log of the quantity x cubed equals 6], what is ln(x²) [the natural log of the quantity x squared]?",
     "qAns": "4",
     "cat": "MATH",
     "sNum": 6,
@@ -57345,7 +57353,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If f(x) = 4x3 - 4x2 + 10, then what is f(-2) [f of negative 2]?",
+    "qTxt": "If f(x) = 4x^3 - 4x^2 + 10, then what is f(-2) [f of negative 2]?",
     "qAns": "-38",
     "cat": "MATH",
     "sNum": 6,
@@ -57689,7 +57697,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Solving for x, find the roots of the following equation:  x2 - 2x - 2 = 0",
+    "qTxt": "Solving for x, find the roots of the following equation:  x² - 2x - 2 = 0",
     "qAns": "x = 1 ± 3   (ACCEPT:  x = 1 + 3  AND  x = 1 - 3)",
     "cat": "MATH",
     "sNum": 2,
@@ -57903,7 +57911,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the solution set of the following equation:  x2 + 6x + 6 = 0",
+    "qTxt": "Find the solution set of the following equation:  x² + 6x + 6 = 0",
     "qAns": "-3 ± 3",
     "cat": "MATH",
     "sNum": 2,
@@ -58300,7 +58308,7 @@
   },
   {
     "qTxt": "Which of the following is a rational number:",
-    "qAns": "W)  1+4",
+    "qAns": "W) 1+√4",
     "ansCh": [
       "W)  1+√4",
       "X)  2+√5",
@@ -58617,7 +58625,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Which of the following is closest to the pKa of an acid whose  Ka = 5.0 x 10-4:",
+    "qTxt": "Which of the following is closest to the pKa of an acid whose  Ka = 5.0 x 10^-4:",
     "qAns": "X)  3.3",
     "ansCh": [
       "W)  2.3",
@@ -58685,7 +58693,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Which of the following represents the inverse function of f(x) = x3 + 5:",
+    "qTxt": "Which of the following represents the inverse function of f(x) = x^3 + 5:",
     "qAns": "Y) (x-5)^1/3",
     "ansCh": [
       "W) (x-5)³",
@@ -59107,8 +59115,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Add the following rational expressions and give your answer in fully factored form:  )6(4)2(-++xxxx",
-    "qAns": ")2)(6()25(+-+xxxx  (ACCEPT: )6)(2()25(-++xxxx)",
+    "qTxt": "Add the following rational expressions and give your answer in fully factored form:  x/(x+2) + 4x/(x-6)",
+    "qAns": "x(5x+2)/(x-6)(x+2)  (ACCEPT: x(5x+2)/(x+2)(x-6)",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 14,
@@ -59517,7 +59525,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Solve the following equation for x over the integers:  x2 = 3x",
+    "qTxt": "Solve the following equation for x over the integers:  x² = 3x",
     "qAns": "0;  3",
     "cat": "MATH",
     "sNum": 1,
@@ -59527,8 +59535,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Giving your answer as a fraction reduced to lowest terms, solve the following equation for x:  216104132+=-xx",
-    "qAns": "-43",
+    "qTxt": "Giving your answer as a fraction reduced to lowest terms, solve the following equation for x:  2/3x - 1/4 = 10/6x + 1/2",
+    "qAns": "-3/4",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 6,
@@ -59757,8 +59765,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Simplify the following rational expression:  xyxy593522+-",
-    "qAns": "CANNOT BE FURTHER SIMPLIFIED  (ACCEPT:   xyxy593522+- or THE SAME)",
+    "qTxt": "Simplify the following rational expression: (5y-3x²)/(9y²+5x)",
+    "qAns": "CANNOT BE FURTHER SIMPLIFIED  (ACCEPT: (5y-3x²)/(9y²+5x) or THE SAME)",
     "cat": "MATH",
     "sNum": 1,
     "rNum": 6,
@@ -59767,7 +59775,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Factor the following expression completely:  12x2 + 24x - 36",
+    "qTxt": "Factor the following expression completely:  12x² + 24x - 36",
     "qAns": "12(x + 3)(x - 1)  (ACCEPT:  12(x - 1)(x + 3))",
     "cat": "MATH",
     "sNum": 1,
@@ -60653,8 +60661,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Factor the following expression as completely as possible:  x4 - 16",
-    "qAns": "(x - 2)(x + 2)(x2 + 4)",
+    "qTxt": "Factor the following expression as completely as possible:  x^4 - 16",
+    "qAns": "(x - 2)(x + 2)(x² + 4)",
     "cat": "MATH",
     "sNum": 2,
     "rNum": 8,
@@ -61033,7 +61041,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "An arc of length 2π is cut off by a central angle of π4  radians.  What is the radius of the circle?",
+    "qTxt": "An arc of length 2π is cut off by a central angle of π/4  radians.  What is the radius of the circle?",
     "qAns": "8",
     "cat": "MATH",
     "sNum": 2,
@@ -61043,8 +61051,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Simplify the following equation:  4499+-+xx",
-    "qAns": "1+x  (ACCEPT:  x+1)",
+    "qTxt": "Simplify the following equation: √(9x+9) - √(4x+4)",
+    "qAns": "√(x+1)  (ACCEPT: √(1+x))",
     "cat": "MATH",
     "sNum": 2,
     "rNum": 8,
@@ -61493,7 +61501,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the solution set of the following equation:  )14(2)32(2+=-xx",
+    "qTxt": "Find the solution set of the following equation:  2/(2x-3) = 2/(4x+1)",
     "qAns": "-2",
     "cat": "MATH",
     "sNum": 2,
@@ -62233,7 +62241,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Evaluate the expression, x(y + z)2, when x = 2, y = -8; and z = 3:",
+    "qTxt": "Evaluate the expression, x(y + z)², when x = 2, y = -8; and z = 3:",
     "qAns": "50",
     "cat": "MATH",
     "sNum": 3,
@@ -62996,7 +63004,7 @@
   },
   {
     "qTxt": "A proton initially at rest is accelerated through a potential difference of 1 megavolt. What is its final kinetic energy in electronvolts?",
-    "qAns": "Y) 106",
+    "qAns": "Y) 10^6",
     "ansCh": [
       "W) 10^3",
       "X) 1.6 x 10^6",
@@ -63101,7 +63109,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "A point moves on the curve 6x2 - 3y2 = 18 so that its y-coordinate increases at a constant rate of 12 meters per second. At what rate, in meters per second, is the x-coordinate changing when the point is at (3, 2√3 )?",
+    "qTxt": "A point moves on the curve 6x² - 3y² = 18 so that its y-coordinate increases at a constant rate of 12 meters per second. At what rate, in meters per second, is the x-coordinate changing when the point is at (3, 2√3 )?",
     "qAns": "4√3",
     "cat": "MATH",
     "sNum": 7,
@@ -63235,7 +63243,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If f(x) = 2 - x [f of x equals 2 minus x], find f(f '(x)) [f of f prime of x].",
+    "qTxt": "If f(x) = 2 - x [f of x equals 2 minus x], find f(f'(x)) [f of f prime of x].",
     "qAns": "3",
     "cat": "MATH",
     "sNum": 7,
@@ -63453,7 +63461,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If we could capture one second of the total energy output of the Sun, store it, and use it with just 20% efficiency, how long, in years and to two significant digits, would this energy last based upon current global energy consumption? Assume the current global energy consumed per year is about 500,000,000 terajoules and the current luminosity of the Sun is 4 x 1026 watts.",
+    "qTxt": "If we could capture one second of the total energy output of the Sun, store it, and use it with just 20% efficiency, how long, in years and to two significant digits, would this energy last based upon current global energy consumption? Assume the current global energy consumed per year is about 500,000,000 terajoules and the current luminosity of the Sun is 4 x 10^26 watts.",
     "qAns": "160,000",
     "cat": "PHY",
     "sNum": 7,
@@ -63599,7 +63607,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If the proper energy of 15 grams of matter is 1.35 x 10n joules, what is the value of n?",
+    "qTxt": "If the proper energy of 15 grams of matter is 1.35 x 10^n joules, what is the value of n?",
     "qAns": "Y) 15",
     "ansCh": [
       "W) 9",
@@ -63615,7 +63623,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Given that the elementary charge is 1.6 x 10-19 coulombs and providing your answer in scientific notation to one significant digit, how many excess electrons would be present in an object with a net negative charge of 2.5 coulombs?",
+    "qTxt": "Given that the elementary charge is 1.6 x 10^-19 coulombs and providing your answer in scientific notation to one significant digit, how many excess electrons would be present in an object with a net negative charge of 2.5 coulombs?",
     "qAns": "2 x 1019",
     "cat": "PHY",
     "sNum": 7,
@@ -63697,7 +63705,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "BIOLOGY Multiple Choice",
+ "qTxt": "Which of the following sea turtle species is phylogenetically distinct from the others and can maintain body temperature elevated above ambient levels?",
     "qAns": "X) LEATHERBACK",
     "ansCh": [
       "W) Kemp's Ridley",
@@ -63936,7 +63944,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Two light waves travel the same distance of 6 x 10-7 meters but in mediums of refractive indices 1.54 and 1.00. Providing your answer in scientific notation to one significant figure, what is the time delay in seconds between waves?",
+    "qTxt": "Two light waves travel the same distance of 6 x 10^-7 meters but in mediums of refractive indices 1.54 and 1.00. Providing your answer in scientific notation to one significant figure, what is the time delay in seconds between waves?",
     "qAns": "1 x 10-15",
     "cat": "PHY",
     "sNum": 7,
@@ -63962,7 +63970,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Let g(x) = (x - 1)2 [g of x equal the square of the quantity x minus 1]. What is the set of all real values of x for which g(x) > 4 [g of x is greater than 4]?",
+    "qTxt": "Let g(x) = (x - 1)² [g of x equal the square of the quantity x minus 1]. What is the set of all real values of x for which g(x) > 4 [g of x is greater than 4]?",
     "qAns": "x < -1 OR x > 3 (MUST GIVE BOTH ANSWERS)",
     "cat": "MATH",
     "sNum": 7,
@@ -64785,7 +64793,7 @@
   },
   {
     "qTxt": "A point rotates around a circle at the rate of 40º per second. Convert this to revolutions per minute.",
-    "qAns": "203  (ACCEPT: 6 2/3)",
+    "qAns": "20/3  (ACCEPT: 6 2/3)",
     "cat": "MATH",
     "sNum": 7,
     "rNum": 11,
@@ -64794,7 +64802,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Given: x2 + y2 = 34 in the first quadrant and dxdt = 5, find dydt when x = 3.",
+    "qTxt": "Given: x² + y² = 34 in the first quadrant and dxdt = 5, find dydt when x = 3.",
     "qAns": "-3",
     "cat": "MATH",
     "sNum": 7,
@@ -65392,7 +65400,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "A body with a 2 kilogram mass has position vector r = 3i + 2t 2j meters. What is the velocity at t = 1 second?",
+    "qTxt": "A body with a 2 kilogram mass has position vector r = 3i + 2t²j meters. What is the velocity at t = 1 second?",
     "qAns": "X) 4j",
     "ansCh": [
       "W) 1j",
@@ -65564,8 +65572,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Assuming the Boltzmann constant k = 1.38 x 10-23 joules per Kelvin, what is the average translational kinetic energy in joules of molecules of an ideal gas at 127o Celsius?",
-    "qAns": "X) 8.28 x10-21",
+    "qTxt": "Assuming the Boltzmann constant k = 1.38 x 10^-23 joules per Kelvin, what is the average translational kinetic energy in joules of molecules of an ideal gas at 127o Celsius?",
+    "qAns": "X) 8.28 x10^-21",
     "ansCh": [
       "W) 2.6 x 10^-21",
       "X) 8.28 x 10^-21",
@@ -65758,8 +65766,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "A 1 meter long wire lying along the x-axis carries a current of 10.0 amperes in the negative x direction. The wire is in a uniform magnetic field 1.0 x 10-3 teslas per square meter. Expressing your answer in scientific notation with one significant figure, what is the magnitude of the magnetic force on the wire in newtons?",
-    "qAns": "1 X 10-2",
+    "qTxt": "A 1 meter long wire lying along the x-axis carries a current of 10.0 amperes in the negative x direction. The wire is in a uniform magnetic field 1.0 x 10^-3 teslas per square meter. Expressing your answer in scientific notation with one significant figure, what is the magnitude of the magnetic force on the wire in newtons?",
+    "qAns": "1 X 10^-2",
     "cat": "PHY",
     "sNum": 7,
     "rNum": 14,
@@ -65940,7 +65948,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Assuming y2 + 3x2y = 7x2 - 5 implicitly defines y as a function of x, find dy/dx at the point (3, 2).",
+    "qTxt": "Assuming y² + 3x²y = 7x² - 5 implicitly defines y as a function of x, find dy/dx at the point (3, 2).",
     "qAns": "6/31",
     "cat": "MATH",
     "sNum": 7,
@@ -66160,7 +66168,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Charged particles in a uniform magnetic field will undergo circular motion with a period of T = 2πm/(qB). The magnetic field of the Earth is roughly 10-4 tesla, assuming it is uniform. Given the mass of a proton to be 1.6 x 10^-27 kilograms and its electric charge to be 1.6 x 10-19 coulombs, providing your answer in scientific notation to one significant figure, what period in seconds would you measure for a proton?",
+    "qTxt": "Charged particles in a uniform magnetic field will undergo circular motion with a period of T = 2πm/(qB). The magnetic field of the Earth is roughly 10^-4 tesla, assuming it is uniform. Given the mass of a proton to be 1.6 x 10^-27 kilograms and its electric charge to be 1.6 x 10^-19 coulombs, providing your answer in scientific notation to one significant figure, what period in seconds would you measure for a proton?",
     "qAns": "6 x 10^-4",
     "cat": "PHY",
     "sNum": 7,
@@ -66448,7 +66456,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Expressing your answer in simplest form, if y = (x6) ln(x) [y equals x to the sixth power times the natural log of x], what is the derivative of y with respect to x?",
+    "qTxt": "Expressing your answer in simplest form, if y = (x^6) ln(x) [y equals x to the sixth power times the natural log of x], what is the derivative of y with respect to x?",
     "qAns": "6x5 ln(x) + x5",
     "cat": "MATH",
     "sNum": 6,
@@ -66816,7 +66824,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the radius of the circle with equation  x2 + 6x + y2 8y 11= 0?",
+    "qTxt": "What is the radius of the circle with equation  x² + 6x + y² - 8y - 11 = 0?",
     "qAns": "6",
     "cat": "MATH",
     "sNum": 6,
@@ -67130,7 +67138,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Providing your answer to one significant figure, determine the pH of a 5.0 molar solution of acetic acid, given that acetic acid's Ka is 2 x 10-5.",
+    "qTxt": "Providing your answer to one significant figure, determine the pH of a 5.0 molar solution of acetic acid, given that acetic acid's Ka is 2 x 10^-5.",
     "qAns": "2",
     "cat": "CHEM",
     "sNum": 6,
@@ -68932,7 +68940,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "The tangent line to the graph y = e2 - x [y equals e to the power of the quantity two minus x] at the point (1, e) [one, e] intersects both coordinate axes.  What is the area of the triangle formed by this tangent line and the coordinate axes?",
+    "qTxt": "The tangent line to the graph y = e² - x [y equals e to the power of the quantity two minus x] at the point (1, e) [one, e] intersects both coordinate axes.  What is the area of the triangle formed by this tangent line and the coordinate axes?",
     "qAns": "W) 2e",
     "ansCh": [
       "W) 2e",
@@ -69088,8 +69096,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Divide and simplify the following 2 polynomials, combining like terms: )2()8(3!!xx",
-    "qAns": "x2 + 2x + 4",
+    "qTxt": "Divide and simplify the following 2 polynomials, combining like terms: (x^3-8)/(x-2)",
+    "qAns": "x² + 2x + 4",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 8,
@@ -69282,7 +69290,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Solve the following quadratic inequality for x:  x2 + 5x + 4 ≥ 0",
+    "qTxt": "Solve the following quadratic inequality for x:  x² + 5x + 4 ≥ 0",
     "qAns": "x ≥ -1 OR x ≤ -4  (must give both answers)",
     "cat": "MATH",
     "sNum": 3,
@@ -69632,7 +69640,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Water flows at 2.0 meters per second through a tube of radius 1 centimeter. The dynamic viscosity of the water is 1.0 x 10-3 pascal seconds. Which of the following best represents the Reynolds number and the nature of the flow, given that the density of water is 1.0 x 103 kilograms per cubic meter?",
+    "qTxt": "Water flows at 2.0 meters per second through a tube of radius 1 centimeter. The dynamic viscosity of the water is 1.0 x 10^-3 pascal seconds. Which of the following best represents the Reynolds number and the nature of the flow, given that the density of water is 1.0 x 10^3 kilograms per cubic meter?",
     "qAns": "W) 40,000; TURBULENT",
     "ansCh": [
       "W) 40,000; turbulent",
@@ -69758,7 +69766,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the open intervals over which a function whose derivative is  5x2(x + 5)(x - 3) [5 x squared times open parenthesis x plus 5 close parenthesis times the quantity x minus 3] is increasing.",
+    "qTxt": "Find the open intervals over which a function whose derivative is  5x²(x + 5)(x - 3) [5 x squared times open parenthesis x plus 5 close parenthesis times the quantity x minus 3] is increasing.",
     "qAns": "(-∞, -5) AND (3, ∞)",
     "cat": "MATH",
     "sNum": 7,
@@ -70029,7 +70037,7 @@
   },
   {
     "qTxt": "Which of the following is a first order non-linear ordinary differential equation?",
-    "qAns": "Z) y' - 2y2 - 2 = 0",
+    "qAns": "Z) y' - 2y² - 2 = 0",
     "ansCh": [
       "W) y' + y = 0 [y prime plus y equals zero]",
       "X) y'' - 2y² - 2 = 0 [y double prime minus 2y squared minus 2 equals zero]",
@@ -71002,7 +71010,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Two identically sized conducting spheres, A, with a charge of +3.2 x 10-19 coulombs, and B, with a charge of -6.4 x 10-19 coulombs, are allowed to touch. While they are touching, sphere A does which of the following?",
+    "qTxt": "Two identically sized conducting spheres, A, with a charge of +3.2 x 10^-19 coulombs, and B, with a charge of -6.4 x 10^-19 coulombs, are allowed to touch. While they are touching, sphere A does which of the following?",
     "qAns": "Y) GAINS THREE ELECTRONS",
     "ansCh": [
       "W) Gains three protons",
@@ -71282,7 +71290,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If the graph of y = (x - 2)2 - 3 [y equals open parenthesis x minus 2 close parenthesis squared minus three] is translated 5 units up and 2 units to the right, what is the vertex of the new parabola obtained?",
+    "qTxt": "If the graph of y = (x - 2)² - 3 [y equals open parenthesis x minus 2 close parenthesis squared minus three] is translated 5 units up and 2 units to the right, what is the vertex of the new parabola obtained?",
     "qAns": "(4, 2)",
     "cat": "MATH",
     "sNum": 6,
@@ -71438,7 +71446,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "For f(x) = x2 + 2x + 4, which of the following statements is NOT true?",
+    "qTxt": "For f(x) = x² + 2x + 4, which of the following statements is NOT true?",
     "qAns": "W) f(x) HAS A MAXIMUM VALUE",
     "ansCh": [
       "W) f(x) has a maximum value",
@@ -71816,8 +71824,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Differentiate and simplify the following with respect to x:  y = xe",
-    "qAns": "xex2",
+    "qTxt": "Differentiate and simplify the following with respect to x: y = e^√x",
+    "qAns": "(e^√x)/(2√x)",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 17,
@@ -72004,7 +72012,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Give the center point and the vertices of the horizontal axis and vertical axis of the ellipse for the following equation:  19)2(16)1(22=!++yx",
+    "qTxt": "Give the center point and the vertices of the horizontal axis and vertical axis of the ellipse for the following equation: (x+1)²/16 +(y-2)²/9 = 1",
     "qAns": "CENTER = (-1, 2);  HORIZONTAL = (-5, 2) AND (3, 2);   VERTICAL = (-1, -1) AND (-1, 5)",
     "cat": "MATH",
     "sNum": 3,
@@ -72014,8 +72022,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Differentiate and simplify the following with respect to x:  y = xxln  (read as: natural log of x divided by x)",
-    "qAns": "2ln1xx!       (ALSO ACCEPT [-(lnx) +1]/x2",
+    "qTxt": "Differentiate and simplify the following with respect to x: y = ln(x)/x (read as: natural log of x divided by x)",
+    "qAns": "(1-ln(x))/x² (ALSO ACCEPT [-(lnx)+1]/x²",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 17,
@@ -72370,8 +72378,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Simplify the following completely: (3xy2) (4x2y3) (read as: 3xy squared times 4x squared y squared)",
-    "qAns": "12 x3y5",
+    "qTxt": "Simplify the following completely: (3xy^2) (4x^2y^3) (read as: 3xy squared times 4x squared y squared)",
+    "qAns": "12x^3y^5",
     "cat": "MATH",
     "sNum": 4,
     "rNum": 4,
@@ -72380,7 +72388,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Solve for x: 3x2 + 6x - 9 = 0",
+    "qTxt": "Solve for x: 3x² + 6x - 9 = 0",
     "qAns": "x = -3, AND x = 1",
     "cat": "MATH",
     "sNum": 4,
@@ -73722,8 +73730,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Giving your answer in standard form, what is the fourth term in the binomial expansion of the following:  (4x + y)4",
-    "qAns": "16xy3  (ACCEPT:  16y3x)",
+    "qTxt": "Giving your answer in standard form, what is the fourth term in the binomial expansion of the following:  (4x + y)^4",
+    "qAns": "16xy^3  (ACCEPT:  16y^3x)",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 11,
@@ -74534,8 +74542,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "By name or number, identify which of the following three species is paramagnetic: 1) CO, 2) CO+, 3) CO2+.",
-    "qAns": "CO+ (ACCEPT: 2)",
+    "qTxt": "By name or number, identify which of the following three species is paramagnetic: 1) CO, 2) CO^+, 3) CO^2+.",
+    "qAns": "CO^+ (ACCEPT: 2)",
     "cat": "CHEM",
     "sNum": 5,
     "rNum": 12,
@@ -74746,7 +74754,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If two angles of a triangle inscribed in a circle are 40 º and 110 º, what is the degree measure of the arc intercepted by the third angle?",
+    "qTxt": "If two angles of a triangle inscribed in a circle are 40º and 110º, what is the degree measure of the arc intercepted by the third angle?",
     "qAns": "Y) 60",
     "ansCh": [
       "W) 15",
@@ -74950,7 +74958,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "Identify the substance being reduced in the following reaction: 3 Zn + Fe2O3 -> (read as: yields) 2Fe + 3 ZnO.",
+    "qTxt": "Identify the substance being reduced in the following reaction: 3Zn + Fe2O3 -> (read as: yields) 2Fe + 3 ZnO.",
     "qAns": "THE Fe3+ IN THE Fe2O3 (ACCEPT: Fe3+ OR IRON III. DO NOT ACCEPT: IRON OR IRON METAL)",
     "cat": "CHEM",
     "sNum": 4,
@@ -75018,7 +75026,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If the input of methane in the Martian atmosphere is 2 x 106 moles per day, and 6 x 108 moles are estimated to reside in the Martian atmosphere, what is the residence time of methane in days?",
+    "qTxt": "If the input of methane in the Martian atmosphere is 2 x 10^6 moles per day, and 6 x 10^8 moles are estimated to reside in the Martian atmosphere, what is the residence time of methane in days?",
     "qAns": "300",
     "cat": "EAS",
     "sNum": 4,
@@ -75590,8 +75598,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "An electron microscope enables observation of detail on a virus down to 6 nanometers. Given h as 6.6 x 10-34 joule seconds and the mass of the electron as 9.1 x 10-31 kilograms, providing your answer in scientific notation with two significant digits, how fast, in meters per second, must an electron in the microscope be moving to observe detail of this size?",
-    "qAns": "1.2 x 105",
+    "qTxt": "An electron microscope enables observation of detail on a virus down to 6 nanometers. Given h as 6.6 x 10^-34 joule seconds and the mass of the electron as 9.1 x 10^-31 kilograms, providing your answer in scientific notation with two significant digits, how fast, in meters per second, must an electron in the microscope be moving to observe detail of this size?",
+    "qAns": "1.2 x 10^5",
     "cat": "PHY",
     "sNum": 5,
     "rNum": 15,
@@ -76328,7 +76336,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If fx, y = xy + 3xy2 (read as: f of x, y equals xy plus 3xy squared), what is the partial derivative of f with respect to y?",
+    "qTxt": "If fx, y = xy + 3xy² (read as: f of x, y equals xy plus 3xy squared), what is the partial derivative of f with respect to y?",
     "qAns": "x + 6xy",
     "cat": "MATH",
     "sNum": 5,
@@ -76446,7 +76454,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the limit of (3x2 + 6x)/(5 + 3x + x2) (read as: open parenthesis 3x squared plus 6x close parenthesis over open parenthesis 5 plus 3x plus x squared close parenthesis) as x goes to infinity?",
+    "qTxt": "What is the limit of (3x² + 6x)/(5 + 3x + x²) (read as: open parenthesis 3x squared plus 6x close parenthesis over open parenthesis 5 plus 3x plus x squared close parenthesis) as x goes to infinity?",
     "qAns": "3",
     "cat": "MATH",
     "sNum": 5,
@@ -79441,13 +79449,13 @@
     "tb": "B"
   },
   {
-    "qTxt": "Two spheres, each with a charge of 3 microcoulombs, are separated by 9 meters. Given that k = 9 x 109 meters per farad, how much electric potential energy in joules is stored in this combination of charges?",
-    "qAns": "Y) 9 x 10-3",
+    "qTxt": "Two spheres, each with a charge of 3 microcoulombs, are separated by 9 meters. Given that k = 9 x 10^9 meters per farad, how much electric potential energy in joules is stored in this combination of charges?",
+    "qAns": "Y) 9 x 10^-3",
     "ansCh": [
-      "W) 9 x 10-6",
-      "X) 1 x 10-3",
-      "Y) 9 x 10-3",
-      "Z) 9 x 109"
+      "W) 9 x 10^-6",
+      "X) 1 x 10^-3",
+      "Y) 9 x 10^-3",
+      "Z) 9 x 10^9"
     ],
     "cat": "PHY",
     "sNum": 7,
@@ -79572,12 +79580,12 @@
   },
   {
     "qTxt": "A wire carries a current of 2 amperes vertically upward. What is the magnitude and direction of the magnetic field in teslas produced by the wire 4 millimeters to the North of the wire?",
-    "qAns": "W) 1 X 10-4, WEST",
+    "qAns": "W) 1 X 10^-4, WEST",
     "ansCh": [
-      "W) 1 x 10-4, West",
-      "X) 1 x 10-4, East",
-      "Y) 2 x 10-4, West",
-      "Z) 2 x 10-4, East"
+      "W) 1 x 10^-4, West",
+      "X) 1 x 10^-4, East",
+      "Y) 2 x 10^-4, West",
+      "Z) 2 x 10^-4, East"
     ],
     "cat": "PHY",
     "sNum": 7,
@@ -80143,12 +80151,12 @@
   },
   {
     "qTxt": "Which of the following silver salts with the given Ksp values has the greatest molar solubility?",
-    "qAns": "W) SILVER CHLORIDE, Ksp = 1.8 x 10-10",
+    "qAns": "W) SILVER CHLORIDE, Ksp = 1.8 x 10^-10",
     "ansCh": [
-      "W) Silver chloride, Ksp = 1.8 x 10-10",
-      "X) Silver bromide, Ksp = 5.0 x 10-13",
-      "Y) Silver iodide, Ksp = 8.3 x 10-17",
-      "Z) Silver cyanide, Ksp = 1.2 x 10-16"
+      "W) Silver chloride, Ksp = 1.8 x 10^-10",
+      "X) Silver bromide, Ksp = 5.0 x 10^-13",
+      "Y) Silver iodide, Ksp = 8.3 x 10^-17",
+      "Z) Silver cyanide, Ksp = 1.2 x 10^-16"
     ],
     "cat": "CHEM",
     "sNum": 7,
@@ -80706,7 +80714,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "What are the coordinates of the vertex of the graph of y = 2x2 + 8x - 3?",
+    "qTxt": "What are the coordinates of the vertex of the graph of y = 2x² + 8x - 3?",
     "qAns": "(-2, -11)",
     "cat": "MATH",
     "sNum": 6,
@@ -80931,7 +80939,7 @@
   },
   {
     "qTxt": "Motion of the basilar membrane stimulates what cell type that initiates the transmission of a signal to the brain?",
-    "qAns": "INNER HAIR     (ALSO ACCEPT STEREOCILIA OR HAIR CELLS)",
+    "qAns": "INNER HAIR (ALSO ACCEPT STEREOCILIA OR HAIR CELLS)",
     "cat": "BIO",
     "sNum": 6,
     "rNum": 1,
@@ -81286,7 +81294,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What is the degree of the polynomial:  (x - 3)3 (x - 7)4 [open parenthesis x minus 3 close parenthesis cubed times open parenthesis x minus 7 close parenthesis to the power of 4]?",
+    "qTxt": "What is the degree of the polynomial:  (x - 3)^3 * (x - 7)^4 [open parenthesis x minus 3 close parenthesis cubed times open parenthesis x minus 7 close parenthesis to the power of 4]?",
     "qAns": "7",
     "cat": "MATH",
     "sNum": 6,
@@ -81654,7 +81662,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "What are the solutions to x2 - 5x + 6 = 0?",
+    "qTxt": "What are the solutions to x² - 5x + 6 = 0?",
     "qAns": "2 AND 3",
     "cat": "MATH",
     "sNum": 6,
@@ -81664,8 +81672,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find an equation of the graph that results from reflecting the graph of y =   over the y-axis, and then shifting the graph 3 units to the left.",
-    "qAns": "y =  (ACCEPT: y = )",
+    "qTxt": "Find an equation of the graph that results from reflecting the graph of y = √x  over the y-axis, and then shifting the graph 3 units to the left.",
+    "qAns": "y = √-(x+3) (ACCEPT: y = √(-x-3) )",
     "cat": "MATH",
     "sNum": 6,
     "rNum": 5,
@@ -81730,7 +81738,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If a radio station broadcasts with a wavelength of 2.5 meters, what is the frequency of the radio station in megahertz, given the speed of light as 3 X 108 meters per second?",
+    "qTxt": "If a radio station broadcasts with a wavelength of 2.5 meters, what is the frequency of the radio station in megahertz, given the speed of light as 3 X 10^8 meters per second?",
     "qAns": "120",
     "cat": "PHY",
     "sNum": 6,
@@ -82042,7 +82050,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "Solve the following equation for x:  1820)10()9(=++xx",
+    "qTxt": "Solve the following equation for x: (x+9)/(x+10) = 20/18",
     "qAns": "-19",
     "cat": "MATH",
     "sNum": 3,
@@ -82232,8 +82240,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "Remove all negative exponents and simplify the following expression for all non-zero values of x, y, and z:  )2()2(5430312!!!!zyxzyx",
-    "qAns": "2543zyx  (ACCEPT:  54321zyx)",
+    "qTxt": "Remove all negative exponents and simplify the following expression for all non-zero values of x, y, and z:  (2x^2*y^-1*z^3)^0/(2x^-3*y^-4*z^-5)",
+    "qAns": "x^3*y^4*z^5/2  (ACCEPT: 1/2*x^3*y^4*z^5)",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 7,
@@ -82243,7 +82251,7 @@
   },
   {
     "qTxt": "What is the slope-intercept equation of the line that passes through the point (4, -1) and is parallel to the line with equation 2x - 3y = 9?",
-    "qAns": "y = 32x - 311",
+    "qAns": "y = 2/3x - 11/3",
     "cat": "MATH",
     "sNum": 3,
     "rNum": 7,
@@ -82860,7 +82868,7 @@
     "tb": "T"
   },
   {
-    "qTxt": "If f(x) = -2x - ex [f of x equals negative 2x minus e to the x], what is the range of f' [the derivative of f]?",
+    "qTxt": "If f(x) = -2x - e^x [f of x equals negative 2x minus e to the x], what is the range of f' [the derivative of f]?",
     "qAns": "(-∞, -2) (ACCEPT: x < -2 or THE OPEN INTERVAL FROM NEGATIVE INFINITY TO -2)",
     "cat": "MATH",
     "sNum": 6,
@@ -83480,8 +83488,8 @@
     "tb": "T"
   },
   {
-    "qTxt": "Find the second derivative of the function f(x) = (3 + 2x)e-3x.",
-    "qAns": "3(6x + 5)e-3x [ACCEPT: (18x + 15)e-3x]",
+    "qTxt": "Find the second derivative of the function f(x) = (3 + 2x)e^-3x.",
+    "qAns": "3(6x + 5)e^-3x [ACCEPT: (18x + 15)e^-3x]",
     "cat": "MATH",
     "sNum": 5,
     "rNum": 14,
@@ -83516,8 +83524,8 @@
     "tb": "B"
   },
   {
-    "qTxt": "If the coulomb constant is 9 x 109 newton meters squared per coulomb squared, what force, in newtons, will two particles with charges of +2 and -2 coulombs kept 2 meters apart exert on each other?",
-    "qAns": "Y) 9.0 x 109 TOWARD EACH OTHER",
+    "qTxt": "If the coulomb constant is 9 x 10^9 newton meters squared per coulomb squared, what force, in newtons, will two particles with charges of +2 and -2 coulombs kept 2 meters apart exert on each other?",
+    "qAns": "Y) 9.0 x 10^9 TOWARD EACH OTHER",
     "ansCh": [
       "W) 4.5 x 10^9 away from each other",
       "X) 4.5 x 10^9 toward each other",
@@ -83608,7 +83616,7 @@
     "tb": "B"
   },
   {
-    "qTxt": "If x2 + y2 = 52, find dydx in terms of x and y in simplest form.",
+    "qTxt": "If x² + y² = 52, find dydx in terms of x and y in simplest form.",
     "qAns": "-xy",
     "cat": "MATH",
     "sNum": 5,
