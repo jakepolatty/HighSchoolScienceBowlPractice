@@ -7,3 +7,5 @@ You can view the app on the iTunes store here: https://itunes.apple.com/us/app/h
 ![sciencebowlapppromo120](https://user-images.githubusercontent.com/20936453/28903042-b027e58e-77d0-11e7-8c42-4723dd22b45b.png)
 
 Questions or concerns about the app can be raised using the "Issues" button at the top of the page.
+
+Information about the Android version of the app can be found [here](https://github.com/jakepolatty/HighSchoolScienceBowlPractice-Android).
