@@ -9,6 +9,9 @@
 import UIKit
 
 class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+    static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+    
     let roundPickerData = [
         ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6", "Set 7", "Set 8", "Set 9"],
         ["Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
@@ -45,6 +48,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         return picker
     }()
     
+    
     lazy var startSetButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +63,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     lazy var timePickerHeader: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Select Question Time Limits:"
+        label.text = "Select Round Time Limits:"
         label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
         label.textColor = UIColor.white
         return label
@@ -97,6 +101,30 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         picker.layer.cornerRadius = 10
         return picker
+    }()
+    
+    lazy var roundTimerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "8 Minute Halves:"
+        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor.white
+        return label
+    }()
+    
+    lazy var roundTimerButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Off", for: .normal)
+        button.setTitle("On", for: .selected)
+        button.setBackgroundColor(color: lightGrey, forState: .normal)
+        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(ReaderSettingsViewController.toggleRoundTimer), for: .touchUpInside)
+        return button
     }()
     
     override func viewDidLoad() {
@@ -148,7 +176,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         
         scrollView.addSubview(tossupTimeLabel)
         NSLayoutConstraint.activate([
-            tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 30),
+            tossupTimeLabel.leadingAnchor.constraint(equalTo: timePickerHeader.leadingAnchor, constant: 20),
             tossupTimeLabel.topAnchor.constraint(equalTo: timePickerHeader.bottomAnchor, constant: 20)
         ])
         
@@ -156,7 +184,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         NSLayoutConstraint.activate([
             tossupTimePicker.widthAnchor.constraint(equalToConstant: 100),
             tossupTimePicker.heightAnchor.constraint(equalToConstant: 50),
-            tossupTimePicker.trailingAnchor.constraint(equalTo: timePickerHeader.trailingAnchor, constant: -30),
+            tossupTimePicker.trailingAnchor.constraint(equalTo: timePickerHeader.trailingAnchor, constant: -20),
             tossupTimePicker.centerYAnchor.constraint(equalTo: tossupTimeLabel.centerYAnchor)
         ])
         
@@ -174,12 +202,26 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
             bonusTimePicker.centerYAnchor.constraint(equalTo: bonusTimeLabel.centerYAnchor)
         ])
         
+        scrollView.addSubview(roundTimerLabel)
+        NSLayoutConstraint.activate([
+            roundTimerLabel.leadingAnchor.constraint(equalTo: bonusTimeLabel.leadingAnchor, constant: -6),
+            roundTimerLabel.topAnchor.constraint(equalTo: bonusTimeLabel.bottomAnchor, constant: 40)
+        ])
+        
+        scrollView.addSubview(roundTimerButton)
+        NSLayoutConstraint.activate([
+            roundTimerButton.widthAnchor.constraint(equalToConstant: 60),
+            roundTimerButton.heightAnchor.constraint(equalToConstant: 35),
+            roundTimerButton.leadingAnchor.constraint(equalTo: roundTimerLabel.trailingAnchor, constant: 10),
+            roundTimerButton.centerYAnchor.constraint(equalTo: roundTimerLabel.centerYAnchor)
+        ])
+        
         scrollView.addSubview(startSetButton)
         NSLayoutConstraint.activate([
             startSetButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 44),
             startSetButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 120),
             startSetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startSetButton.topAnchor.constraint(equalTo: bonusTimePicker.bottomAnchor, constant: 40)
+            startSetButton.topAnchor.constraint(equalTo: roundTimerButton.bottomAnchor, constant: 30)
         ])
         
         let height = startSetButton.frame.origin.y + startSetButton.frame.height + 30
@@ -209,6 +251,12 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     
     func returnMainMenu() {
         navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Button Handlers
+    
+    func toggleRoundTimer() {
+        roundTimerButton.isSelected = !roundTimerButton.isSelected;
     }
     
     // MARK: - Picker Data Source
