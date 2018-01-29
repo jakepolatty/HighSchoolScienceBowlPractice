@@ -361,6 +361,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         if (!roundTimerStartToggle.isSelected) {
             runRoundTimer()
             roundTimerStartToggle.isSelected = true
+            roundTimerStartToggle.setTitle("Resume", for: .normal)
         } else {
             roundTimer.invalidate()
             isTimerRunning = false
