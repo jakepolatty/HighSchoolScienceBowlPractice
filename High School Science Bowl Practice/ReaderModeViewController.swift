@@ -14,11 +14,15 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     var seconds: Int = 0
     var tossupTime: Int = 0
     var bonusTime: Int = 0
-    var timer = Timer()
+    var questionTimer = Timer()
     var contentOffset: CGFloat = 0
     var scrollView: UIScrollView = UIScrollView()
     
     var isTimedRound: Bool = false
+    var roundTimeRemaining: Int = 0
+    var halfNum: Int = 0
+    var isTimerRunning: Bool = false
+    var roundTimer = Timer()
     
     lazy var mainMenuButton: UIBarButtonItem? = {
         let button = UIButton(type: .system)
@@ -194,13 +198,18 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         return button
     }()
     
-    init(questionSet: [Question], index: Int, tossupTime: Int, bonusTime: Int, isTimedRound: Bool) {
+    init(questionSet: [Question], index: Int, tossupTime: Int, bonusTime: Int, isTimedRound: Bool, roundTimeRemaining: Int, halfNum: Int, isTimerRunning: Bool) {
         self.questionSet = questionSet
         self.index = index
         self.tossupTime = tossupTime
         self.bonusTime = bonusTime
         
         self.isTimedRound = isTimedRound
+        if (isTimedRound) {
+            self.roundTimeRemaining = roundTimeRemaining
+            self.halfNum = halfNum
+            self.isTimerRunning = isTimerRunning
+        }
         
         if questionSet[index].questionType == .tossup {
             self.seconds = tossupTime
@@ -228,41 +237,52 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        view.addSubview(timerBar)
-        NSLayoutConstraint.activate([
-            timerBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
-            timerBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            timerBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            timerBar.heightAnchor.constraint(equalToConstant: 44)
-        ])
         
-        timerBar.addSubview(roundTimeHeader)
-        NSLayoutConstraint.activate([
-            roundTimeHeader.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
-            roundTimeHeader.leadingAnchor.constraint(equalTo: timerBar.leadingAnchor, constant: 10)
-        ])
-        
-        timerBar.addSubview(roundTimeLabel)
-        NSLayoutConstraint.activate([
-            roundTimeLabel.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
-            roundTimeLabel.leadingAnchor.constraint(equalTo: roundTimeHeader.trailingAnchor, constant: 4)
-        ])
-        
-        timerBar.addSubview(roundTimerStartToggle)
-        NSLayoutConstraint.activate([
-            roundTimerStartToggle.widthAnchor.constraint(equalToConstant: 100),
-            roundTimerStartToggle.heightAnchor.constraint(equalToConstant: 35),
-            roundTimerStartToggle.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
-            roundTimerStartToggle.trailingAnchor.constraint(equalTo: timerBar.trailingAnchor, constant: -10)
-        ])
-        
-        view.addSubview(scrollView)
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: timerBar.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        if (isTimedRound) {
+            view.addSubview(timerBar)
+            NSLayoutConstraint.activate([
+                timerBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+                timerBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                timerBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                timerBar.heightAnchor.constraint(equalToConstant: 44)
+            ])
+            
+            timerBar.addSubview(roundTimeHeader)
+            NSLayoutConstraint.activate([
+                roundTimeHeader.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
+                roundTimeHeader.leadingAnchor.constraint(equalTo: timerBar.leadingAnchor, constant: 10)
+            ])
+            
+            timerBar.addSubview(roundTimeLabel)
+            NSLayoutConstraint.activate([
+                roundTimeLabel.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
+                roundTimeLabel.leadingAnchor.constraint(equalTo: roundTimeHeader.trailingAnchor, constant: 4)
+            ])
+            
+            timerBar.addSubview(roundTimerStartToggle)
+            NSLayoutConstraint.activate([
+                roundTimerStartToggle.widthAnchor.constraint(equalToConstant: 100),
+                roundTimerStartToggle.heightAnchor.constraint(equalToConstant: 35),
+                roundTimerStartToggle.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
+                roundTimerStartToggle.trailingAnchor.constraint(equalTo: timerBar.trailingAnchor, constant: -10)
+            ])
+            
+            view.addSubview(scrollView)
+            NSLayoutConstraint.activate([
+                scrollView.topAnchor.constraint(equalTo: timerBar.bottomAnchor),
+                scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        } else {
+            view.addSubview(scrollView)
+            NSLayoutConstraint.activate([
+                scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+                scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        }
         
         scrollView.addSubview(roundSetNumLabel)
         NSLayoutConstraint.activate([
@@ -338,14 +358,43 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Round Timer
     
     func toggleRoundTimer() {
-        
+        if (!roundTimerStartToggle.isSelected) {
+            runRoundTimer()
+            roundTimerStartToggle.isSelected = true
+        } else {
+            roundTimer.invalidate()
+            isTimerRunning = false
+            roundTimerStartToggle.isSelected = false
+        }
+    }
+    
+    func runRoundTimer() {
+        isTimerRunning = true
+        roundTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ReaderModeViewController.updateRoundTimer), userInfo: nil, repeats: true)
+    }
+    
+    func updateRoundTimer() {
+        if roundTimeRemaining == 1 {
+            roundTimer.invalidate()
+            isTimerRunning = false
+            if (halfNum == 1) {
+                roundTimeLabel.text = "Halftime"
+            } else {
+                roundTimeLabel.text = "Round Over"
+            }
+        } else {
+            roundTimeRemaining -= 1
+            let minutes = (roundTimeRemaining / 60) % 60
+            let seconds = roundTimeRemaining % 60
+            roundTimeLabel.text = String(format: "%i:%02i (Half %i)", minutes, seconds, halfNum)
+        }
     }
     
     // MARK: - Navigation
     
     func loadNextQuestion() {
         if let questionSet = questionSet {
-            let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1, tossupTime: tossupTime, bonusTime: bonusTime, isTimedRound: isTimedRound)
+            let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1, tossupTime: tossupTime, bonusTime: bonusTime, isTimedRound: isTimedRound, roundTimeRemaining: roundTimeRemaining, halfNum: halfNum, isTimerRunning: isTimerRunning)
             navigationController?.pushViewController(nextQuestionController, animated: true)
         }
     }
@@ -367,12 +416,12 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ReaderModeViewController.updateTimer), userInfo: nil, repeats: true)
+        questionTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ReaderModeViewController.updateTimer), userInfo: nil, repeats: true)
     }
     
     func updateTimer() {
         if seconds == 1 {
-            timer.invalidate()
+            questionTimer.invalidate()
             timerLabel.text = "Time's Up"
         } else {
             seconds -= 1

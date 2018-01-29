@@ -245,7 +245,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         } else {
             let questionSet = QuestionJSONParser.shared.getQuestionSet(questionSetNum, forRound: roundNum)
             let isTimedRound = roundTimerButton.isSelected
-            let readerController = ReaderModeViewController(questionSet: questionSet, index: 0, tossupTime: tossupTime, bonusTime: bonusTime, isTimedRound: isTimedRound)
+            let readerController = ReaderModeViewController(questionSet: questionSet, index: 0, tossupTime: tossupTime, bonusTime: bonusTime, isTimedRound: isTimedRound, roundTimeRemaining: 10, halfNum: 1, isTimerRunning: false)
             navigationController?.pushViewController(readerController, animated: true)
         }
     }
