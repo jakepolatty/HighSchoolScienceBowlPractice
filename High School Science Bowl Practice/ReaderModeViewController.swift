@@ -18,6 +18,8 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     var contentOffset: CGFloat = 0
     var scrollView: UIScrollView = UIScrollView()
     
+    var isTimedRound: Bool = false
+    
     lazy var mainMenuButton: UIBarButtonItem? = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
@@ -152,11 +154,14 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         return label
     }()
     
-    init(questionSet: [Question], index: Int, tossupTime: Int, bonusTime: Int) {
+    init(questionSet: [Question], index: Int, tossupTime: Int, bonusTime: Int, isTimedRound: Bool) {
         self.questionSet = questionSet
         self.index = index
         self.tossupTime = tossupTime
         self.bonusTime = bonusTime
+        
+        self.isTimedRound = isTimedRound
+        
         if questionSet[index].questionType == .tossup {
             self.seconds = tossupTime
         } else {
