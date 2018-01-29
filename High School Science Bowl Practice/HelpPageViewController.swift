@@ -45,7 +45,7 @@ class HelpPageViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "Reader Mode: Designed for coaches and team leaders to use in meetings to run practice rounds. You can select any specific set from the online database by the set number and round, and can set custom time limits."
+        label.text = "Reader Mode: Designed for coaches and team leaders to use in meetings to run practice rounds. You can select any specific set from the online database by the set number and round, and can set custom time limits. Reader Mode also includes an 8-minute half timer so you can run full competition-style scrimmage rounds under time constraints."
         label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightMedium)
         return label
