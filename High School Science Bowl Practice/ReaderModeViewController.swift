@@ -154,6 +154,46 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         return label
     }()
     
+    lazy var timerBar: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(red: 89.0/255.0, green: 185.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        return view
+    }()
+    
+    lazy var roundTimeHeader: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightLight)
+        label.textColor = UIColor.white
+        label.text = "Round Timer:"
+        return label
+    }()
+    
+    lazy var roundTimeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightBold)
+        label.textColor = UIColor.white
+        label.text = "8:00 (Half 1)"
+        return label
+    }()
+    
+    lazy var roundTimerStartToggle: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Start Timer", for: .normal)
+        button.setTitle("Pause", for: .selected)
+        button.setBackgroundColor(color: UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5), forState: .normal)
+        button.setBackgroundColor(color: UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5), forState: .selected)
+        button.tintColor = UIColor.white
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(ReaderModeViewController.toggleRoundTimer), for: .touchUpInside)
+        return button
+    }()
+    
     init(questionSet: [Question], index: Int, tossupTime: Int, bonusTime: Int, isTimedRound: Bool) {
         self.questionSet = questionSet
         self.index = index
@@ -188,9 +228,37 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.addSubview(timerBar)
+        NSLayoutConstraint.activate([
+            timerBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            timerBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            timerBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            timerBar.heightAnchor.constraint(equalToConstant: 44)
+        ])
+        
+        timerBar.addSubview(roundTimeHeader)
+        NSLayoutConstraint.activate([
+            roundTimeHeader.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
+            roundTimeHeader.leadingAnchor.constraint(equalTo: timerBar.leadingAnchor, constant: 10)
+        ])
+        
+        timerBar.addSubview(roundTimeLabel)
+        NSLayoutConstraint.activate([
+            roundTimeLabel.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
+            roundTimeLabel.leadingAnchor.constraint(equalTo: roundTimeHeader.trailingAnchor, constant: 4)
+        ])
+        
+        timerBar.addSubview(roundTimerStartToggle)
+        NSLayoutConstraint.activate([
+            roundTimerStartToggle.widthAnchor.constraint(equalToConstant: 100),
+            roundTimerStartToggle.heightAnchor.constraint(equalToConstant: 35),
+            roundTimerStartToggle.centerYAnchor.constraint(equalTo: timerBar.centerYAnchor),
+            roundTimerStartToggle.trailingAnchor.constraint(equalTo: timerBar.trailingAnchor, constant: -10)
+        ])
+        
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: timerBar.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -267,9 +335,17 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentOffset = CGPoint(x: 0, y: contentOffset)
     }
     
+    // MARK: - Round Timer
+    
+    func toggleRoundTimer() {
+        
+    }
+    
+    // MARK: - Navigation
+    
     func loadNextQuestion() {
         if let questionSet = questionSet {
-            let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1, tossupTime: tossupTime, bonusTime: bonusTime)
+            let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1, tossupTime: tossupTime, bonusTime: bonusTime, isTimedRound: isTimedRound)
             navigationController?.pushViewController(nextQuestionController, animated: true)
         }
     }
@@ -281,6 +357,8 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     func finishSet() {
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    // MARK: - Question Timer
     
     func startTimerPressed() {
         runTimer()
