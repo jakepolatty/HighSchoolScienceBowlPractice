@@ -189,7 +189,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         button.setTitle("Start Timer", for: .normal)
         button.setTitle("Pause", for: .selected)
         button.setBackgroundColor(color: UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5), forState: .normal)
-        button.setBackgroundColor(color: UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5), forState: .selected)
+        button.setBackgroundColor(color: UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.7), forState: .selected)
         button.tintColor = UIColor.white
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
         button.clipsToBounds = true
@@ -216,6 +216,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         } else {
             self.seconds = bonusTime
         }
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -230,6 +231,24 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Reader Mode"
         scrollView.delegate = self
+        
+        if (isTimedRound) {
+            roundTimeLabel.text = getRoundTimerString()
+            
+            if (roundTimeRemaining <= 1) {
+                roundTimeLabel.text = "Round Over"
+                roundTimerStartToggle.isHidden = true
+                roundTimerStartToggle.isSelected = false
+            } else if (roundTimeRemaining < 480) {
+                roundTimerStartToggle.setTitle("Resume", for: .normal)
+                roundTimerStartToggle.isSelected = false
+            }
+            
+            if (isTimerRunning) {
+                roundTimerStartToggle.isSelected = true
+                runRoundTimer()
+            }
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -380,20 +399,35 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
             isTimerRunning = false
             if (halfNum == 1) {
                 roundTimeLabel.text = "Halftime"
+                roundTimerStartToggle.setTitle("Start Half 2", for: .normal)
+                roundTimerStartToggle.isSelected = false
+                isTimerRunning = false
+                roundTimeRemaining = 480
+                halfNum = 2
             } else {
                 roundTimeLabel.text = "Round Over"
+                roundTimerStartToggle.isHidden = true
+                roundTimerStartToggle.isSelected = false
+                isTimerRunning = false
             }
         } else {
             roundTimeRemaining -= 1
-            let minutes = (roundTimeRemaining / 60) % 60
-            let seconds = roundTimeRemaining % 60
-            roundTimeLabel.text = String(format: "%i:%02i (Half %i)", minutes, seconds, halfNum)
+            roundTimeLabel.text = getRoundTimerString()
         }
+    }
+    
+    func getRoundTimerString() -> String {
+        let minutes = (roundTimeRemaining / 60) % 60
+        let seconds = roundTimeRemaining % 60
+        return String(format: "%i:%02i (Half %i)", minutes, seconds, halfNum)
     }
     
     // MARK: - Navigation
     
     func loadNextQuestion() {
+        if (isTimerRunning) {
+            roundTimer.invalidate()
+        }
         if let questionSet = questionSet {
             let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1, tossupTime: tossupTime, bonusTime: bonusTime, isTimedRound: isTimedRound, roundTimeRemaining: roundTimeRemaining, halfNum: halfNum, isTimerRunning: isTimerRunning)
             navigationController?.pushViewController(nextQuestionController, animated: true)
@@ -401,10 +435,16 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func returnMainMenu() {
+        if (isTimerRunning) {
+            roundTimer.invalidate()
+        }
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func finishSet() {
+        if (isTimerRunning) {
+            roundTimer.invalidate()
+        }
         navigationController?.popToRootViewController(animated: true)
     }
     
