@@ -2,7 +2,7 @@
 
 # Information
 
-This is an iOS app designed to help students prepare for the National Science Bowl competition.
+This is an iOS app designed to help students prepare for Science Bowl competitions.
 
 You can view the app on the iTunes store here: https://itunes.apple.com/us/app/high-school-science-bowl-practice/id1264942565?ls=1&mt=8
 
