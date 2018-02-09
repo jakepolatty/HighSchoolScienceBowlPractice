@@ -72,7 +72,6 @@ class HelpPageViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        scrollView = UIScrollView(frame: view.frame)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         view.addSubview(scrollView)
@@ -80,7 +79,7 @@ class HelpPageViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         scrollView.addSubview(topHeader)
