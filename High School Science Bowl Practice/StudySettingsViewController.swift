@@ -12,8 +12,8 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     let pickerData = [
         ["All Rounds", "Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7", "Round 8", "Round 9", "Round 10", "Round 11", "Round 12", "Round 13", "Round 14", "Round 15", "Round 16", "Round 17"]
     ]
-    static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-    static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+    static let lightGrey = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+    static let darkGrey = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
     var category: Category?
     var scrollView: UIScrollView = UIScrollView()
     
@@ -21,7 +21,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
         button.setTitle(" Menu", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         button.sizeToFit()
         button.addTarget(self, action: #selector(StudySettingsViewController.returnMainMenu), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
@@ -31,7 +31,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Choose a Topic:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -40,10 +40,10 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Biology", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: StudySettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: StudySettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleBiology), for: .touchUpInside)
@@ -54,10 +54,10 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Chemistry", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: StudySettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: StudySettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleChemistry), for: .touchUpInside)
@@ -68,10 +68,10 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Earth and Space", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: StudySettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: StudySettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleEarthAndSpace), for: .touchUpInside)
@@ -82,10 +82,10 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Energy", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: StudySettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: StudySettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleEnergy), for: .touchUpInside)
@@ -96,10 +96,10 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Mathematics", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: StudySettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: StudySettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.toggleMath), for: .touchUpInside)
@@ -110,10 +110,10 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Physics", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: StudySettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: StudySettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.togglePhysics), for: .touchUpInside)
@@ -124,7 +124,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Or Generate Random Questions:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -133,10 +133,10 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Random", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: StudySettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: StudySettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.isSelected = true
@@ -148,7 +148,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "And Select a Round:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -156,7 +156,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     lazy var roundPicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         picker.layer.cornerRadius = 10
         return picker
     }()
@@ -165,7 +165,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Start Set", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
+        button.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudySettingsViewController.startStudyMode), for: .touchUpInside)
@@ -177,7 +177,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Study Mode"
         self.automaticallyAdjustsScrollViewInsets = false
-        view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         roundPicker.delegate = self
         roundPicker.dataSource = self
     }
@@ -186,7 +186,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         super.viewWillLayoutSubviews()
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        scrollView.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
@@ -293,14 +293,14 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         }
     }
     
-    func startStudyMode() {
+    @objc func startStudyMode() {
         let category = getCategoryForToggle()
         let roundNumber = roundPicker.selectedRow(inComponent: 0)
         let studyController = StudyModeViewController(category: category, round: roundNumber)
         navigationController?.pushViewController(studyController, animated: true)
     }
     
-    func returnMainMenu() {
+    @objc func returnMainMenu() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
@@ -316,43 +316,43 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         randomButton.isSelected = false
     }
     
-    func toggleBiology() {
+    @objc func toggleBiology() {
         toggleOff()
         biologyButton.isSelected = true
         category = Category.biology
     }
     
-    func toggleChemistry() {
+    @objc func toggleChemistry() {
         toggleOff()
         chemistryButton.isSelected = true
         category = Category.chemistry
     }
     
-    func toggleEarthAndSpace() {
+    @objc func toggleEarthAndSpace() {
         toggleOff()
         earthAndSpaceButton.isSelected = true
         category = Category.earthAndSpace
     }
     
-    func toggleEnergy() {
+    @objc func toggleEnergy() {
         toggleOff()
         energyButton.isSelected = true
         category = Category.energy
     }
     
-    func toggleMath() {
+    @objc func toggleMath() {
         toggleOff()
         mathButton.isSelected = true
         category = Category.mathematics
     }
     
-    func togglePhysics() {
+    @objc func togglePhysics() {
         toggleOff()
         physicsButton.isSelected = true
         category = Category.physics
     }
     
-    func toggleRandom() {
+    @objc func toggleRandom() {
         toggleOff()
         randomButton.isSelected = true
         category = nil
@@ -392,7 +392,7 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let title = pickerData[component][row]
-        let attributedString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.white])
+        let attributedString = NSAttributedString(string: title, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor.white]))
         return attributedString
     }
     
@@ -401,11 +401,22 @@ class StudySettingsViewController: UIViewController, UIPickerViewDataSource, UIP
         if pickerLabel == nil {
             pickerLabel = UILabel()
             pickerLabel?.textAlignment = .center
-            pickerLabel?.font = UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightRegular)
+            pickerLabel?.font = UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.regular)
         }
         let title = pickerData[component][row]
         pickerLabel?.text = title
         pickerLabel?.textColor = UIColor.white
         return pickerLabel!
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

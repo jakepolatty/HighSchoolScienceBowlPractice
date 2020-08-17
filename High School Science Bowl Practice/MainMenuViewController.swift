@@ -15,7 +15,7 @@ class MainMenuViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "High School Science Bowl Practice"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 39.0, weight: UIFontWeightHeavy)
+        label.font = UIFont.systemFont(ofSize: 39.0, weight: UIFont.Weight.heavy)
         label.textAlignment = NSTextAlignment.center
         label.textColor = UIColor.white
         return label
@@ -25,9 +25,9 @@ class MainMenuViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Quiz Mode", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(MainMenuViewController.startQuizMode), for: .touchUpInside)
@@ -38,9 +38,9 @@ class MainMenuViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Reader Mode", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(MainMenuViewController.startReaderMode), for: .touchUpInside)
@@ -51,9 +51,9 @@ class MainMenuViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Study Mode", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(MainMenuViewController.startStudyMode), for: .touchUpInside)
@@ -64,9 +64,9 @@ class MainMenuViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("About", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.15)
+        button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.15)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 22
         button.addTarget(self, action: #selector(MainMenuViewController.openAboutPage), for: .touchUpInside)
@@ -77,9 +77,9 @@ class MainMenuViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Help", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.15)
+        button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.15)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 22
         button.addTarget(self, action: #selector(MainMenuViewController.openHelpPage), for: .touchUpInside)
@@ -95,7 +95,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
 
     override func viewWillLayoutSubviews() {
@@ -157,31 +157,31 @@ class MainMenuViewController: UIViewController {
         ])
     }
     
-    func startQuizMode() {
+    @objc func startQuizMode() {
         let quizSettingsController = QuizSettingsViewController()
         let navigationController = UINavigationController(rootViewController: quizSettingsController)
         self.present(navigationController, animated: true, completion: nil)
     }
     
-    func startReaderMode() {
+    @objc func startReaderMode() {
         let readerSettingsController = ReaderSettingsViewController()
         let navigationController = UINavigationController(rootViewController: readerSettingsController)
         self.present(navigationController, animated: true, completion: nil)
     }
     
-    func startStudyMode() {
+    @objc func startStudyMode() {
         let studySettingsController = StudySettingsViewController()
         let navigationController = UINavigationController(rootViewController: studySettingsController)
         self.present(navigationController, animated: true, completion: nil)
     }
     
-    func openAboutPage() {
+    @objc func openAboutPage() {
         let aboutPageController = AboutPageViewController()
         let navigationController = UINavigationController(rootViewController: aboutPageController)
         self.present(navigationController, animated: true, completion: nil)
     }
     
-    func openHelpPage() {
+    @objc func openHelpPage() {
         let helpPageController = HelpPageViewController()
         let navigationController = UINavigationController(rootViewController: helpPageController)
         self.present(navigationController, animated: true, completion: nil)

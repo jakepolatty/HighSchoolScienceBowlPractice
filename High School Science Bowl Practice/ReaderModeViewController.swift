@@ -28,7 +28,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
         button.setTitle(" Menu", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         button.sizeToFit()
         button.addTarget(self, action: #selector(ReaderModeViewController.returnMainMenu), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
@@ -41,7 +41,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
             button = UIButton(type: .system)
             button.setImage(#imageLiteral(resourceName: "Forward Chevron"), for: .normal)
             button.setTitle("Finish Set ", for: .normal)
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
             button.sizeToFit()
             button.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
             button.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
@@ -51,7 +51,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
             button = UIButton(type: .system)
             button.setImage(#imageLiteral(resourceName: "Forward Chevron"), for: .normal)
             button.setTitle("Next ", for: .normal)
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
             button.sizeToFit()
             button.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
             button.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
@@ -64,8 +64,8 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     lazy var roundSetNumLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFont.Weight.light)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         if let roundNum = self.questionSet?[self.index].roundNumber, let setNum = self.questionSet?[self.index].setNumber {
             label.text = "Question Set \(setNum) Round \(roundNum)"
         }
@@ -75,8 +75,8 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     lazy var questionNumLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFont.Weight.light)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         if let questionNum = self.questionSet?[self.index].questionNumber, let questionType = self.questionSet?[self.index].questionType {
             label.text = "Question \(questionNum) \(questionType)"
         }
@@ -86,8 +86,8 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     lazy var catTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFont.Weight.light)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         if let category = self.questionSet?[self.index].category, let answerType = self.questionSet?[self.index].answerType {
             label.text = "\(String(describing: category)) \(String(describing: answerType))"
         }
@@ -98,7 +98,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         if let questionText = self.questionSet?[self.index].questionText {
             label.text = questionText
@@ -110,8 +110,8 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightSemibold)
-        label.textColor = UIColor(colorLiteralRed: 212.0/255.0, green: 212.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.semibold)
+        label.textColor = UIColor(red: 212.0/255.0, green: 212.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         if let answerChoices = self.questionSet?[self.index].answerChoices {
             if answerChoices.count > 0 {
                 label.text = "\(answerChoices[0])\n\(answerChoices[1])\n\(answerChoices[2])\n\(answerChoices[3])"
@@ -128,9 +128,9 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightHeavy)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.heavy)
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.95)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.95)
         if let answerText = self.questionSet?[self.index].answer {
             label.text = "Answer: \(answerText)"
         }
@@ -141,7 +141,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Start Timer", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
+        button.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(ReaderModeViewController.startTimerPressed), for: .touchUpInside)
@@ -151,8 +151,8 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     lazy var timerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightThin)
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.thin)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
         label.isHidden = true
         label.text = "\(self.seconds) Seconds Left"
         return label
@@ -168,7 +168,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     lazy var roundTimeHeader: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightLight)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.light)
         label.textColor = UIColor.white
         label.text = "Round Timer:"
         return label
@@ -177,7 +177,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     lazy var roundTimeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightBold)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.bold)
         label.textColor = UIColor.white
         label.text = "8:00 (Half 1)"
         return label
@@ -191,7 +191,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         button.setBackgroundColor(color: UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5), forState: .normal)
         button.setBackgroundColor(color: UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.7), forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(ReaderModeViewController.toggleRoundTimer), for: .touchUpInside)
@@ -226,7 +226,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.rightBarButtonItem = nextQuestionButton
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Reader Mode"
@@ -255,7 +255,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillLayoutSubviews()
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        scrollView.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         
         if (isTimedRound) {
             view.addSubview(timerBar)
@@ -376,7 +376,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Round Timer
     
-    func toggleRoundTimer() {
+    @objc func toggleRoundTimer() {
         if (!roundTimerStartToggle.isSelected) {
             runRoundTimer()
             roundTimerStartToggle.isSelected = true
@@ -393,7 +393,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         roundTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ReaderModeViewController.updateRoundTimer), userInfo: nil, repeats: true)
     }
     
-    func updateRoundTimer() {
+    @objc func updateRoundTimer() {
         if roundTimeRemaining == 1 {
             roundTimer.invalidate()
             isTimerRunning = false
@@ -424,7 +424,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Navigation
     
-    func loadNextQuestion() {
+    @objc func loadNextQuestion() {
         if (isTimerRunning) {
             roundTimer.invalidate()
         }
@@ -434,14 +434,14 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func returnMainMenu() {
+    @objc func returnMainMenu() {
         if (isTimerRunning) {
             roundTimer.invalidate()
         }
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    func finishSet() {
+    @objc func finishSet() {
         if (isTimerRunning) {
             roundTimer.invalidate()
         }
@@ -450,7 +450,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Question Timer
     
-    func startTimerPressed() {
+    @objc func startTimerPressed() {
         runTimer()
         startTimerButton.isHidden = true
         timerLabel.isHidden = false
@@ -460,7 +460,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         questionTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ReaderModeViewController.updateTimer), userInfo: nil, repeats: true)
     }
     
-    func updateTimer() {
+    @objc func updateTimer() {
         if seconds == 1 {
             questionTimer.invalidate()
             timerLabel.text = "Time's Up"

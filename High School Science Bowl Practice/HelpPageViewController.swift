@@ -15,7 +15,7 @@ class HelpPageViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
         button.setTitle(" Menu", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         button.sizeToFit()
         button.addTarget(self, action: #selector(HelpPageViewController.returnMainMenu), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
@@ -27,7 +27,7 @@ class HelpPageViewController: UIViewController {
         label.numberOfLines = 0
         label.text = "This page provides information about the app's different modes and settings."
         label.textColor = UIColor.white
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightBold)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.bold)
         return label
     }()
     
@@ -36,8 +36,8 @@ class HelpPageViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.text = "Quiz Mode: Multiple-choice only quiz mode that tests your knowledge against a clock and tracks statistics of your performance. You can select any category or pull questions from all categories (random option), and can also choose the time limits for tossup and bonus questions."
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.medium)
         return label
     }()
     
@@ -46,8 +46,8 @@ class HelpPageViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.text = "Reader Mode: Designed for coaches and team leaders to use in meetings to run practice rounds. You can select any specific set from the online database by the set number and round, and can set custom time limits. Reader Mode also includes an 8-minute half timer so you can run full competition-style scrimmage rounds under time constraints."
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.medium)
         return label
     }()
     
@@ -56,14 +56,14 @@ class HelpPageViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.text = "Study Mode: Casual mode used for studying questions without a time limit. You can select any category (or all categories) and any round difficulty level (or allow questions from all rounds)."
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightMedium)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.medium)
         return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.title = "Help"
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.automaticallyAdjustsScrollViewInsets = false
@@ -73,7 +73,7 @@ class HelpPageViewController: UIViewController {
         super.viewWillLayoutSubviews()
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        scrollView.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
@@ -113,7 +113,7 @@ class HelpPageViewController: UIViewController {
         scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height)
     }
     
-    func returnMainMenu() {
+    @objc func returnMainMenu() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
 }

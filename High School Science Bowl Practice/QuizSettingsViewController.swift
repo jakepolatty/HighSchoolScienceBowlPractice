@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     
-    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+    func setBackgroundColor(color: UIColor, forState: UIControl.State) {
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
         UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
         UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
@@ -22,8 +22,8 @@ extension UIButton {
 }
 
 class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-    static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+    static let lightGrey = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+    static let darkGrey = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
     
     let tossupTimePickerData = [["10 Seconds", "15 Seconds", "20 Seconds", "25 Seconds", "30 Seconds"]]
     let bonusTimePickerData = [["10 Seconds", "15 Seconds", "20 Seconds", "25 Seconds", "30 Seconds", "35 Seconds", "40 Seconds"]]
@@ -34,7 +34,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
         button.setTitle(" Menu", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         button.sizeToFit()
         button.addTarget(self, action: #selector(QuizSettingsViewController.returnMainMenu), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
@@ -44,7 +44,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Choose a Topic:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -53,10 +53,10 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Biology", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: QuizSettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: QuizSettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(QuizSettingsViewController.toggleBiology), for: .touchUpInside)
@@ -67,10 +67,10 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Chemistry", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: QuizSettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: QuizSettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(QuizSettingsViewController.toggleChemistry), for: .touchUpInside)
@@ -81,10 +81,10 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Earth and Space", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: QuizSettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: QuizSettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(QuizSettingsViewController.toggleEarthAndSpace), for: .touchUpInside)
@@ -95,10 +95,10 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Energy", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: QuizSettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: QuizSettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(QuizSettingsViewController.toggleEnergy), for: .touchUpInside)
@@ -109,10 +109,10 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Mathematics", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: QuizSettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: QuizSettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(QuizSettingsViewController.toggleMath), for: .touchUpInside)
@@ -123,10 +123,10 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Physics", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: QuizSettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: QuizSettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(QuizSettingsViewController.togglePhysics), for: .touchUpInside)
@@ -137,7 +137,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Or Generate Random Questions:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -146,10 +146,10 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Random", for: .normal)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: QuizSettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: QuizSettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.isSelected = true
@@ -161,7 +161,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Start Set", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
+        button.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(QuizSettingsViewController.startQuizMode), for: .touchUpInside)
@@ -172,7 +172,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Select Question Time Limits:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -181,7 +181,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Tossup:"
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -189,7 +189,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
     lazy var tossupTimePicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         picker.layer.cornerRadius = 10
         return picker
     }()
@@ -198,7 +198,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Bonus:"
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -206,7 +206,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
     lazy var bonusTimePicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         picker.layer.cornerRadius = 10
         return picker
     }()
@@ -216,7 +216,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Quiz Mode"
         self.automaticallyAdjustsScrollViewInsets = false
-        view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         tossupTimePicker.delegate = self
         tossupTimePicker.dataSource = self
         bonusTimePicker.delegate = self
@@ -227,7 +227,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         super.viewWillLayoutSubviews()
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        scrollView.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
@@ -354,7 +354,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         }
     }
     
-    func startQuizMode() {
+    @objc func startQuizMode() {
         let category = getCategoryForToggle()
         let tossupTime = getTossupTimeSelected()
         let bonusTime = getBonusTimeSelected()
@@ -362,7 +362,7 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         navigationController?.pushViewController(studyController, animated: true)
     }
     
-    func returnMainMenu() {
+    @objc func returnMainMenu() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
@@ -378,43 +378,43 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         randomButton.isSelected = false
     }
     
-    func toggleBiology() {
+    @objc func toggleBiology() {
         toggleOff()
         biologyButton.isSelected = true
         category = Category.biology
     }
     
-    func toggleChemistry() {
+    @objc func toggleChemistry() {
         toggleOff()
         chemistryButton.isSelected = true
         category = Category.chemistry
     }
     
-    func toggleEarthAndSpace() {
+    @objc func toggleEarthAndSpace() {
         toggleOff()
         earthAndSpaceButton.isSelected = true
         category = Category.earthAndSpace
     }
     
-    func toggleEnergy() {
+    @objc func toggleEnergy() {
         toggleOff()
         energyButton.isSelected = true
         category = Category.energy
     }
     
-    func toggleMath() {
+    @objc func toggleMath() {
         toggleOff()
         mathButton.isSelected = true
         category = Category.mathematics
     }
     
-    func togglePhysics() {
+    @objc func togglePhysics() {
         toggleOff()
         physicsButton.isSelected = true
         category = Category.physics
     }
     
-    func toggleRandom() {
+    @objc func toggleRandom() {
         toggleOff()
         randomButton.isSelected = true
         category = nil
@@ -468,10 +468,10 @@ class QuizSettingsViewController: UIViewController, UIPickerViewDataSource, UIPi
         let title: String
         if pickerView == tossupTimePicker {
             title = tossupTimePickerData[component][row]
-            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightRegular)
+            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.regular)
         } else if pickerView == bonusTimePicker {
             title = bonusTimePickerData[component][row]
-            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightRegular)
+            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.regular)
         } else {
             title = ""
         }

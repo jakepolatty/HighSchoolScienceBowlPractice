@@ -9,8 +9,8 @@
 import UIKit
 
 class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    static let lightGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
-    static let darkGrey = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+    static let lightGrey = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+    static let darkGrey = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
     
     let roundPickerData = [
         ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6", "Set 7", "Set 8", "Set 9"],
@@ -25,7 +25,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
         button.setTitle(" Menu", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         button.sizeToFit()
         button.addTarget(self, action: #selector(ReaderSettingsViewController.returnMainMenu), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
@@ -35,7 +35,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Choose a Question Set:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -43,7 +43,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     lazy var setRoundPicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         picker.layer.cornerRadius = 10
         return picker
     }()
@@ -53,7 +53,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Start Set", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
+        button.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 63.0/255.0, alpha: 0.5)
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(ReaderSettingsViewController.startReaderMode), for: .touchUpInside)
@@ -64,7 +64,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Select Round Time Limits:"
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -73,7 +73,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Tossup:"
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -81,7 +81,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     lazy var tossupTimePicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         picker.layer.cornerRadius = 10
         return picker
     }()
@@ -90,7 +90,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Bonus:"
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -98,7 +98,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
     lazy var bonusTimePicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        picker.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         picker.layer.cornerRadius = 10
         return picker
     }()
@@ -107,7 +107,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "8 Minute Halves:"
-        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         return label
     }()
@@ -117,10 +117,10 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Off", for: .normal)
         button.setTitle("On", for: .selected)
-        button.setBackgroundColor(color: lightGrey, forState: .normal)
-        button.setBackgroundColor(color: darkGrey, forState: .selected)
+        button.setBackgroundColor(color: ReaderSettingsViewController.lightGrey, forState: .normal)
+        button.setBackgroundColor(color: ReaderSettingsViewController.darkGrey, forState: .selected)
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.light)
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(ReaderSettingsViewController.toggleRoundTimer), for: .touchUpInside)
@@ -131,7 +131,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Reader Mode"
-        view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.automaticallyAdjustsScrollViewInsets = false
         setRoundPicker.delegate = self
         setRoundPicker.dataSource = self
@@ -145,7 +145,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         super.viewWillLayoutSubviews()
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        scrollView.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
@@ -232,7 +232,7 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         }
     }
     
-    func startReaderMode() {
+    @objc func startReaderMode() {
         let questionSetNum = setRoundPicker.selectedRow(inComponent: 0) + 1
         let roundNum = setRoundPicker.selectedRow(inComponent: 1) + 1
         let tossupTime = getTossupTimeSelected()
@@ -250,13 +250,13 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         }
     }
     
-    func returnMainMenu() {
+    @objc func returnMainMenu() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Button Handlers
     
-    func toggleRoundTimer() {
+    @objc func toggleRoundTimer() {
         roundTimerButton.isSelected = !roundTimerButton.isSelected;
     }
     
@@ -294,13 +294,13 @@ class ReaderSettingsViewController: UIViewController, UIPickerViewDataSource, UI
         let title: String
         if pickerView == setRoundPicker {
             title = roundPickerData[component][row]
-            pickerLabel?.font = UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightRegular)
+            pickerLabel?.font = UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.regular)
         } else if pickerView == tossupTimePicker {
             title = tossupTimePickerData[component][row]
-            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightRegular)
+            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.regular)
         } else if pickerView == bonusTimePicker {
             title = bonusTimePickerData[component][row]
-            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightRegular)
+            pickerLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.regular)
         } else {
             title = ""
         }

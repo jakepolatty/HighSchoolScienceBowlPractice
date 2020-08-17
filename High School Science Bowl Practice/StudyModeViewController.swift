@@ -30,7 +30,7 @@ class StudyModeViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
         button.setTitle(" Menu", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         button.sizeToFit()
         button.addTarget(self, action: #selector(StudyModeViewController.returnMainMenu), for: .touchUpInside)
         return UIBarButtonItem(customView: button)
@@ -40,7 +40,7 @@ class StudyModeViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Forward Chevron"), for: .normal)
         button.setTitle("Next ", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         button.sizeToFit()
         button.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         button.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
@@ -52,8 +52,8 @@ class StudyModeViewController: UIViewController {
     lazy var roundSetNumLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFont.Weight.light)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         label.text = "Question Set \(self.question.setNumber) Round \(self.question.roundNumber)"
         return label
     }()
@@ -61,8 +61,8 @@ class StudyModeViewController: UIViewController {
     lazy var questionNumLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFont.Weight.light)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         label.text = "Question \(self.question.questionNumber) \(self.question.questionType)"
         return label
     }()
@@ -70,8 +70,8 @@ class StudyModeViewController: UIViewController {
     lazy var catTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightLight)
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        label.font = UIFont.systemFont(ofSize: 13.0, weight: UIFont.Weight.light)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         label.text = "\(String(describing: self.question.category)) \(String(describing: self.question.answerType))"
         return label
     }()
@@ -80,7 +80,7 @@ class StudyModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightMedium)
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.medium)
         label.textColor = UIColor.white
         label.text = self.question.questionText
         return label
@@ -90,8 +90,8 @@ class StudyModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightSemibold)
-        label.textColor = UIColor(colorLiteralRed: 212.0/255.0, green: 212.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.semibold)
+        label.textColor = UIColor(red: 212.0/255.0, green: 212.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         if let answerChoices = self.question.answerChoices {
             if answerChoices.count == 4 {
                 label.text = "\(answerChoices[0])\n\(answerChoices[1])\n\(answerChoices[2])\n\(answerChoices[3])"
@@ -108,7 +108,7 @@ class StudyModeViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Show Answer", for: .normal)
-        button.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
+        button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25)
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(StudyModeViewController.showAnswer), for: .touchUpInside)
@@ -119,9 +119,9 @@ class StudyModeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightHeavy)
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.heavy)
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+        label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
         label.text = "Answer: \(self.question.answer)"
         return label
     }()
@@ -138,7 +138,7 @@ class StudyModeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.rightBarButtonItem = nextQuestionButton
         self.navigationItem.leftBarButtonItem = mainMenuButton
         self.navigationItem.title = "Study Mode"
@@ -150,7 +150,7 @@ class StudyModeViewController: UIViewController {
         
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        scrollView.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
@@ -226,16 +226,16 @@ class StudyModeViewController: UIViewController {
         }
     }
     
-    func loadNextQuestion() {
+    @objc func loadNextQuestion() {
         let nextQuestionController = StudyModeViewController(category: category, round: round)
         navigationController?.pushViewController(nextQuestionController, animated: true)
     }
     
-    func returnMainMenu() {
+    @objc func returnMainMenu() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    func showAnswer() {
+    @objc func showAnswer() {
         showAnswerButton.isHidden = true
         questionAnswerLabel.isHidden = false
     }
