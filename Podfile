@@ -6,6 +6,6 @@ target 'High School Science Bowl Practice' do
   use_frameworks!
 
   # Pods for High School Science Bowl Practice
-  #pod 'Charts'
+  pod 'Charts'
 
 end
