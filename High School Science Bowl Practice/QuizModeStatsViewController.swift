@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Charts
+import Charts
 
 class QuizModeStatsViewController: UIViewController {
     var stats: QuizModeStats?
@@ -45,20 +45,20 @@ class QuizModeStatsViewController: UIViewController {
         return label
     }()
     
-//    lazy var statsPieChart: PieChartView = {
-//        let pieChart = PieChartView()
-//        pieChart.translatesAutoresizingMaskIntoConstraints = false
-//        pieChart.holeColor = UIColor.clear
-//        pieChart.transparentCircleColor = UIColor.clear
-//        let description = Description()
-//        description.text = ""
-//        pieChart.chartDescription = description
-//        pieChart.entryLabelColor = UIColor.white
-//        pieChart.entryLabelFont = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightLight)
-//        pieChart.legend.enabled = false
-//        return pieChart
-//    }()
-//
+    lazy var statsPieChart: PieChartView = {
+        let pieChart = PieChartView()
+        pieChart.translatesAutoresizingMaskIntoConstraints = false
+        pieChart.holeColor = UIColor.clear
+        pieChart.transparentCircleColor = UIColor.clear
+        let description = Description()
+        description.text = ""
+        pieChart.chartDescription = description
+        pieChart.entryLabelColor = UIColor.white
+        pieChart.entryLabelFont = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.light)
+        pieChart.legend.enabled = false
+        return pieChart
+    }()
+
     lazy var noResultsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -74,32 +74,32 @@ class QuizModeStatsViewController: UIViewController {
     }()
     
     func setChart() {
-//        var dataEntries: [PieChartDataEntry] = []
-//        var colors: [UIColor] = []
-//        if let correct = stats?.numberCorrect, let incorrect = stats?.numberIncorrect, let notAnswered = stats?.numberNotAnswered  {
-//            if correct > 0 {
-//                let correctEntry = PieChartDataEntry(value: Double(correct), label: "Correct")
-//                dataEntries.append(correctEntry)
-//                colors.append(UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5))
-//            }
-//            if incorrect > 0 {
-//                dataEntries.append(PieChartDataEntry(value: Double(incorrect), label: "Incorrect"))
-//                colors.append(UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5))
-//            }
-//            if notAnswered > 0 {
-//                dataEntries.append(PieChartDataEntry(value: Double(notAnswered), label: "Not Answered"))
-//                colors.append(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25))
-//            }
-//        }
-//
-//        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: nil)
-//        pieChartDataSet.colors = colors
-//        let pieChartData = PieChartData(dataSets: [pieChartDataSet])
-//        let format = NumberFormatter()
-//        format.maximumFractionDigits = 0
-//        let formatter = DefaultValueFormatter(formatter: format)
-//        pieChartData.setValueFormatter(formatter)
-//        statsPieChart.data = pieChartData
+        var dataEntries: [PieChartDataEntry] = []
+        var colors: [UIColor] = []
+        if let correct = stats?.numberCorrect, let incorrect = stats?.numberIncorrect, let notAnswered = stats?.numberNotAnswered  {
+            if correct > 0 {
+                let correctEntry = PieChartDataEntry(value: Double(correct), label: "Correct")
+                dataEntries.append(correctEntry)
+                colors.append(UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5))
+            }
+            if incorrect > 0 {
+                dataEntries.append(PieChartDataEntry(value: Double(incorrect), label: "Incorrect"))
+                colors.append(UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5))
+            }
+            if notAnswered > 0 {
+                dataEntries.append(PieChartDataEntry(value: Double(notAnswered), label: "Not Answered"))
+                colors.append(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.25))
+            }
+        }
+
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
+        pieChartDataSet.colors = colors
+        let pieChartData = PieChartData(dataSets: [pieChartDataSet])
+        let format = NumberFormatter()
+        format.maximumFractionDigits = 0
+        let formatter = DefaultValueFormatter(formatter: format)
+        pieChartData.setValueFormatter(formatter)
+        statsPieChart.data = pieChartData
     }
     
     init(stats: QuizModeStats?, category: Category?) {
@@ -135,19 +135,19 @@ class QuizModeStatsViewController: UIViewController {
             categoryLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-//        view.addSubview(statsPieChart)
-//        NSLayoutConstraint.activate([
-//            statsPieChart.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 15),
-//            statsPieChart.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-//            statsPieChart.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-//            statsPieChart.heightAnchor.constraint(equalToConstant: view.frame.width - 40)
-//        ])
+        view.addSubview(statsPieChart)
+        NSLayoutConstraint.activate([
+            statsPieChart.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 15),
+            statsPieChart.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            statsPieChart.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            statsPieChart.heightAnchor.constraint(equalToConstant: view.frame.width - 40)
+        ])
         
         view.addSubview(noResultsLabel)
-//        NSLayoutConstraint.activate([
-//            noResultsLabel.centerXAnchor.constraint(equalTo: statsPieChart.centerXAnchor),
-//            noResultsLabel.centerYAnchor.constraint(equalTo: statsPieChart.centerYAnchor)
-//        ])
+        NSLayoutConstraint.activate([
+            noResultsLabel.centerXAnchor.constraint(equalTo: statsPieChart.centerXAnchor),
+            noResultsLabel.centerYAnchor.constraint(equalTo: statsPieChart.centerYAnchor)
+        ])
     }
     
     @objc func returnMainMenu() {
