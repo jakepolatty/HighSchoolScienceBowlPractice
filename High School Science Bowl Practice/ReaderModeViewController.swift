@@ -61,6 +61,27 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         return UIBarButtonItem(customView: button)
     }()
     
+    lazy var prevQuestionButton: UIBarButtonItem = {
+        let button: UIButton
+        if self.index == 0 {
+            button = UIButton(type: .system)
+            button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
+            button.setTitle(" Back", for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
+            button.sizeToFit()
+            button.tintColor = UIColor.clear
+            button.isEnabled = false;
+        } else {
+            button = UIButton(type: .system)
+            button.setImage(#imageLiteral(resourceName: "Back Chevron"), for: .normal)
+            button.setTitle(" Back", for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
+            button.sizeToFit()
+            button.addTarget(self, action: #selector(ReaderModeViewController.loadPrevQuestion), for: .touchUpInside)
+        }
+        return UIBarButtonItem(customView: button)
+    }()
+    
     lazy var roundSetNumLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -228,7 +249,7 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationItem.rightBarButtonItem = nextQuestionButton
-        self.navigationItem.leftBarButtonItem = mainMenuButton
+        self.navigationItem.leftBarButtonItem = prevQuestionButton
         self.navigationItem.title = "Reader Mode"
         scrollView.delegate = self
         
@@ -431,6 +452,16 @@ class ReaderModeViewController: UIViewController, UIScrollViewDelegate {
         if let questionSet = questionSet {
             let nextQuestionController = ReaderModeViewController(questionSet: questionSet, index: index+1, tossupTime: tossupTime, bonusTime: bonusTime, isTimedRound: isTimedRound, roundTimeRemaining: roundTimeRemaining, halfNum: halfNum, isTimerRunning: isTimerRunning)
             navigationController?.pushViewController(nextQuestionController, animated: true)
+        }
+    }
+    
+    @objc func loadPrevQuestion() {
+        if (isTimerRunning) {
+            roundTimer.invalidate()
+        }
+        if let questionSet = questionSet {
+            let prevQuestionController = ReaderModeViewController(questionSet: questionSet, index: index-1, tossupTime: tossupTime, bonusTime: bonusTime, isTimedRound: isTimedRound, roundTimeRemaining: roundTimeRemaining, halfNum: halfNum, isTimerRunning: isTimerRunning)
+            navigationController?.pushViewController(prevQuestionController, animated: true)
         }
     }
     
